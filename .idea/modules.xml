@@ -4,9 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Timetable_recommend.iml" filepath="$PROJECT_DIR$/.idea/modules/Timetable_recommend.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Timetable_recommend.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Timetable_recommend.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Timetable_recommend.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Timetable_recommend.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Timetable_recommend.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Timetable_recommend.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Timetable_recommend.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Timetable_recommend.app.unitTest.iml" />
     </modules>
   </component>
 </project>
