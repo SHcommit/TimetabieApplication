@@ -14,7 +14,14 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:text="가나다라마바사"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:text="가나다라마바사"
             android:textSize="20sp" />
 
@@ -33,7 +40,14 @@
             <RadioButton
                 android:id="@+id/radioButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:text="Y"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton14"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:text="Y"
                 android:textSize="14sp" />
 
@@ -45,9 +59,15 @@
             android:layout_weight="1">
 
             <RadioButton
+                android:id="@+id/radioButton15"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="N" />
+
+            <RadioButton
                 android:id="@+id/radioButton13"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:text="N" />
         </RadioGroup>
     </LinearLayout>
