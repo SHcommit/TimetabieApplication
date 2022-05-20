@@ -14,7 +14,7 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-
+        //
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("MBTI 검사 하시겠습니까?").setMessage("");
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
