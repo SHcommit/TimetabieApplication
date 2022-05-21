@@ -4,8 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../layout/custom_preview.xml" value="0.2484375" />
+<<<<<<< HEAD
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21950683593750003" />
         <entry key="app/src/main/res/layout/subject_item.xml" value="0.3182291666666667" />
+=======
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2482757568359376" />
+        <entry key="app/src/main/res/layout/subject_item.xml" value="0.3182291666666667" />
+        <entry key="app/src/main/res/layout/table_cell.xml" value="0.221875" />
+>>>>>>> table_timeTbDevelop
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.24170532226562502" />
       </map>
     </option>
