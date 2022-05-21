@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 # TimeTable_recommend application project!!
->>>>>>> 64dac4e62437f5567927c5d58b8360c92abe9dfd
 
 ![header](https://capsule-render.vercel.app/api?type=Waving&color=gradient&height=200&animation=twinkling&section=header&text=MBTI%20추천%20TimeTable&fontSize=60&fontColor=FF9B00)
 
