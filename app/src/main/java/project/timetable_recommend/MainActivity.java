@@ -13,16 +13,11 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-<<<<<<< HEAD
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import javax.security.auth.Subject;
 
-public class MainActivity extends AppCompatActivity {
-    BottomNavigationView bottomNavigationView;
-
-=======
 import Model.AMPM;
 import Model.DAY;
 import Model.TableCell;
@@ -33,41 +28,30 @@ public class MainActivity extends AppCompatActivity {
      * day       : 요일
      * TableCell : 테이블셀 객체
      */
-    AMPM      ampm;
-    DAY       day;
+    AMPM ampm;
+    DAY day;
     TableCell c;
-<<<<<<< HEAD
->>>>>>> table_timeTbDevelop
 
-=======
     BottomNavigationView bottomNavigationView;
->>>>>>> ysh
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> table_timeTbDevelop
-=======
 
         //변수 인스턴스 생성
         c = new TableCell();
         findTextViewById(c);
 
->>>>>>> ysh
+
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
          * 이 객체에 이벤트 헨들러를 통해 어떤 네비게이션 바의 아이콘이 클릭 됬는지 찾는 메서드 입니다.
          */
-<<<<<<< HEAD
-=======
+
         bottomNavigationView = findViewById(R.id.bottom_navigation);
->>>>>>> ysh
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -111,6 +95,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
 
 }
