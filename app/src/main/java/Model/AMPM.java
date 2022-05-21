@@ -3,7 +3,7 @@ package Model;
 public enum AMPM {
     EIGHT,
     NINE,
-    TEM,
+    TEN,
     ELEVEN,
     ONE,
     TWO,
