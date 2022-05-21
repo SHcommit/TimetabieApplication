@@ -19,23 +19,14 @@ import javax.security.auth.Subject;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    SubjectAdapter       adapter;
-    RecyclerView         recycleView;
-    GridLayoutManager    layoutManager;
-    static final int     numberOfColumns = 6;
-    ArrayList<SubjectAdapter.test> myList =new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        for (Integer i = 0; i< 50; i++){
-            SubjectAdapter.test t = new SubjectAdapter.test(i);
-            myList.add(t);
-        }
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
@@ -61,17 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-
-        recycleView          = (RecyclerView) findViewById(R.id.grid_recyclerView);
-        layoutManager        = new GridLayoutManager(this,numberOfColumns);
-        adapter              = new SubjectAdapter(this,myList);
-
-
-        recycleView.setLayoutManager(layoutManager);
-        recycleView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-
     }
 
 
