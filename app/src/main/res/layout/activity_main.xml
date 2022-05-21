@@ -60,7 +60,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/wen0"
+                android:id="@+id/wed0"
                 android:layout_width="42dp"
                 android:layout_height="38dp"
                 android:gravity="center"
@@ -121,7 +121,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/wen1"
+                android:id="@+id/wed1"
                 android:layout_width="42dp"
                 android:layout_height="38dp"
                 android:gravity="center"
@@ -182,7 +182,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/wen2"
+                android:id="@+id/wed2"
                 android:layout_width="42dp"
                 android:layout_height="38dp"
                 android:gravity="center"
@@ -242,7 +242,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/wen3"
+                android:id="@+id/wed3"
                 android:layout_width="42dp"
                 android:layout_height="38dp"
                 android:gravity="center"
@@ -303,7 +303,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/wen4"
+                android:id="@+id/wed4"
                 android:layout_width="42dp"
                 android:layout_height="38dp"
                 android:gravity="center"
@@ -363,7 +363,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/wen5"
+                android:id="@+id/wed5"
                 android:layout_width="42dp"
                 android:layout_height="38dp"
                 android:gravity="center"
@@ -424,7 +424,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/wen6"
+                android:id="@+id/wed6"
                 android:layout_width="42dp"
                 android:layout_height="38dp"
                 android:gravity="center"
@@ -479,7 +479,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/wen7"
+                android:id="@+id/wed7"
                 android:layout_width="42dp"
                 android:layout_height="38dp"
                 android:gravity="center"
@@ -534,7 +534,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/wen8"
+                android:id="@+id/wed8"
                 android:layout_width="42dp"
                 android:layout_height="38dp"
                 android:gravity="center"
@@ -589,7 +589,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/wen9"
+                android:id="@+id/wed9"
                 android:layout_width="42dp"
                 android:layout_height="38dp"
                 android:gravity="center"
@@ -644,7 +644,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/wen10"
+                android:id="@+id/wed10"
                 android:layout_width="42dp"
                 android:layout_height="38dp"
                 android:gravity="center"
