@@ -8,8 +8,7 @@
 
     tools:context=".MainActivity">
 
-<<<<<<< HEAD
-=======
+
     <TextView
         android:id="@+id/userMBTI"
         android:layout_width="wrap_content"
@@ -685,12 +684,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-<<<<<<< HEAD
 
         app:menu="@menu/bottom_navigation_menu" />
-=======
-        app:menu="@menu/bottom_navigation_menu" />
 
->>>>>>> table_timeTbDevelop
 
 </LinearLayout>
