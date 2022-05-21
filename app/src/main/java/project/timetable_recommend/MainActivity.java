@@ -14,6 +14,11 @@ import Model.DAY;
 import Model.TableCell;
 
 public class MainActivity extends AppCompatActivity {
+    /**
+     * apam      : 몇시인지 호출 할 수 있는 enum
+     * day       : 요일
+     * TableCell : 테이블셀 객체
+     */
     AMPM      ampm;
     DAY       day;
     TableCell c;
@@ -48,11 +53,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        //변수 인스턴스 생성
         c = new TableCell();
         findTextViewById(c);
-        c.cell[3][3].setText("haha");
-        c.cell[3][3].setBackgroundColor(Color.YELLOW);
+
+        //test
+        c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setText("c++");
+        c.cell[ampm.NINE.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
+        c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
+        c.cell[ampm.ELEVEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
 
     }
 
