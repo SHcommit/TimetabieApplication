@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         recycleView          = (RecyclerView) findViewById(R.id.grid_recyclerView);
         layoutManager        = new GridLayoutManager(this,numberOfColumns);
         adapter              = new SubjectAdapter(this,myList);
