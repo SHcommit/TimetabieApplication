@@ -1,5 +1,6 @@
 package project.timetable_recommend;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.ViewHolder>{
     //테스트를 위한 ㅡ클래스
 
-    class test {
+    static class test {
         Integer i;
         test(Integer i){
             this.i = i;
@@ -24,9 +26,14 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.ViewHold
             return i;
         }
     }
+
+    LayoutInflater layoutInflater;
     ArrayList<test> list = new ArrayList<>();
 
-
+    SubjectAdapter(Context context, ArrayList<test> sequence){
+        this.layoutInflater = LayoutInflater.from(context);
+        list = sequence;
+    }
 
     /**
      * Todo :
@@ -34,11 +41,11 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.ViewHold
      * 해당 데이터를 intent로 받아들여와서 여기서 그 것들을 받는 객체를 생성하고 데이터를 집어넣으면 된다.
      */
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView subject;
+        TextView subjectTextView;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
-            subject = itemView.findViewById(R.id.timetableCell);
+            subjectTextView = itemView.findViewById(R.id.timetableCell);
         }
     }
 
@@ -49,14 +56,8 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View item                     = layoutInflater.inflate(R.layout.subject_item,parent,false);
 
-        // 시간표 출력 테스트를위한 포문
-        for(int i= 0; i<50; i++){
-            test t = new test(i);
-            list.add(t);
-        }
         return new ViewHolder(item);
 
     }
@@ -64,7 +65,8 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         test t = list.get(position);
-        holder.subject.setText(t.getI().toString());
+        holder.subjectTextView.setText(t.getI().toString());
+
     }
 
     @Override
@@ -72,5 +74,9 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.ViewHold
         return 0;
     }
 
+    public void addItem(test t ){
+        //추가 정의 다른 .java파일에서 어뎁터를 통해 값 널 수 수 있도록
+        list.add(t);
+    }
 
 }
