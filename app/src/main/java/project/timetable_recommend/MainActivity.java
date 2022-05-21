@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -35,22 +36,38 @@ public class MainActivity extends AppCompatActivity {
     AMPM      ampm;
     DAY       day;
     TableCell c;
+<<<<<<< HEAD
 >>>>>>> table_timeTbDevelop
 
+=======
+    BottomNavigationView bottomNavigationView;
+>>>>>>> ysh
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
 
 =======
 >>>>>>> table_timeTbDevelop
+=======
+
+        //변수 인스턴스 생성
+        c = new TableCell();
+        findTextViewById(c);
+
+>>>>>>> ysh
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
          * 이 객체에 이벤트 헨들러를 통해 어떤 네비게이션 바의 아이콘이 클릭 됬는지 찾는 메서드 입니다.
          */
+<<<<<<< HEAD
+=======
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+>>>>>>> ysh
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -60,8 +77,10 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println("여기에 시간표와 관련된 액티비티 호출");
                         return true;
                     case R.id.tab_MBTI:
+                        Intent i = new Intent(getApplicationContext(),MBTIActivity.class);
                         Toast.makeText(getApplicationContext(),"여기에 앰비티아이 설명과 관련된 액티비티 호출", Toast.LENGTH_LONG).show();
                         System.out.println("여기에 앰비티아이 설명과 관련된 액티비티 호출");
+                        startActivityForResult(i,1001);
                         return true;
                     case R.id.tab_setting:
                         Toast.makeText(getApplicationContext(),"여기에 세팅과 관련된 액티비티 호출 이때 엠비티아이 검사하고", Toast.LENGTH_LONG).show();
@@ -72,9 +91,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //변수 인스턴스 생성
-        c = new TableCell();
-        findTextViewById(c);
+
 
         //test
         c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setText("c++");
