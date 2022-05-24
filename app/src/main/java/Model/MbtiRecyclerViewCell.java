@@ -11,7 +11,9 @@ import project.timetable_recommend.R;
 public class MbtiRecyclerViewCell {
 
     /**
-     * @param textID[]      : 여기에 recyclerView의 card위젯 안 textView 변수의 id값을 저장한다.
+     * @param widgetID[]      : 여기에 recyclerView의 card위젯 안 textView 변수의 id값을 저장한다.
+     * @param imageID[]     : 여기에 recyclerView의 card위젯 안 imageView 변수 id 값 저장된다.
+     *                             https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9-%EC%9C%A0%ED%98%95
      * @param mbtiType      : cardView 위젯 안 첫번째 textView
      * @param mbtiInfo      : cardView 위젯 안 두번째 textView
      * @param mbtiImage     : 이미지 호출하는 객체
@@ -19,8 +21,8 @@ public class MbtiRecyclerViewCell {
      * @param mbti_type_num : "
      * @param mbti_image_num: "
      */
-    public final int textID[]  = {R.id.mbti_info, R.id.mbti_type,R.id.mbti_image};
-    //public final int imageID[] = {R.drawable.};
+    public int widgetID[]  = {R.id.mbti_info, R.id.mbti_type,R.id.mbti_image};
+
     public TextView mbtiType , mbtiInfo;
     public ImageView mbtiImage;
 
@@ -29,8 +31,9 @@ public class MbtiRecyclerViewCell {
     public int mbti_image_num;
     //생성자 함수
     public MbtiRecyclerViewCell(){
-        mbti_info_num = 0;
-        mbti_type_num = 1;
+        mbti_info_num  = 0;
+        mbti_type_num  = 1;
+        mbti_image_num = 2;
     }
 
 

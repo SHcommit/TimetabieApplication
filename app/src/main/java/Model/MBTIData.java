@@ -1,10 +1,16 @@
 package Model;
 
 import Model.MbtiType;
+import project.timetable_recommend.R;
 
 public class MBTIData {
 
     MbtiType mbti_type[];
+
+    public int imageID[] = {R.drawable.intj,R.drawable.intp,R.drawable.entj,R.drawable.entp,
+            R.drawable.infj,R.drawable.infp,R.drawable.enfj,R.drawable.enfp,
+            R.drawable.istj,R.drawable.isfj,R.drawable.estj,R.drawable.esfj,
+            R.drawable.istp,R.drawable.isfp,R.drawable.estp,R.drawable.esfp};
 
     String mbti_type_data[][] =
             {
@@ -40,7 +46,7 @@ public class MBTIData {
      */
     public void inputMbtiData(){
         for (int i = 0; i< this.mbti_type_data.length; i ++){
-            mbti_type[i] = new MbtiType(this.mbti_type_data[i][0],this.mbti_type_data[i][1]);
+            mbti_type[i] = new MbtiType(this.mbti_type_data[i][0],this.mbti_type_data[i][1], this.imageID[i]);
         }
     }
 

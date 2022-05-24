@@ -9,10 +9,12 @@ import android.widget.TextView;
 public class MbtiType {
     public String type;
     public String feautre;
+    public int image;
 
-    public MbtiType(String type , String feautre){
-        this.type = type;
+    public MbtiType(String type , String feautre, int image){
+        this.type    = type;
         this.feautre = feautre;
+        this.image   = image;
     }
     public String getType() {
         return type;
@@ -28,5 +30,12 @@ public class MbtiType {
 
     public void setFeautre(String feautre) {
         this.feautre = feautre;
+    }
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 }
