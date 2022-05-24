@@ -3,6 +3,7 @@ package project.timetable_recommend;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,6 +33,7 @@ public class MBTIAdapter extends RecyclerView.Adapter<MBTIAdapter.ViewHolder> {
         public void setItem(MbtiType mbti){
             cellText.mbtiType.setText(mbti.getType());
             cellText.mbtiInfo.setText(mbti.getFeautre());
+            cellText.mbtiImage.setImageResource(mbti.getImage());
         }
     }
 
@@ -65,11 +67,12 @@ public class MBTIAdapter extends RecyclerView.Adapter<MBTIAdapter.ViewHolder> {
     }
 
     /**
-     * mbtiCellText의 TextView mbtiType, mbtiInfo 위젯의 아이디 값을 찾아 객체화 한다.
+     * mbtiCellText의 TextView mbtiType, mbtiInfo , ImageView mbtiImage 위젯의 아이디 값을 찾아 객체화 한다.
      */
     public static void findViewByTevtViewID(@NonNull View itemView, MbtiRecyclerViewCell mbtiCellText){
-        mbtiCellText.mbtiType  = (TextView) itemView.findViewById(mbtiCellText.textID[mbtiCellText.mbti_type_num]);
-        mbtiCellText.mbtiInfo = (TextView) itemView.findViewById(mbtiCellText.textID[mbtiCellText.mbti_info_num]);
+        mbtiCellText.mbtiType  = (TextView) itemView.findViewById(mbtiCellText.widgetID[mbtiCellText.mbti_type_num]);
+        mbtiCellText.mbtiInfo = (TextView) itemView.findViewById(mbtiCellText.widgetID[mbtiCellText.mbti_info_num]);
+        mbtiCellText.mbtiImage = (ImageView) itemView.findViewById(mbtiCellText.widgetID[mbtiCellText.mbti_image_num]);
     }
 
 
