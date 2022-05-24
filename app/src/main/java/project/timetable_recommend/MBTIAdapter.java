@@ -24,7 +24,6 @@ public class MBTIAdapter extends RecyclerView.Adapter<MBTIAdapter.ViewHolder> {
             super(itemView);
             cellText = new MbtiRecyclerViewCell();
             findViewByTevtViewID(itemView, cellText);
-
         }
 
         /**
@@ -65,7 +64,9 @@ public class MBTIAdapter extends RecyclerView.Adapter<MBTIAdapter.ViewHolder> {
         return mbtiList.size();
     }
 
-
+    /**
+     * mbtiCellText의 TextView mbtiType, mbtiInfo 위젯의 아이디 값을 찾아 객체화 한다.
+     */
     public static void findViewByTevtViewID(@NonNull View itemView, MbtiRecyclerViewCell mbtiCellText){
         mbtiCellText.mbtiType  = (TextView) itemView.findViewById(mbtiCellText.textID[mbtiCellText.mbti_type_num]);
         mbtiCellText.mbtiInfo = (TextView) itemView.findViewById(mbtiCellText.textID[mbtiCellText.mbti_info_num]);
