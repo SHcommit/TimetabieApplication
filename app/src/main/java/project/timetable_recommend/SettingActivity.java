@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class SettingActivity extends AppCompatActivity {
@@ -73,6 +74,10 @@ public class SettingActivity extends AppCompatActivity {
                         intent.putExtra("MBTI", MBTI);
                         startActivity(intent);
                         break;
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(),
+                                "MBTI를 정확히 입력해주세요.", Toast.LENGTH_SHORT).show();
                     }
 
 
