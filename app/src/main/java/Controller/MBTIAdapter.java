@@ -1,4 +1,4 @@
-package project.timetable_recommend;
+package Controller;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import Model.MbtiRecyclerViewCell;
 import Model.MbtiType;
+import project.timetable_recommend.R;
 
 public class MBTIAdapter extends RecyclerView.Adapter<MBTIAdapter.ViewHolder> {
     private ArrayList<MbtiType> mbtiList = new ArrayList<>();

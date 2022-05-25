@@ -1,22 +1,17 @@
 package project.timetable_recommend;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import Controller.MBTIAdapter;
 import Controller.bottomNavigationListenerInSecondActivity;
 import Model.MBTIData;
-import Model.MbtiType;
-import Controller.bottomNavigationListenerInSecondActivity;
 
 public class MBTIActivity extends AppCompatActivity {
 
@@ -30,7 +25,7 @@ public class MBTIActivity extends AppCompatActivity {
      */
     BottomNavigationView       bottomNavigationView;
     RecyclerView.LayoutManager layoutManager;
-    MBTIAdapter                adapter;
+    MBTIAdapter adapter;
     RecyclerView               recycleView;
     MBTIData                   mbtiData;
     public static Context      context_mbtiActivity;
