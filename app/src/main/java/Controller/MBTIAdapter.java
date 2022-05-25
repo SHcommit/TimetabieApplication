@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 import Model.MbtiRecyclerViewCell;
@@ -34,6 +36,7 @@ public class MBTIAdapter extends RecyclerView.Adapter<MBTIAdapter.ViewHolder> {
         public void setItem(MbtiType mbti){
             cellText.mbtiType.setText(mbti.getType());
             cellText.mbtiInfo.setText(mbti.getFeautre());
+            cellText.mbtiDetailInfo.setText(mbti.getDetailFeature());
             cellText.mbtiImage.setImageResource(mbti.getImage());
         }
     }
@@ -73,6 +76,7 @@ public class MBTIAdapter extends RecyclerView.Adapter<MBTIAdapter.ViewHolder> {
     public static void findViewByTevtViewID(@NonNull View itemView, MbtiRecyclerViewCell mbtiCellText){
         mbtiCellText.mbtiType  = (TextView) itemView.findViewById(mbtiCellText.widgetID[mbtiCellText.mbti_type_num]);
         mbtiCellText.mbtiInfo = (TextView) itemView.findViewById(mbtiCellText.widgetID[mbtiCellText.mbti_info_num]);
+        mbtiCellText.mbtiDetailInfo = (TextView) itemView.findViewById(mbtiCellText.widgetID[mbtiCellText.mbti_detailInfo_num]);
         mbtiCellText.mbtiImage = (ImageView) itemView.findViewById(mbtiCellText.widgetID[mbtiCellText.mbti_image_num]);
     }
 

@@ -8,12 +8,14 @@ import android.widget.TextView;
  */
 public class MbtiType {
     public String type;
-    public String feautre;
+    public String feature;
+    public String detailFeature;
     public int image;
 
-    public MbtiType(String type , String feautre, int image){
+    public MbtiType(String type , String feautre, String detailFeature, int image){
         this.type    = type;
-        this.feautre = feautre;
+        this.feature = feautre;
+        this.detailFeature = detailFeature;
         this.image   = image;
     }
     public String getType() {
@@ -25,11 +27,11 @@ public class MbtiType {
     }
 
     public String getFeautre() {
-        return feautre;
+        return feature;
     }
 
     public void setFeautre(String feautre) {
-        this.feautre = feautre;
+        this.feature = feautre;
     }
     public int getImage() {
         return image;
@@ -37,5 +39,21 @@ public class MbtiType {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public String getFeature() {
+        return feature;
+    }
+
+    public void setFeature(String feature) {
+        this.feature = feature;
+    }
+
+    public String getDetailFeature() {
+        return detailFeature;
+    }
+
+    public void setDetailFeature(String detailFeature) {
+        this.detailFeature = detailFeature;
     }
 }

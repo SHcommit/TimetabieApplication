@@ -21,19 +21,21 @@ public class MbtiRecyclerViewCell {
      * @param mbti_type_num : "
      * @param mbti_image_num: "
      */
-    public int widgetID[]  = {R.id.mbti_info, R.id.mbti_type,R.id.mbti_image};
+    public int widgetID[]  = {R.id.mbti_info, R.id.mbti_type,R.id.mbti_detail_infomation ,R.id.mbti_image};
 
-    public TextView mbtiType , mbtiInfo;
+    public TextView mbtiType , mbtiInfo, mbtiDetailInfo;
     public ImageView mbtiImage;
 
     public int mbti_info_num ;
     public int mbti_type_num ;
     public int mbti_image_num;
+    public int mbti_detailInfo_num;
     //생성자 함수
     public MbtiRecyclerViewCell(){
-        mbti_info_num  = 0;
-        mbti_type_num  = 1;
-        mbti_image_num = 2;
+        mbti_info_num       = 0;
+        mbti_type_num       = 1;
+        mbti_detailInfo_num = 2;
+        mbti_image_num      = 3;
     }
 
 
