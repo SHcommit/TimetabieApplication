@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+        menu 안에 item은 네비게이션 바의 탭 속성 하나 하나 정의해주는 것
+        id : tab_timetable  첫번째 탭
+        id : tab_MBTI       두번째 탭
+        id : tab_setting    세번째 탭
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/tab_timetable" app:showAsAction="ifRoom" android:enabled="true"
+        android:icon="@drawable/ic_launcher_foreground" android:title="schedule" />
+    <item android:id="@+id/tab_MBTI" app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_launcher_foreground" android:title="MBTI" />
+    <item android:id="@+id/tab_setting" app:showAsAction="ifRoom"
+        android:enabled="true" android:icon="@drawable/ic_launcher_foreground" android:title="Setting" />
+</menu>
