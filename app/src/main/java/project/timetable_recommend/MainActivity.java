@@ -1,15 +1,17 @@
 package project.timetable_recommend;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+
 import android.util.Log;
 import android.view.MenuItem;
+
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -32,64 +34,49 @@ import javax.security.auth.Subject;
 import Model.AMPM;
 import Model.DAY;
 import Model.TableCell;
+import Controller.bottomNavigationListenerInFirstActivity;
 
 public class MainActivity extends AppCompatActivity {
     /**
-     * apam      : 몇시인지 호출 할 수 있는 enum
-     * day       : 요일
-     * TableCell : 테이블셀 객체
-     * requestQueue : Volley에서 다리역할을 하는 객체
-     * subjectResult : Json 파싱한 데이터가 저장되어있습니다.
+     * @param bottomNavigationView : 네비게이션 바 다룰 수있는 객체
+     * @param apam                 : 몇시인지 호출 할 수 있는 enum
+     * @param day                  : 요일
+     * @param TableCell            : 테이블셀 객체
+     * @param context_main         : 메인 액티비티 객체 얻어올 수 있다.
+     * @param requestQueue         : Volley에서 다리역할을 하는 객체
+     * @param subjectResult        : Json 파싱한 데이터가 저장되어있습니다.
      */
-    AMPM ampm;
-    DAY day;
-    TableCell c;
-    static RequestQueue requestQueue;
-    BottomNavigationView bottomNavigationView;
-    SubjectList subjectList;
+    BottomNavigationView  bottomNavigationView;
+    AMPM                  ampm;
+    DAY                   day;
+    TableCell             c;
+    public static Context context_main;
+    static RequestQueue   requestQueue;
+    SubjectList           subjectList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //변수 초기화
+        context_main          = this;
+        bottomNavigationView  = findViewById(R.id.bottom_navigation);
+        GsonThread gsonThread = new GsonThread();
+        c                     = new TableCell();
+        findTextViewById(c);
+
         if(requestQueue == null){
             requestQueue = Volley.newRequestQueue(getApplicationContext());
         }
-        //변수 인스턴스 생성
-        c = new TableCell();
-        findTextViewById(c);
-        GsonThread gsonThread = new GsonThread();
+
         gsonThread.start();
+
+
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
          * 이 객체에 이벤트 헨들러를 통해 어떤 네비게이션 바의 아이콘이 클릭 됬는지 찾는 메서드 입니다.
          */
-
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getItemId()){
-                    case R.id.tab_timetable:
-                        Toast.makeText(getApplicationContext(),"여기에 시간표와 관련된 액티비티 호출", Toast.LENGTH_LONG).show();
-                        System.out.println("여기에 시간표와 관련된 액티비티 호출");
-                        return true;
-                    case R.id.tab_MBTI:
-                        Intent i = new Intent(getApplicationContext(),MBTIActivity.class);
-                        Toast.makeText(getApplicationContext(),"여기에 앰비티아이 설명과 관련된 액티비티 호출", Toast.LENGTH_LONG).show();
-                        System.out.println("여기에 앰비티아이 설명과 관련된 액티비티 호출");
-                        startActivityForResult(i,1001);
-                        return true;
-                    case R.id.tab_setting:
-                        Toast.makeText(getApplicationContext(),"여기에 세팅과 관련된 액티비티 호출 이때 엠비티아이 검사하고", Toast.LENGTH_LONG).show();
-                        System.out.println("여기에 세팅과 관련된 액티비티 호출 이때 엠비티아이 검사하고)");
-                        return true;
-                }
-                return false;
-            }
-        });
-
-
+        bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
 
         //test
         c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setText("c++");
@@ -98,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
         c.cell[ampm.ELEVEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
 
     }
+
+
 
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.
     public void findTextViewById(TableCell tCell){
@@ -116,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void makeRequest() {
-        String url = "http://211.243.144.157:80/test/Android/android.jsp";
+        String url = "http://192.168.0.118:80/test/Android/android.jsp";
 
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
