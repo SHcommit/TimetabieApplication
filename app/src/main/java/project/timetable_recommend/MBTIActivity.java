@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.animation.OvershootInterpolator;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import Controller.MBTIAdapter;
 import Controller.bottomNavigationListenerInSecondActivity;
 import Model.MBTIData;
+import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
+import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 
 public class MBTIActivity extends AppCompatActivity {
 
@@ -26,7 +29,7 @@ public class MBTIActivity extends AppCompatActivity {
     BottomNavigationView       bottomNavigationView;
     RecyclerView.LayoutManager layoutManager;
     MBTIAdapter adapter;
-    RecyclerView               recycleView;
+    RecyclerView recyclerView;
     MBTIData                   mbtiData;
     public static Context      context_mbtiActivity;
 
@@ -42,15 +45,21 @@ public class MBTIActivity extends AppCompatActivity {
          */
         context_mbtiActivity = this;
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        recycleView          = (RecyclerView)findViewById(R.id.mbti_recyclerView);
+        recyclerView         = (RecyclerView)findViewById(R.id.mbti_recyclerView);
         layoutManager        = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         adapter              = new MBTIAdapter();
         mbtiData             = new MBTIData();
 
         //adapter에 데이터 넣기.
         inputDataToAdapter();
-        recycleView.setLayoutManager(layoutManager);
-        recycleView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(new AlphaInAnimationAdapter(adapter));
+        //add recycler view animation
+        AlphaInAnimationAdapter alphaInAnimationAdapter = new AlphaInAnimationAdapter(adapter);
+        alphaInAnimationAdapter.setDuration(1000);
+        alphaInAnimationAdapter.setInterpolator(new OvershootInterpolator());
+        alphaInAnimationAdapter.setFirstOnly(false);
+        recyclerView.setAdapter(new ScaleInAnimationAdapter(alphaInAnimationAdapter));
 
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
