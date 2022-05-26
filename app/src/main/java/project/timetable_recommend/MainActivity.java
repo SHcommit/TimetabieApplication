@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
      * @param subjectResult        : Json 파싱한 데이터가 저장되어있습니다.
      */
     BottomNavigationView  bottomNavigationView; //push
-    AMPM                  ampm;
+    AMPM                  ampm; //android
     DAY                   day;
     TableCell             c;
     public static Context context_main;
