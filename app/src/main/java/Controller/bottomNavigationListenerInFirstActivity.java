@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import project.timetable_recommend.MBTIActivity;
 import project.timetable_recommend.MainActivity;
+import project.timetable_recommend.PreviousActivity;
 import project.timetable_recommend.R;
 
 
@@ -35,6 +36,13 @@ public class bottomNavigationListenerInFirstActivity implements BottomNavigation
                 return true;
             case R.id.tab_setting:
                 System.out.println("여기에 세팅과 관련된 액티비티 호출 이때 엠비티아이 검사하고)");
+                return true;
+            case R.id.tab_previous:
+                System.out.println("현재 재작중인 이전 시간표 추가하는 엑티비티입니다.");
+                Intent intent2 = new Intent(MainActivity.context_main.getApplicationContext(), PreviousActivity.class);
+                Toast.makeText(MainActivity.context_main.getApplicationContext(),"이전 시간표 제작중", Toast.LENGTH_LONG).show();
+                System.out.println("이전 시간표 제작중");
+                MainActivity.context_main.startActivity(intent2);
                 return true;
         }
         return false;

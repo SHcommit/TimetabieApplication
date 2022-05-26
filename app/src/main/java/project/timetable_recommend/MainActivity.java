@@ -72,17 +72,12 @@ public class MainActivity extends AppCompatActivity {
          * 이 객체에 이벤트 헨들러를 통해 어떤 네비게이션 바의 아이콘이 클릭 됬는지 찾는 메서드 입니다.
          */
         bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
-
         //test
         c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setText("c++");
         c.cell[ampm.NINE.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
         c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
         c.cell[ampm.ELEVEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
-
     }
-
-
-
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.
     public void findTextViewById(TableCell tCell){
         for(int y = 0; y < tCell.getHeight(); y++){

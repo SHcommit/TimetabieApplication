@@ -29,6 +29,9 @@ public class bottomNavigationListenerInSecondActivity implements BottomNavigatio
             case R.id.tab_setting:
                 System.out.println("여기에 세팅과 관련된 액티비티 호출 이때 엠비티아이 검사하고)");
                 return true;
+            case R.id.tab_previous:
+                System.out.println("이전 시간표 제작중");
+                return true;
         }
         return false;
     }

@@ -24,6 +24,9 @@ public class bottomNavigationListenerInThirdActivity implements BottomNavigation
             case R.id.tab_setting:
                 System.out.println("이땐 현재 자기자신 화면 누르는중 따라서 변동 x");
                 return true;
+            case R.id.tab_previous:
+                System.out.println("현재 재작중인 이전 시간표 추가하는 엑티비티입니다.");
+                return true;
         }
         return false;
     }
