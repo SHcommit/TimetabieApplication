@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView  bottomNavigationView;
     AMPM                  ampm;
-    DAY                   day;
+    DAY                   day; ////
     TableCell             c;
     public static Context context_main;
 
