@@ -75,8 +75,6 @@ public class MBTIAdapter extends RecyclerView.Adapter<MBTIAdapter.ViewHolder> {
         mbtiCellText.mbtiInfo = (TextView) itemView.findViewById(mbtiCellText.widgetID[mbtiCellText.mbti_info_num]);
         mbtiCellText.mbtiImage = (ImageView) itemView.findViewById(mbtiCellText.widgetID[mbtiCellText.mbti_image_num]);
     }
-
-
     public void addItem(MbtiType mbti ){
         mbtiList.add(mbti);
     }

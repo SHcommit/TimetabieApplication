@@ -10,7 +10,7 @@ import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import Controller.MBTIAdapter;
-import Controller.bottomNavigationListenerInSecondActivity;
+import Controller.bottomNavigationListenerInFirstActivity;
 import Model.MBTIData;
 
 public class MBTIActivity extends AppCompatActivity {
@@ -56,7 +56,7 @@ public class MBTIActivity extends AppCompatActivity {
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
          * 이 객체에 이벤트 헨들러를 통해 어떤 네비게이션 바의 아이콘이 클릭 됬는지 찾는 메서드 입니다.
          */
-        bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInSecondActivity());
+        bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
 
     }
 
