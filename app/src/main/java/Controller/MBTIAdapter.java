@@ -81,14 +81,10 @@ public class MBTIAdapter extends RecyclerView.Adapter<MBTIAdapter.ViewHolder> {
     public void setItems(ArrayList<MbtiType> list){
         this.mbtiList = list;
     }
-
     public MbtiType getItem(int position){
         return mbtiList.get(position);
     }
     public void setItem(int position, MbtiType item){
         mbtiList.set(position,item);
     }
-
-
-
 }
