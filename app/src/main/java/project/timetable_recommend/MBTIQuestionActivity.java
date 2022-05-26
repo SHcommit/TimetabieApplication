@@ -224,7 +224,8 @@ public class MBTIQuestionActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class); //class 수정해야됨
                 intent.putExtra("MBTI", MBTI.toString());
-                startActivity(intent);
+                setResult(RESULT_OK);
+                finish();
             }
         });
 

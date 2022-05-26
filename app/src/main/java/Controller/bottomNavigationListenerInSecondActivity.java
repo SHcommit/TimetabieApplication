@@ -23,9 +23,11 @@ public class bottomNavigationListenerInSecondActivity implements BottomNavigatio
                 System.out.println("시간표 띄워주자");
                 ((MBTIActivity)(MBTIActivity.context_mbtiActivity)).finish();
                 return true;
+
             case R.id.tab_MBTI:
                 System.out.println("이땐 현재 자기자신 화면 누르는중 따라서 변동 x");
                 return true;
+
             case R.id.tab_setting:
                 System.out.println("여기에 세팅과 관련된 액티비티 호출 이때 엠비티아이 검사하고)");
                 return true;

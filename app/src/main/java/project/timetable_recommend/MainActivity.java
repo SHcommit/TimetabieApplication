@@ -4,13 +4,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-<<<<<<< HEAD
+
 import android.content.Intent;
-=======
+
 import android.content.Context;
-import android.content.Intent;
+
 import android.graphics.Color;
->>>>>>> ed12175d833ab405a653003c4bc3aa2318ba4b5b
+
 import android.os.Bundle;
 import android.widget.Toast;
 

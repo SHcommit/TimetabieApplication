@@ -10,11 +10,14 @@
         <entry key="app/src/main/res/drawable/layout_background.xml" value="0.151" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/activity_mbtiactivity.xml" value="0.30625" />
-        <entry key="app/src/main/res/layout/activity_mbtiquestion.xml" value="0.28269313767803195" />
+        <entry key="app/src/main/res/layout/activity_mbtiquestion.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.3398148148148148" />
+        <entry key="app/src/main/res/layout/fragment_information.xml" value="0.3487179487179487" />
+        <entry key="app/src/main/res/layout/fragment_input_mbti.xml" value="0.2765625" />
+        <entry key="app/src/main/res/layout/fragment_student_info.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/layout/layout_background.xml" value="0.334375" />
         <entry key="app/src/main/res/layout/mbti_item.xml" value="0.16510416666666666" />
-        <entry key="app/src/main/res/layout/table_cell.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/layout/table_cell.xml" value="0.5" />
       </map>
     </option>
   </component>
