@@ -52,4 +52,4 @@ public class PreviousActivity extends AppCompatActivity {
                 transaction.replace(R.id.frameLayout, fragment4).commitAllowingStateLoss();
         }
     }
-}
+}}
