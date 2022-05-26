@@ -17,42 +17,47 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import Controller.bottomNavigationListenerInFirstActivity;
 
 public class PreviousActivity extends AppCompatActivity {
-    Button button1, button2, button3, button4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_previous);
-        button1 = findViewById(R.id.button);
-        button2 = findViewById(R.id.button2);
-        button3 = findViewById(R.id.button3);
-        button4 = findViewById(R.id.button4);
-        Button.OnClickListener onClickListener = new Button.OnClickListener() {
+        setContentView(R.layout.activity_main);
+
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()) {
-                    case R.id.button:
-                        Intent intent1 = new Intent(getApplicationContext(), PreviousLayout1.class);
-                        startActivity(intent1);
-                        break ;
-                    case R.id.button2:
-                        Intent intent2 = new Intent(getApplicationContext(), PreviousLayout2.class);
-                        startActivity(intent2);
-                        break ;
-                    case R.id.button3:
-                        Intent intent3 = new Intent(getApplicationContext(), PreviousLayout3.class);
-                        startActivity(intent3);
-                        break ;
-                    case R.id.button4:
-                        Intent intent4 = new Intent(getApplicationContext(), PreviousLayout4.class);
-                        startActivity(intent4);
-
-                }
+                FragmentView(0);
             }
-        } ;
-        button1.setOnClickListener(onClickListener);
-        button2.setOnClickListener(onClickListener);
-        button3.setOnClickListener(onClickListener);
-        button4.setOnClickListener(onClickListener);
+        });
+
+        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentView(1);
+            }
+        });
+
+    }
+
+    private void FragmentView(int fragment){
+
+        //FragmentTransactiom를 이용해 프래그먼트를 사용합니다.
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        switch (fragment){
+            case 1:
+                // 첫번 째 프래그먼트 호출
+                Fragment1 fragment1 = new Fragment1();
+                transaction.replace(R.id.fragment_container, fragment1);
+                transaction.commit();
+                break;
+
+            case 2:
+                // 두번 째 프래그먼트 호출
+                Fragment2 fragment2 = new Fragment2();
+                transaction.replace(R.id.fragment_container, fragment2);
+                transaction.commit();
+                break;
+        }
 
     }
 
