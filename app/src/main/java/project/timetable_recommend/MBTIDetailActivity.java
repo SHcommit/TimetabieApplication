@@ -59,14 +59,15 @@ public class MBTIDetailActivity extends AppCompatActivity {
             }
         });
         img_thumbnail = (ImageView) findViewById(R.id.mbti_image);
-        Glide.with(mContext)
+        img_thumbnail.setImageResource(img_name);
+        /*Glide.with(mContext)
                 .load(img_name)
-                .into(img_thumbnail);
+                .into(img_thumbnail);*/
         //여기서 문제있네
-        //mbti_text_type = (TextView) findViewById(R.id.mbti_type);
-        //mbti_text_type.setText(mbti_type);
-       // mbti_text_introduce = (TextView) findViewById(R.id.text_mbti_introduce);
-       // mbti_text_introduce.setText("mbti 더 자세한 설명!?");
+        mbti_text_type = (TextView) findViewById(R.id.text_mbti_title);
+        mbti_text_type.setText(mbti_type);
+        mbti_text_introduce = (TextView) findViewById(R.id.text_mbti_introduce);
+        mbti_text_introduce.setText("mbti 더 자세한 설명!?");
 
     }
 }
