@@ -23,7 +23,7 @@ public class bottomNavigationListenerInThirdActivity implements BottomNavigation
                 return true;
             case R.id.tab_setting:
                 System.out.println("이땐 현재 자기자신 화면 누르는중 따라서 변동 x");
-                return true;
+                return true;////
         }
         return false;
     }
