@@ -4,52 +4,56 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import Controller.bottomNavigationListenerInFirstActivity;
 
 public class PreviousActivity extends AppCompatActivity {
-    BottomNavigationView bottomNavigationView;
-    private FragmentManager fragmentManager;
-    private PreviousFragment1 fragment1;
-    private PreviousFragment2 fragment2;
-    private PreviousFragment3 fragment3;
-    private PreviousFragment4 fragment4;
-    private FragmentTransaction transaction;
+    Button button1, button2, button3, button4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_previous);
-        fragmentManager = getSupportFragmentManager();
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        button1 = findViewById(R.id.button);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
+        Button.OnClickListener onClickListener = new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.button:
+                        Intent intent1 = new Intent(getApplicationContext(), PreviousLayout1.class);
+                        startActivity(intent1);
+                        break ;
+                    case R.id.button2:
+                        Intent intent2 = new Intent(getApplicationContext(), PreviousLayout2.class);
+                        startActivity(intent2);
+                        break ;
+                    case R.id.button3:
+                        Intent intent3 = new Intent(getApplicationContext(), PreviousLayout3.class);
+                        startActivity(intent3);
+                        break ;
+                    case R.id.button4:
+                        Intent intent4 = new Intent(getApplicationContext(), PreviousLayout4.class);
+                        startActivity(intent4);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
-        fragment1 = new PreviousFragment1();
-        fragment2 = new PreviousFragment2();
-        fragment3 = new PreviousFragment3();
-        fragment4 = new PreviousFragment4();
-        transaction = fragmentManager.beginTransaction();
+                }
+            }
+        } ;
+        button1.setOnClickListener(onClickListener);
+        button2.setOnClickListener(onClickListener);
+        button3.setOnClickListener(onClickListener);
+        button4.setOnClickListener(onClickListener);
+
     }
-    public void clickHandler(View view)
-    {
-        transaction = fragmentManager.beginTransaction();
-        switch(view.getId())
-        {
-            case R.id.button:
-                transaction.replace(R.id.frameLayout, fragment1).commitAllowingStateLoss();
-                break;
-            case R.id.button2:
-                transaction.replace(R.id.frameLayout, fragment2).commitAllowingStateLoss();
-                break;
-            case R.id.button3:
-                transaction.replace(R.id.frameLayout, fragment3).commitAllowingStateLoss();
-                break;
-            case R.id.button4:
-                transaction.replace(R.id.frameLayout, fragment4).commitAllowingStateLoss();
-        }
-    }
-}}
+
+}
