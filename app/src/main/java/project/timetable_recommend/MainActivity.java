@@ -62,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
         //변수 초기화
         context_main          = this;
         bottomNavigationView  = findViewById(R.id.bottom_navigation);
-        //GsonThread gsonThread = new GsonThread(getApplicationContext());
+        GsonThread gsonThread = new GsonThread(getApplicationContext());
         c                     = new TableCell();
         findTextViewById(c);
-        //gsonThread.start();
+        gsonThread.start();
 
 
         /**
