@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
      * @param requestQueue         : Volley에서 다리역할을 하는 객체
      * @param subjectResult        : Json 파싱한 데이터가 저장되어있습니다.
      */
-    BottomNavigationView  bottomNavigationView;
+    BottomNavigationView  bottomNavigationView; //push
     AMPM                  ampm;
     DAY                   day;
     TableCell             c;
