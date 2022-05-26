@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <font-family xmlns:android="http://schemas.android.com/apk/res/android">
-  
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="1300"
+        android:font="@font/ef_diary"/>
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="1300"
+        android:font="@font/happiness_sans_title"/>
+
 </font-family>
