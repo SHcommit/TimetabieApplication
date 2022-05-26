@@ -13,10 +13,9 @@
         android:theme="@style/Theme.Timetable_recommend">
 
         <!-- networkSecurityConfig는 res/xml 폴더 안에 있는 네트워크 허용 파일 적용시킨 겁니다.-->
-        <activity
 
-            android:name=".MBTIActivity"
-            android:exported="false" />
+
+
         <activity
             android:name=".MBTIQuestionActivity"
             android:exported="false">
@@ -37,7 +36,12 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
+            android:exported="true">
+          <!--  <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
 
         </activity>
     </application>

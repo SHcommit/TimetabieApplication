@@ -222,9 +222,9 @@ public class MBTIQuestionActivity extends AppCompatActivity {
                 else
                     MBTI = MBTI.append("P");
 
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class); //class 수정해야됨
-                intent.putExtra("MBTI", MBTI.toString());
-                setResult(RESULT_OK);
+                Intent intent = getIntent();
+                intent.putExtra("MBTI", MBTI.toString()); //MBTI를 intent에 넣음
+                setResult(RESULT_OK, intent); //SettingActivity에 intent를 보내면서 화면 전환
                 finish();
             }
         });

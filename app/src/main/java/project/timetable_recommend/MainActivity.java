@@ -64,11 +64,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = getIntent();
-        String MBTI = intent.getStringExtra("MBTI");
-        Toast.makeText(getApplicationContext(), "당신의 MBTI는 " + MBTI + "입니다.", Toast.LENGTH_SHORT)
-                .show();
-
 
         //변수 초기화
         context_main          = this;

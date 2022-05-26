@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="40dp"
     android:layout_marginTop="40dp"
     android:layout_marginRight="40dp"
@@ -19,23 +19,26 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="\n학년 :"
+            android:gravity="center"
+            android:text="학년 :"
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/textViewMajor"
+            android:id="@+id/textViewM"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="\n전공 학점 : "
+            android:gravity="center"
+            android:text="전공 학점 : "
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/textViewCulture"
+            android:id="@+id/textViewC"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="\n교양 학점: "
+            android:gravity="center"
+            android:text="교양 학점: "
             android:textAlignment="center" />
 
         <TextView
@@ -43,7 +46,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="\n학수번호 : "
+            android:gravity="center"
+            android:text="학수번호 : "
             android:textAlignment="center" />
 
         <TextView
@@ -61,39 +65,71 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="match_parent"
+            android:id="@+id/editTextGrade"
+            android:layout_width="150dp"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName" />
 
-        <SeekBar
-            android:id="@+id/seekBar"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-        <SeekBar
-            android:id="@+id/seekBar2"
+            <SeekBar
+                android:id="@+id/seekBarMajorScore"
+                android:layout_width="163dp"
+                android:layout_height="match_parent"
+                android:max="25"/>
+
+            <TextView
+                android:id="@+id/textViewMajorNum"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="start|center_vertical"
+                android:text="학점 수 :" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/seekBarCultureScore"
+                android:layout_width="163dp"
+                android:layout_height="match_parent"
+                android:max="25"/>
+
+            <TextView
+                android:id="@+id/textViewCultureNum"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="start|center_vertical"
+                android:text="학점 수:" />
+        </LinearLayout>
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
-            android:layout_width="match_parent"
+            android:id="@+id/editTextTextSubjectId"
+            android:layout_width="150dp"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonOK"
+            android:layout_width="80dp"
             android:layout_height="0dp"
             android:layout_gravity="right"
+            android:layout_marginRight="35dp"
             android:layout_weight="1"
+            android:background="@drawable/button"
             android:text="확인" />
 
     </LinearLayout>
