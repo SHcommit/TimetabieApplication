@@ -37,8 +37,8 @@ public class MBTIActivity extends AppCompatActivity implements MBTIAdapter.OnIte
      */
     BottomNavigationView       bottomNavigationView;
     RecyclerView.LayoutManager layoutManager;
-    MBTIAdapter adapter;
-    RecyclerView recyclerView;
+    MBTIAdapter                adapter;
+    RecyclerView               recyclerView;
     MBTIData                   mbtiData;
     public static Context      context_mbtiActivity;
 
@@ -62,12 +62,21 @@ public class MBTIActivity extends AppCompatActivity implements MBTIAdapter.OnIte
         //adapter에 데이터 넣기.
         inputDataToAdapter();
         recyclerView.setLayoutManager(layoutManager);
+
+        /**
+         * adapter에 에니메이션 adapter 설정.
+         */
         recyclerView.setAdapter(new AlphaInAnimationAdapter(adapter));
+
+        /**
+         * Used recyclerview shared element transition
+         *
+         */
         //add recycler view animation
         AlphaInAnimationAdapter alphaInAnimationAdapter = new AlphaInAnimationAdapter(adapter);
-        alphaInAnimationAdapter.setDuration(1000);
+        alphaInAnimationAdapter.setDuration(4500);
         alphaInAnimationAdapter.setInterpolator(new OvershootInterpolator());
-        alphaInAnimationAdapter.setFirstOnly(false);
+        alphaInAnimationAdapter.setFirstOnly(true);
         recyclerView.setAdapter(new ScaleInAnimationAdapter(alphaInAnimationAdapter));
         adapter.setOnItemClickListener(new MBTIAdapter.OnItemClickListener() {
             @Override
@@ -78,21 +87,14 @@ public class MBTIActivity extends AppCompatActivity implements MBTIAdapter.OnIte
                 intent.putExtra("mbtiType", mbti.getType());
                 intent.putExtra("mbtiImage",mbti.getImage());
                 View mbtiView = v.findViewById(R.id.mbti_image);
-                //View mbtiTextView = v.findViewById(R.id.mbti_type);
-                //Pair<View, String> mbti_imag = Pair.create(mbtiView, mbtiView.getTransitionName());
 
-        /*ActivityOptionsCompat option =
-                ActivityOptionsCompat.makeSceneTransitionAnimation(this, mbtiView,
-                        Pair.create(mbtiView, "mbtiImg"),
-                        Pair.create(mbtiTextView, "mbtiType"));
-           튜플 안먹힘
-           우선 튜플 안먹히니까 nbtiType transtionName빼자 추후 되는거 알면 다시 xml에 추가
-       */
                 ActivityOptionsCompat option =
                         ActivityOptionsCompat.makeSceneTransitionAnimation(MBTIActivity.this, mbtiView, "mbtiImg");
                 startActivity(intent, option.toBundle());
             }
         }) ;
+
+
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
          * 이 객체에 이벤트 헨들러를 통해 어떤 네비게이션 바의 아이콘이 클릭 됬는지 찾는 메서드 입니다.
@@ -111,6 +113,14 @@ public class MBTIActivity extends AppCompatActivity implements MBTIAdapter.OnIte
         }
     }
 
+    /**
+     *
+     * @param v        : view를 통해 현재 출력된 특정 position의 이미지thumbnail을 얻어낸다.
+     * @param position : recyclerView 의 특정 Cell에서 몇번째 값이 선택 됬는지 알 수 있다.
+     * .makeSceneTransitionAnimation func를 통해서 특정 thumbnail의 이미지 객체 v와
+     *                 애니메이션을 통해 전환될 이미지 thumbnail을 매칭시켜준다.
+     *                 그 후 detailActivity 시작
+     */
     @Override
     public void onItemClick(View v, int position)  {
         Intent intent = new Intent(MBTIActivity.this, MBTIDetailActivity.class);
