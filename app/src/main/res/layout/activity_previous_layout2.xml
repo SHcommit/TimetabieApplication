@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PreviousLayout2"
+    android:orientation="vertical">
+
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/first"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="2학년 1학기"
+          android:textSize="25dp" />
+
+      <TableLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:stretchColumns="*"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:animationCache="false">
+
+          <TextView
+              android:id="@+id/emptyCell"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/mon0"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+
+              android:text="월"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/tue0"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text="화"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/wed0"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text="수"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/thu0"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text="목"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/fri0"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text="금"
+              android:textAlignment="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:animationCache="false">
+
+          <TextView
+              android:id="@+id/time1"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text="9"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/mon1"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/tue1"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/wed1"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/thu1"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/fri1"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:animationCache="false">
+
+          <TextView
+              android:id="@+id/time2"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text="10"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/mon2"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/tue2"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/wed2"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/thu2"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/fri2"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:animationCache="false">
+
+          <TextView
+              android:id="@+id/time3"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text="11"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/mon3"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/tue3"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/wed3"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/thu3"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/fri3"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:animationCache="false">
+
+          <TextView
+              android:id="@+id/time4"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text="12"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/mon4"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/tue4"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/wed4"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/thu4"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/fri4"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:animationCache="false">
+
+          <TextView
+              android:id="@+id/time5"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text="1"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/mon5"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/tue5"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/wed5"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/thu5"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/fri5"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:animationCache="false">
+
+          <TextView
+              android:id="@+id/time6"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text="2"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/mon6"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/tue6"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/wed6"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/thu6"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/fri6"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:animationCache="false">
+
+          <TextView
+              android:id="@+id/time7"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text="3"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/mon7"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/tue7"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/wed7"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/thu7"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/fri7"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:animationCache="false">
+
+          <TextView
+              android:id="@+id/time8"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text="4"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/mon8"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/tue8"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/wed8"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/thu8"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/fri8"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:animationCache="false">
+
+          <TextView
+              android:id="@+id/time9"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text="5"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/mon9"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/tue9"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/wed9"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/thu9"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/fri9"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:animationCache="false">
+
+          <TextView
+              android:id="@+id/time10"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text="6"
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/mon10"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/tue10"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/wed10"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/thu10"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+
+          <TextView
+              android:id="@+id/fri10"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
+              android:text=""
+              android:textAlignment="center" />
+        </TableRow>
+      </TableLayout>
+    </LinearLayout>
+  </ScrollView>
+
+  <LinearLayout
+      android:id="@+id/lenear"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="2"
+      android:paddingTop="2dp"
+      android:paddingBottom="2dp"
+      android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scrollbars="vertical">
+
+    </androidx.recyclerview.widget.RecyclerView>
+  </LinearLayout>
+
+</LinearLayout>
