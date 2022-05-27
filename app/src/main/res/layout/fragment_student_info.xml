@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="330dp"
+    android:layout_height="300dp"
     android:layout_marginLeft="40dp"
     android:layout_marginTop="40dp"
     android:layout_marginRight="40dp"
+    android:background="@drawable/button"
     android:visibility="visible"
     tools:context=".StudentInfoFragment">
 
@@ -20,25 +21,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="학년 :"
-            android:textAlignment="center" />
-
-        <TextView
-            android:id="@+id/textViewM"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="전공 학점 : "
-            android:textAlignment="center" />
-
-        <TextView
-            android:id="@+id/textViewC"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="교양 학점: "
+            android:text=" 학년        :"
             android:textAlignment="center" />
 
         <TextView
@@ -47,7 +30,25 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="학수번호 : "
+            android:text=" 학수 번호 : "
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textViewM"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=" 전공 학점 : "
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textViewC"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=" 교양 학점 : "
             android:textAlignment="center" />
 
         <TextView
@@ -57,6 +58,7 @@
             android:layout_weight="1"
             android:text="TextView"
             android:visibility="invisible" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -65,12 +67,23 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editTextGrade"
+            android:id="@+id/editTextTextGrade"
             android:layout_width="150dp"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="13dp" />
+
+        <EditText
+            android:id="@+id/editTextTextSubjectId"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="한 과목만 입력하시오."
+            android:inputType="textPersonName"
+            android:textSize="13dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,15 +95,21 @@
                 android:id="@+id/seekBarMajorScore"
                 android:layout_width="163dp"
                 android:layout_height="match_parent"
-                android:max="25"/>
+                android:max="25" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="학점 합계 :" />
 
             <TextView
                 android:id="@+id/textViewMajorNum"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="start|center_vertical"
-                android:text="학점 수 :" />
+                android:gravity="start|center_vertical" />
         </LinearLayout>
 
         <LinearLayout
@@ -103,33 +122,32 @@
                 android:id="@+id/seekBarCultureScore"
                 android:layout_width="163dp"
                 android:layout_height="match_parent"
-                android:max="25"/>
+                android:max="25" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="학점 합계 :" />
 
             <TextView
                 android:id="@+id/textViewCultureNum"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="start|center_vertical"
-                android:text="학점 수:" />
+                android:gravity="start|center_vertical" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/editTextTextSubjectId"
-            android:layout_width="150dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonOK"
+            android:id="@+id/buttonFSI_OK"
             android:layout_width="80dp"
             android:layout_height="0dp"
-            android:layout_gravity="right"
-            android:layout_marginRight="35dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="70dp"
             android:layout_weight="1"
-            android:background="@drawable/button"
+
+            android:background="#00ff0000"
             android:text="확인" />
 
     </LinearLayout>
