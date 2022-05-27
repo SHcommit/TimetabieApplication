@@ -15,6 +15,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import Controller.bottomNavigationListenerInFirstActivity;
+import Model.GsonThread;
+import Model.TableCell;
+
 
 public class SettingActivity extends AppCompatActivity {
     String MBTI;
@@ -26,11 +32,21 @@ public class SettingActivity extends AppCompatActivity {
     Button button;
     static final int REQUEST_SETTING_TO_QUESTION = 1; //requestCode of SettnigActivity -> MBTIQuestionActivity
     Bundle bundle;
+    Button button5;
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         bundle = new Bundle();
+        button5 = findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         textView = findViewById(R.id.textViewFIM_text);
         editText = findViewById(R.id.editTextFIM_input);
@@ -41,7 +57,8 @@ public class SettingActivity extends AppCompatActivity {
         inputMBTIFragment = new InputMBTIFragment();
         recommendSubjectFragment = new RecommendSubjectFragment();
 
-
+        GsonThread gsonThread = new GsonThread(getApplicationContext());
+        gsonThread.start();
         //시작화면 다이얼로그
         /*
         * 어플 시작 시 MBTI 검사 여부 체크하기 위해 다이얼로그 띄움
