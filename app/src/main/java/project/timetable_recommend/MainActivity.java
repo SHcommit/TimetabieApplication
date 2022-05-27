@@ -1,10 +1,13 @@
 package project.timetable_recommend;
+
 import static Model.GsonThread.subjectList;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+
 import android.graphics.Color;
+
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -28,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
      * @param subjectResult        : Json 파싱한 데이터가 저장되어있습니다.
      */
 
-    BottomNavigationView  bottomNavigationView;
-    AMPM                  ampm;
-    DAY                   day; ////
-    TableCell             c;
+    BottomNavigationView bottomNavigationView;
+    AMPM ampm;
+    DAY day; ////
+    TableCell c;
     public static Context context_main;
 
     @Override
@@ -39,12 +42,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         //변수 초기화
-        context_main          = this;
-        bottomNavigationView  = findViewById(R.id.bottom_navigation);
+        context_main = this;
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
         GsonThread gsonThread = new GsonThread(getApplicationContext());
-        c                     = new TableCell();
+        c = new TableCell();
         findTextViewById(c);
         gsonThread.start();
 
@@ -60,11 +62,12 @@ public class MainActivity extends AppCompatActivity {
         c.cell[ampm.ELEVEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
 
     }
+
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.
-    public void findTextViewById(TableCell tCell){
-        for(int y = 0; y < tCell.getHeight(); y++){
+    public void findTextViewById(TableCell tCell) {
+        for (int y = 0; y < tCell.getHeight(); y++) {
             final int curY = y;
-            for(int x = 0; x < tCell.getWidth(); x++){
+            for (int x = 0; x < tCell.getWidth(); x++) {
                 final int curX = x;
                 tCell.cell[curY][curX] = findViewById(tCell.cellID[curY][curX]);
             }
