@@ -12,19 +12,21 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
-
+import Model.MBTISubject;
 import java.util.HashMap;
 import java.util.Map;
 
-
+/**
+ * RequestQueue : Volley에서 사용하는 변수입니다.
+ */
 public class GsonThread extends Thread{
-    SubjectList subjectList;
+    static public SubjectListDTO subjectList;
     static RequestQueue requestQueue;
     public GsonThread(Context context){
         if(requestQueue == null){
             requestQueue = Volley.newRequestQueue(context);
         }
-        subjectList = new SubjectList();
+        subjectList = new SubjectListDTO();
     }
     //이 함수는 Volley를 이용해서 url에 있는 정보를 가져옵니다.
     public void run() {
@@ -56,17 +58,9 @@ public class GsonThread extends Thread{
     //이 함수는 gson을 이용해서 json객체를 파싱합니다.
     public void processResponse(String response){
         Gson gson = new Gson();
-        subjectList = gson.fromJson(response, SubjectList.class);
-        subjectChecked();
+        subjectList = gson.fromJson(response, SubjectListDTO.class);
     }
-    //이 함수는 새로 추가한 각 과목에 boolean 추가한 것을 false로 초기화
-    public void subjectChecked() {
-        int size = subjectList.subject.size();
-        for (int i = 0; i < size; i++) {
-            subjectList.subject.get(i).checkSubject = false;
-        }
-    }
-    public SubjectList getSubject(){
+    public SubjectListDTO getSubject(){
         return subjectList;
     }
 }

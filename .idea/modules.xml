@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Android.Timetable_recommend.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Android.Timetable_recommend.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Timetable_recommend.iml" filepath="$PROJECT_DIR$/.idea/modules/Timetable_recommend.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Timetable_recommend.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Timetable_recommend.app.iml" />
     </modules>

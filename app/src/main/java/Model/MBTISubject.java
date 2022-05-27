@@ -1,7 +1,15 @@
 package Model;
 
+import static Model.GsonThread.subjectList;
+
 public class MBTISubject {
-    SubjectItem[] MBTI80subjects = new SubjectItem[80];
+    //mbti별로 추천하는 80개의 subject를 담고있습니다.
+    public MBTISubject(){
+        MBTI80subject();
+    }
+
+    //mbti별로 추천하는 80개의 subject를 지정하는 학수번호를 담고 있습니다.
+    SubjectItemDTO[] MBTI80subjects = new SubjectItemDTO[80];
     int MBTIsubjects[] = {
             10018, 10043, 10571, 11096, 11109,//ISFJ
             10046, 10047, 10592, 11093, 11096,//ESFJ
@@ -20,17 +28,18 @@ public class MBTISubject {
             10022, 10028, 11092, 10573, 11074,//INFJ
             10016, 10612, 11075, 11076, 11095//INFP
     };
-    public void MBTI80subject(SubjectList m_subjectList){
-        int tmp = m_subjectList.getSubjects().size();
+    //80개를 초기화 시켜주는 함수입니다.
+    public void MBTI80subject(){
+        int tmp = subjectList.getSubjects().size();
         for(int i = 0; i<tmp; i++){
             for(int j = 0; j < 80; j++){
-                if(m_subjectList.getSubjects().get(i).getSubjectId() == MBTIsubjects[j]){
-                    MBTI80subjects[j] = m_subjectList.getSubjects().get(i);
+                if(subjectList.getSubjects().get(i).getSubjectId() == MBTIsubjects[j]){
+                    MBTI80subjects[j] = subjectList.getSubjects().get(i);
                 }
             }
         }
     }
-    public SubjectItem[] getMBTI80subjects(){
+    public SubjectItemDTO[] getMBTI80subjects(){
         return MBTI80subjects;
     }
 }

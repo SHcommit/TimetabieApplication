@@ -1,23 +1,23 @@
 package Model;
 
-public class SubjectItem {
-    int subjectId;
-    int separatedClass;
-    String subjectName;
-    int credit;
-    String division;
-    String professor;
-    String subjectTimetable;
-    int grade;
-
+public class SubjectItemDTO {
+    int subjectId; //학번
+    int separatedClass; //분반
+    String subjectName; //과목명
+    int credit; //학점
+    String division; //이수구분
+    String professor; //대표교수
+    String subjectTimetable; //시간표
+    int grade; // 학년
+    public void setDayTime(){
+        
+    }
     public boolean isCheckSubject() {
         return checkSubject;
     }
-
     public void setCheckSubject(boolean checkSubject) {
         this.checkSubject = checkSubject;
     }
-
     boolean checkSubject;
     public int getSubjectId() {
         return subjectId;
