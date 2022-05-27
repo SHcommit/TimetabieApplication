@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="project.timetable_recommend" >
 
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -21,6 +22,10 @@
             android:name=".PreviousActivity"
             android:exported="false" /> <!-- networkSecurityConfig는 res/xml 폴더 안에 있는 네트워크 허용 파일 적용시킨 겁니다. -->
         <activity
+            android:name=".MBTIDetailActivity"
+            android:exported="false" />
+        <!-- networkSecurityConfig는 res/xml 폴더 안에 있는 네트워크 허용 파일 적용시킨 겁니다. -->
+        <activity
             android:name=".MBTIActivity"
             android:exported="false" />
         <activity
@@ -28,7 +33,6 @@
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

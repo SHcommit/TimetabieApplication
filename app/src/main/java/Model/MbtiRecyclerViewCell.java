@@ -21,7 +21,7 @@ public class MbtiRecyclerViewCell {
      * @param mbti_type_num : "
      * @param mbti_image_num: "
      */
-    public int widgetID[]  = {R.id.previous_info, R.id.subjectId,R.id.mbti_image};
+    public int widgetID[]  = {R.id.mbti_info, R.id.mbti_type,R.id.mbti_image};
 
     public TextView mbtiType , mbtiInfo;
     public ImageView mbtiImage;

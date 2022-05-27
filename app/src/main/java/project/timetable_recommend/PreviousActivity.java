@@ -18,10 +18,14 @@ import Controller.bottomNavigationListenerInFirstActivity;
 
 public class PreviousActivity extends AppCompatActivity {
     Button button1, button2, button3, button4;
+    BottomNavigationView  bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_previous);
+        bottomNavigationView  = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
         button1 = findViewById(R.id.button);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);

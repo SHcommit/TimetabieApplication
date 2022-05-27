@@ -13,8 +13,6 @@ import project.timetable_recommend.MBTIActivity;
 import project.timetable_recommend.MainActivity;
 import project.timetable_recommend.PreviousActivity;
 import project.timetable_recommend.R;
-
-
 /**
  * firstScene에서 navigation bar 를 누를 경우 이동할 화면 전환 작성하자.
  * 이벤트 헨들러임
@@ -46,12 +44,12 @@ public class bottomNavigationListenerInFirstActivity implements BottomNavigation
                 return true;
             case R.id.tab_previous:
                 System.out.println("현재 재작중인 이전 시간표 추가하는 엑티비티입니다.");
-                Intent intent3 = new Intent(MainActivity.context_main.getApplicationContext(), PreviousActivity.class);
+                Intent intent4= new Intent(MainActivity.context_main.getApplicationContext(), PreviousActivity.class);
                 Toast.makeText(MainActivity.context_main.getApplicationContext(),"이전 시간표 제작중", Toast.LENGTH_LONG).show();
-                intent3.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent3.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                intent4.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent4.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 System.out.println("이전 시간표 제작중");
-                MainActivity.context_main.startActivity(intent3);
+                MainActivity.context_main.startActivity(intent4);
                 return true;
         }
         return false;
