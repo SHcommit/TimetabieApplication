@@ -1,6 +1,8 @@
 package Model;
 
 public class SubjectItemDTO {
+
+
     int subjectId; //학번
     int separatedClass; //분반
     String subjectName; //과목명
