@@ -1,15 +1,19 @@
 package project.timetable_recommend;
+import static Model.GsonThread.subjectList;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import Model.AMPM;
 import Model.DAY;
 import Model.GsonThread;
+import Model.SubjectListDTO;
 import Model.TableCell;
 import Controller.bottomNavigationListenerInFirstActivity;
 
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         //변수 초기화
         context_main          = this;
         bottomNavigationView  = findViewById(R.id.bottom_navigation);
@@ -41,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         c                     = new TableCell();
         findTextViewById(c);
         gsonThread.start();
-
 
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
@@ -53,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         c.cell[ampm.NINE.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
         c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
         c.cell[ampm.ELEVEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
+
     }
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.
     public void findTextViewById(TableCell tCell){

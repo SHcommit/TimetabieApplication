@@ -1,5 +1,7 @@
 package project.timetable_recommend;
 
+import static Model.GsonThread.subjectList;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;

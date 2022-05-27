@@ -91,6 +91,7 @@ public class MBTIActivity extends AppCompatActivity implements MBTIAdapter.OnIte
                 ActivityOptionsCompat option =
                         ActivityOptionsCompat.makeSceneTransitionAnimation(MBTIActivity.this, mbtiView, "mbtiImg");
                 startActivity(intent, option.toBundle());
+
             }
         }) ;
 

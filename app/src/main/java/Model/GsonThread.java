@@ -21,6 +21,7 @@ import java.util.Map;
  */
 public class GsonThread extends Thread{
     static public SubjectListDTO subjectList;
+
     static RequestQueue requestQueue;
     public GsonThread(Context context){
         if(requestQueue == null){
@@ -59,6 +60,9 @@ public class GsonThread extends Thread{
     public void processResponse(String response){
         Gson gson = new Gson();
         subjectList = gson.fromJson(response, SubjectListDTO.class);
+        for(int i = 0 ; i<subjectList.getSubjects().size(); i++){
+            subjectList.getSubjects().get(i).DivideTimetable();
+        }
     }
     public SubjectListDTO getSubject(){
         return subjectList;
