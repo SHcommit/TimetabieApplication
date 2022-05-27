@@ -3,6 +3,7 @@ package Controller;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,16 +17,31 @@ import Model.MbtiType;
 import project.timetable_recommend.R;
 
 public class MBTIAdapter extends RecyclerView.Adapter<MBTIAdapter.ViewHolder> {
-    private ArrayList<MbtiType> mbtiList = new ArrayList<>();
-
-    public static class ViewHolder extends RecyclerView.ViewHolder
+    private ArrayList<MbtiType> mbtiList = new ArrayList<>(); //이거 일단 스테틱으로바꿧는데(onclick때매 문제있으면 다시 static 빼자
+    //뷰 홀더 원래 스태틱인데 아니도록 만들어봄
+    public class ViewHolder extends RecyclerView.ViewHolder
     {
         MbtiRecyclerViewCell cellText;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             cellText = new MbtiRecyclerViewCell();
             findViewByTevtViewID(itemView, cellText);
+
+            // 아이템 클릭 이벤트 처리.
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition() ;
+                    if (pos != RecyclerView.NO_POSITION) {
+                        // TODO : use pos.
+                        MbtiType mType = mbtiList.get(pos);
+                        if (mListener != null) {
+                            mListener.onItemClick(v, pos) ;
+                            notifyItemChanged(pos) ;
+                        }
+                    }
+                }
+            });
         }
 
         /**
@@ -36,7 +52,19 @@ public class MBTIAdapter extends RecyclerView.Adapter<MBTIAdapter.ViewHolder> {
             cellText.mbtiInfo.setText(mbti.getFeautre());
             cellText.mbtiImage.setImageResource(mbti.getImage());
         }
+
     }
+    public interface OnItemClickListener {
+        void onItemClick(View v, int position) ;
+    }
+
+    private OnItemClickListener mListener = null ;
+
+    // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mListener =  listener;
+    }
+
 
     /**
      * inflater를 통해 뷰 홀더를 만든다.
@@ -75,22 +103,16 @@ public class MBTIAdapter extends RecyclerView.Adapter<MBTIAdapter.ViewHolder> {
         mbtiCellText.mbtiInfo = (TextView) itemView.findViewById(mbtiCellText.widgetID[mbtiCellText.mbti_info_num]);
         mbtiCellText.mbtiImage = (ImageView) itemView.findViewById(mbtiCellText.widgetID[mbtiCellText.mbti_image_num]);
     }
-
-
     public void addItem(MbtiType mbti ){
         mbtiList.add(mbti);
     }
     public void setItems(ArrayList<MbtiType> list){
         this.mbtiList = list;
     }
-
     public MbtiType getItem(int position){
         return mbtiList.get(position);
     }
     public void setItem(int position, MbtiType item){
         mbtiList.set(position,item);
     }
-
-
-
 }
