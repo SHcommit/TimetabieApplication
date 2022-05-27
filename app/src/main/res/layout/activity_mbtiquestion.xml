@@ -64,7 +64,7 @@
                 android:id="@+id/layout2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -85,8 +85,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:background="@drawable/button"
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y2"
@@ -106,7 +106,7 @@
                 android:id="@+id/layout3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView3"
@@ -127,8 +127,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:background="@drawable/button"
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y3"
@@ -148,7 +148,7 @@
                 android:id="@+id/layout4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView4"
@@ -169,8 +169,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:background="@drawable/button"
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y4"
@@ -190,7 +190,7 @@
                 android:id="@+id/layout5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView5"
@@ -211,8 +211,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:background="@drawable/button"
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y5"
@@ -232,7 +232,7 @@
                 android:id="@+id/layout6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView6"
@@ -253,8 +253,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:background="@drawable/button"
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y6"
@@ -274,7 +274,7 @@
                 android:id="@+id/layout7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView7"
@@ -295,8 +295,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:background="@drawable/button"
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y7"
@@ -316,7 +316,7 @@
                 android:id="@+id/layout8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView8"
@@ -337,8 +337,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:background="@drawable/button"
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y8"
@@ -358,7 +358,7 @@
                 android:id="@+id/layout9"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView9"
@@ -379,8 +379,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:background="@drawable/button"
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y9"
@@ -400,7 +400,7 @@
                 android:id="@+id/layout10"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView10"
@@ -421,8 +421,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:background="@drawable/button"
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y10"
@@ -442,7 +442,7 @@
                 android:id="@+id/layout11"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView11"
@@ -463,8 +463,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:background="@drawable/button"
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y11"
@@ -484,7 +484,7 @@
                 android:id="@+id/layout12"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView12"
@@ -505,8 +505,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:background="@drawable/button"
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y12"
@@ -522,13 +522,14 @@
                 </RadioGroup>
 
             </LinearLayout>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/button"
                 android:text="완료"
-                android:visibility="invisible"
-                android:background="@drawable/button"/>
+                android:visibility="gone" />
 
         </LinearLayout>
     </ScrollView>

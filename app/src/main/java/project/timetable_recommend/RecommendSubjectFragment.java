@@ -33,9 +33,53 @@ public class RecommendSubjectFragment extends Fragment {
         //settingActivity에 담겨있는 bundle객체 반환받음
         Bundle bundle = getArguments();
         String MBTI = bundle.getString("MBTI"); //번들에서 MBTI값 가져옴
+        textView.setText(MBTI);
 
         //bundle에 담아놓은 studentInfoDTO(객체)를 꺼냄
         StudentInfoDTO studentInfoDTO = (StudentInfoDTO) bundle.getSerializable("studentInfoDTO");
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        buttonFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
         return recommendSubjectView;
     }
