@@ -64,8 +64,8 @@ public class MBTIDetailActivity extends AppCompatActivity {
      */
     public void getData() {
         Intent intent = getIntent();
-        img_name = (int) intent.getSerializableExtra("mbtiImage");
-        mbti_type = (String) intent.getSerializableExtra("mbtiType");
+        img_name      = (int) intent.getSerializableExtra("mbtiImage");
+        mbti_type     = (String) intent.getSerializableExtra("mbtiType");
     }
 
     /**
@@ -73,9 +73,9 @@ public class MBTIDetailActivity extends AppCompatActivity {
      * 이 클래스의 위젯멤버변수 객체 인스턴스 얻어옴
      */
     public void setInit() {
-        btn_back = (ImageView) findViewById(R.id.btn_back);
-        img_thumbnail = (ImageView) findViewById(R.id.mbti_image);
-        mbti_text_type = (TextView) findViewById(R.id.text_mbti_title);
+        btn_back            = (ImageView) findViewById(R.id.btn_back);
+        img_thumbnail       = (ImageView) findViewById(R.id.mbti_image);
+        mbti_text_type      = (TextView) findViewById(R.id.text_mbti_title);
         mbti_text_introduce = (TextView) findViewById(R.id.text_mbti_introduce);
 
         img_thumbnail.setImageResource(img_name);

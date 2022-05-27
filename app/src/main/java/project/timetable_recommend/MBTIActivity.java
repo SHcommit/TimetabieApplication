@@ -119,16 +119,6 @@ public class MBTIActivity extends AppCompatActivity implements MBTIAdapter.OnIte
         intent.putExtra("mbtiType", mbti.getType());
         intent.putExtra("mbtiImage",mbti.getImage());
         View mbtiView = v.findViewById(R.id.mbti_image);
-        //View mbtiTextView = v.findViewById(R.id.mbti_type);
-        //Pair<View, String> mbti_imag = Pair.create(mbtiView, mbtiView.getTransitionName());
-
-        /*ActivityOptionsCompat option =
-                ActivityOptionsCompat.makeSceneTransitionAnimation(this, mbtiView,
-                        Pair.create(mbtiView, "mbtiImg"),
-                        Pair.create(mbtiTextView, "mbtiType"));
-           튜플 안먹힘
-           우선 튜플 안먹히니까 nbtiType transtionName빼자 추후 되는거 알면 다시 xml에 추가
-       */
         ActivityOptionsCompat option =
                 ActivityOptionsCompat.makeSceneTransitionAnimation(this, mbtiView, "mbti_image_detail");
         startActivity(intent, option.toBundle());
