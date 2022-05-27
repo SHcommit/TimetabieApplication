@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".MainActivity">
 
 
@@ -687,3 +686,6 @@
         app:menu="@menu/bottom_navigation_menu" />
 
 </LinearLayout>
+
+
+
