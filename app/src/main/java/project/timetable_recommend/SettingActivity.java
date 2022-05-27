@@ -20,7 +20,7 @@ public class SettingActivity extends AppCompatActivity {
     String MBTI;
     StudentInfoFragment studentInfoFragment;
     InputMBTIFragment inputMBTIFragment;
-    public RecommendSubjectFragment recommendSubjectFragment;
+    RecommendSubjectFragment recommendSubjectFragment;
     TextView textView;
     EditText editText;
     Button button;

@@ -32,11 +32,10 @@ public class RecommendSubjectFragment extends Fragment {
 
         //settingActivity에 담겨있는 bundle객체 반환받음
         Bundle bundle = getArguments();
-        String MBTI = bundle.getString("MBTI"); //MBTI값 가져옴
-        Toast.makeText(getContext(), MBTI, Toast.LENGTH_SHORT).show();
+        String MBTI = bundle.getString("MBTI"); //번들에서 MBTI값 가져옴
+
         //bundle에 담아놓은 studentInfoDTO(객체)를 꺼냄
         StudentInfoDTO studentInfoDTO = (StudentInfoDTO) bundle.getSerializable("studentInfoDTO");
-
 
         return recommendSubjectView;
     }

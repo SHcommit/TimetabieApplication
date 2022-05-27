@@ -105,7 +105,7 @@ public class StudentInfoFragment extends Fragment {
                 studentInfoDTO.setGrade(Integer.parseInt(grade.getText().toString()));
                 studentInfoDTO.setMajorScore(Integer.parseInt(majorNum.getText().toString()));
                 studentInfoDTO.setCultureScore(Integer.parseInt(cultureNum.getText().toString()));
-                studentInfoDTO.setSubjectId(subjectId.getText().toString()); //학수번호는 문자열! (시작 번호가 0으로 시작할 수도 있기 때문
+                studentInfoDTO.setSubjectId(Integer.parseInt(subjectId.getText().toString())); //학수번호는 문자열! (시작 번호가 0으로 시작할 수도 있기 때문
                // Toast.makeText(getContext(), studentInfoDTO.getGrade(), Toast.LENGTH_SHORT).show();
                 // SettingActivity에서 생성한 bundle 받음 (MBTI값 들어있음)
 
