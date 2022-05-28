@@ -45,3 +45,11 @@
 <img width="255" alt="2" src="https://user-images.githubusercontent.com/96910404/169507867-dfc1af25-4bc5-4715-bbcd-4c9861ac70cf.png">
 
 ![3](https://user-images.githubusercontent.com/96910404/169509367-d559ef89-6f73-40ec-8b5e-3ca987d739d3.jpeg)
+
+<div align=center><h3>초기 기획 과정_ </div>
+
+<img width="275" alt="1" align="left" src="https://user-images.githubusercontent.com/96910404/170806754-723096ca-e154-4739-b7b7-8bf146c7b227.jpeg">
+<img width="275" alt="1" align="left" src="https://user-images.githubusercontent.com/96910404/170806755-51d47969-c604-474e-8143-42998737521d.jpeg">
+<img width="275" alt="1" align="left" src="https://user-images.githubusercontent.com/96910404/170806757-97537aa3-d589-482f-bf9b-329aa974c111.jpeg">
+
+<img width="275" alt="1" align="left" src="https://user-images.githubusercontent.com/96910404/170806756-982cf955-a02a-458c-9c90-6c2bd90e873c.jpeg">
