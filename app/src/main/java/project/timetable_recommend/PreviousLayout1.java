@@ -13,8 +13,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.Array;
 import java.util.ArrayList;
@@ -38,25 +40,47 @@ public class PreviousLayout1 extends AppCompatActivity {
     TableCell c;
     public static Context context_main;
     private ImageView btn_back;
-
-
+    boolean[][] checkSubject;
+    Button button5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_previous_layout1);
+        button5 =findViewById(R.id.button6);
+        //초기화 시키는 임시 버튼, 나중에 삭제 기능 추가하면 삭제 예정
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.clear();
+                editor.commit();
+                for(int i = 1; i<c.getHeight(); i++){
+                    for(int j = 1; j<c.getWidth(); j++) {
+                        c.cell[i][j].setText(null);
+                        c.cell[i][j].setBackgroundColor(Color.WHITE);
+                        checkSubject[i][j] = false;
+                    }
+                }
+            }
+        });
         context_main = this;
         recyclerView = (RecyclerView)findViewById(R.id.recycler);
         c = new TableCell();
         findTextViewById(c);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         adapter = new PreviousAdapter();
-        ArrayList<SubjectItemDTO> insertSubject = new ArrayList<SubjectItemDTO>();
         ////////////////////
+        checkSubject = new boolean[c.getHeight()][c.getWidth()];
+        for(int i = 1; i<(c.getHeight()-1); i++) {
+            for (int j = 1; j < (c.getWidth() - 1); j++) {
+                checkSubject[i][j]= false;
+            }
+        }
         adapter.setOnItemClickListener(
                 new PreviousAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(View v, int pos) {
-                        insertSubject.add(subjectList.getSubjects().get(pos));
                         int r = 0;
                         int g = 0;
                         int b = 0;
@@ -65,13 +89,27 @@ public class PreviousLayout1 extends AppCompatActivity {
                         b = (int)(Math.random()*255);
                         int tmp_day = 0;
                         int tmp_time = 0;
+                        int checked_day = 0;
+                        int checked_time = 0;
+                        boolean checked_subjectTime = false;
+                        for(int i = 0; i<subjectList.getSubjects().get(pos).getSubject_day().size(); i++) {
+                            checked_day = subjectList.getSubjects().get(pos).getSubject_day().get(i).getDay();
+                            checked_time = subjectList.getSubjects().get(pos).getSubject_day().get(i).getTime();
+                            if(checkSubject[checked_time][checked_day])checked_subjectTime = true;
+                        }
                         for(int i = 0; i<subjectList.getSubjects().get(pos).getSubject_day().size(); i++) {
                             tmp_day = subjectList.getSubjects().get(pos).getSubject_day().get(i).getDay();
                             tmp_time = subjectList.getSubjects().get(pos).getSubject_day().get(i).getTime();
-                            if(i==0&&tmp_day!=0&&tmp_time!=0) {
-                                c.cell[tmp_time][tmp_day].setText(subjectList.getSubjects().get(pos).getSubjectName()); // 시간표에 추가되는 부분
+                            if(i==0&&tmp_day!=0&&tmp_time!=0 ) {
+                                if (!checked_subjectTime) {
+                                    c.cell[tmp_time][tmp_day].setText(subjectList.getSubjects().get(pos).getSubjectName()); // 시간표에 추가되는 부분
+                                    checkSubject[tmp_time][tmp_day] = true;
+                                }
+                                else Toast.makeText(getApplicationContext(),"중첩된 시간표가 있습니다.", Toast.LENGTH_LONG).show();
                             }
-                            c.cell[tmp_time][tmp_day].setBackgroundColor(Color.rgb(r,g,b));
+                            if(!checked_subjectTime) {
+                                c.cell[tmp_time][tmp_day].setBackgroundColor(Color.rgb(r, g, b));
+                            }
                         }
                     }
                 }
@@ -81,7 +119,7 @@ public class PreviousLayout1 extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         setInit();
     }
-    /*@Override
+    @Override
     protected void onPause() {
         super.onPause();
         saveState();
@@ -90,10 +128,11 @@ public class PreviousLayout1 extends AppCompatActivity {
     protected void saveState(){
         SharedPreferences pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        for(int i = 1; i<(c.getHeight()-1); i++){
-            for(int j = 1; j<(c.getWidth()-1); j++){
-                System.out.println(j + " , " +  j + "  : " + c.cell[i][j].getText());
-                editor.putString(i + " , " + j, c.cell[i][j].getText().toString());
+        for(int i = 1; i<(c.getHeight()); i++){
+            for(int j = 1; j<(c.getWidth()); j++){
+                System.out.println(i + " , " +  j + "  : " + c.cell[i][j].getText().toString());
+                editor.putString("String" + i+","+j, c.cell[i][j].getText()+"");
+                editor.putBoolean("boolean" +i+","+j, checkSubject[i][j]);
             }
         }
         editor.commit();
@@ -107,18 +146,19 @@ public class PreviousLayout1 extends AppCompatActivity {
     protected void restoreState(){
         SharedPreferences pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
         if(pref!=null){
-            for(int i = 1; i<c.getHeight()-1; i++){
-                for(int j = 1; j<c.getWidth()-1; j++){
+            for(int i = 1; i<c.getHeight(); i++){
+                for(int j = 1; j<c.getWidth(); j++){
                     System.out.println("지금이니  : "+ j);
-                    if(pref.contains(i + " , " + j)) {
-                        System.out.println("되냐  : "+ i + " , " + j + "   : " + pref.getString(i + " , " + j, ""));
-                        c.cell[i][j].setText(pref.getString(i + " , " + j, ""));
+                    if(pref.contains("String" + i+","+j)) {
+                        System.out.println("되냐  : "+ i + " , " + j + "   : " + pref.getString("String" + i+","+j, ""));
+                        c.cell[i][j].setText(pref.getString("String" + i+","+j, ""));
+                        checkSubject[i][j] = pref.getBoolean("boolean" +i+","+j, false);
                     }
                 }
             }
         }
     }
-    */
+
     public void findTextViewById(TableCell tCell) {
         for (int y = 0; y < tCell.getHeight(); y++) {
             final int curY = y;
