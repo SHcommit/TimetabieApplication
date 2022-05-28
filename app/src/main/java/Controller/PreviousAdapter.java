@@ -14,7 +14,13 @@ import Model.SubjectItemDTO;
 import project.timetable_recommend.R;
 
 public class PreviousAdapter extends RecyclerView.Adapter<PreviousAdapter.ViewHolder>{
-
+    public interface OnItemClickListener{
+        void onItemClick(View v, int pos);
+    }
+    private OnItemClickListener listener = null;
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.listener = listener;
+    }
     public class ViewHolder extends RecyclerView.ViewHolder{
         /**
          * textView : 과목명을 보여주는 텍스트 뷰입니다.
@@ -26,6 +32,15 @@ public class PreviousAdapter extends RecyclerView.Adapter<PreviousAdapter.ViewHo
             super(itemView);
             textView = itemView.findViewById(R.id.subjectId);
             textView2 = itemView.findViewById(R.id.previous_info);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+                        listener.onItemClick(view, pos);
+                    }
+                }
+            });
         }
         public void setItem(SubjectItemDTO m_subject){
             textView.setTextSize(15);

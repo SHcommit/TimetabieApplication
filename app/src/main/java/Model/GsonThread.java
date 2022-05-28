@@ -34,7 +34,7 @@ public class GsonThread extends Thread{
         makeRequest();
     }
     public void makeRequest() {
-        String url = "http://192.168.0.118:80/test/Android/android.jsp";
+        String url = "http://211.243.144.157/test/Android/android.jsp";
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -60,9 +60,9 @@ public class GsonThread extends Thread{
     public void processResponse(String response){
         Gson gson = new Gson();
         subjectList = gson.fromJson(response, SubjectListDTO.class);
-        /*for(int i = 0 ; i<subjectList.getSubjects().size(); i++){
+        for(int i = 0 ; i<subjectList.getSubjects().size(); i++){
             subjectList.getSubjects().get(i).DivideTimetable();
-        }*/
+        }
     }
     public SubjectListDTO getSubject(){
         return subjectList;
