@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
         //변수 초기화
         context_main = this;
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        GsonThread gsonThread = new GsonThread(getApplicationContext());
+        //GsonThread gsonThread = new GsonThread(getApplicationContext());
         c = new TableCell();
         findTextViewById(c);
-        gsonThread.start();
+        //gsonThread.start();
 
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
@@ -61,6 +61,25 @@ public class MainActivity extends AppCompatActivity {
         c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
         c.cell[ampm.ELEVEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
 
+        c.cell[ampm.ELEVEN.ordinal()][day.WEDNESDAY.ordinal()].setText("java");
+        c.cell[ampm.TEN.ordinal()][day.WEDNESDAY.ordinal()].setBackgroundColor(Color.GREEN);
+        c.cell[ampm.ELEVEN.ordinal()][day.WEDNESDAY.ordinal()].setBackgroundColor(Color.GREEN);
+        c.cell[ampm.TWELVE.ordinal()][day.WEDNESDAY.ordinal()].setBackgroundColor(Color.GREEN);
+
+        c.cell[ampm.ONE.ordinal()][day.FRIDYA.ordinal()].setText("인터넷응용");
+        c.cell[ampm.TWO.ordinal()][day.FRIDYA.ordinal()].setBackgroundColor(Color.BLUE);
+        c.cell[ampm.ONE.ordinal()][day.FRIDYA.ordinal()].setBackgroundColor(Color.BLUE);
+        c.cell[ampm.THREE.ordinal()][day.FRIDYA.ordinal()].setBackgroundColor(Color.BLUE);
+
+        c.cell[ampm.TWELVE.ordinal()][day.MONDAY.ordinal()].setText("메롱");
+        c.cell[ampm.ELEVEN.ordinal()][day.MONDAY.ordinal()].setBackgroundColor(Color.CYAN);
+        c.cell[ampm.TWELVE.ordinal()][day.MONDAY.ordinal()].setBackgroundColor(Color.CYAN);
+        c.cell[ampm.ONE.ordinal()][day.MONDAY.ordinal()].setBackgroundColor(Color.CYAN);
+
+        c.cell[ampm.THREE.ordinal()][day.TUESDAY.ordinal()].setText("하와이");
+        c.cell[ampm.TWO.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.GREEN);
+        c.cell[ampm.THREE.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.GREEN);
+        c.cell[ampm.FOUR.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.GREEN);
     }
 
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.

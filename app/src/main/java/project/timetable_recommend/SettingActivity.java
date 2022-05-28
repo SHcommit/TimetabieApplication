@@ -56,9 +56,10 @@ public class SettingActivity extends AppCompatActivity {
         studentInfoFragment = new StudentInfoFragment();
         inputMBTIFragment = new InputMBTIFragment();
         recommendSubjectFragment = new RecommendSubjectFragment();
-
-        GsonThread gsonThread = new GsonThread(getApplicationContext());
-        gsonThread.start();
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
+        //GsonThread gsonThread = new GsonThread(getApplicationContext());
+        //gsonThread.start();
         //시작화면 다이얼로그
         /*
         * 어플 시작 시 MBTI 검사 여부 체크하기 위해 다이얼로그 띄움

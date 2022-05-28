@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="#ECF0F3"
+    android:background="#FCF7F6"
     android:layout_height="match_parent"
     tools:context=".MBTIActivity">
 
@@ -21,9 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="bottom"
-        android:background="@color/white"
+        android:background="#FFFDFC"
         android:elevation="10dp"
-        app:itemBackground="@color/white"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
