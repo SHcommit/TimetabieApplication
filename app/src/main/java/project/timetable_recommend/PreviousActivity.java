@@ -55,6 +55,7 @@ public class PreviousActivity extends AppCompatActivity {
                 }
             }
         } ;
+        
         button1.setOnClickListener(onClickListener);
         button2.setOnClickListener(onClickListener);
         button3.setOnClickListener(onClickListener);

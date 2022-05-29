@@ -38,6 +38,8 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        GsonThread gsonThread = new GsonThread(getApplicationContext());
+        gsonThread.start();
         bundle = new Bundle();
         button5 = findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +59,6 @@ public class SettingActivity extends AppCompatActivity {
         inputMBTIFragment = new InputMBTIFragment();
         recommendSubjectFragment = new RecommendSubjectFragment();
 
-        GsonThread gsonThread = new GsonThread(getApplicationContext());
-        gsonThread.start();
         //시작화면 다이얼로그
         /*
         * 어플 시작 시 MBTI 검사 여부 체크하기 위해 다이얼로그 띄움
