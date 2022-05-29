@@ -30,14 +30,19 @@
 
         <TextView
             android:id="@+id/first"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="30dp"
             android:gravity="center"
-            android:text="2학년 1학기"
+            android:text="4학년 1학기"
             android:textSize="25dp" />
-
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="임시 초기화" />
       </LinearLayout>
 
       <TableLayout

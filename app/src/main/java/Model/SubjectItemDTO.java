@@ -2,13 +2,14 @@ package Model;
 
 import static Model.GsonThread.subjectList;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.lang.reflect.Array;
 import java.sql.Time;
 import java.util.ArrayList;
 
-public class SubjectItemDTO {
-
-    int countt;
+public class SubjectItemDTO{
     int subjectId; //학번
     int separatedClass; //분반
     String subjectName; //과목명
@@ -19,6 +20,7 @@ public class SubjectItemDTO {
     int grade; // 학년
     String subjectPlace; //장소
     ArrayList<DayTime> subject_day = new ArrayList<DayTime>(); //날짜 시간 분할된 정보 (시간표 삽입용)
+
     public ArrayList<DayTime> getSubject_day() {
         return subject_day;
     }
@@ -108,4 +110,5 @@ public class SubjectItemDTO {
     public int getGrade() {
         return grade;
     }
+
 }

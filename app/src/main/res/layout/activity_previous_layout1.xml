@@ -41,14 +41,6 @@
             android:text="1학년 1학기"
             android:textSize="25dp" />
 
-        <TextView
-            android:id="@+id/wed5"
-            android:layout_width="42dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-
-            android:text=""
-            android:textAlignment="center" />
 
         <Button
             android:id="@+id/button6"
@@ -404,7 +396,14 @@
 
               android:text=""
               android:textAlignment="center" />
+          <TextView
+              android:id="@+id/wed5"
+              android:layout_width="42dp"
+              android:layout_height="38dp"
+              android:gravity="center"
 
+              android:text=""
+              android:textAlignment="center" />
           <TextView
               android:id="@+id/thu5"
               android:layout_width="42dp"
