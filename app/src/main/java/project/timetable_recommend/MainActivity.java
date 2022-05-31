@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
          * 이 객체에 이벤트 헨들러를 통해 어떤 네비게이션 바의 아이콘이 클릭 됬는지 찾는 메서드 입니다.
          */
         bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
+
         //test
         c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setText("c++");
         c.cell[ampm.NINE.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);

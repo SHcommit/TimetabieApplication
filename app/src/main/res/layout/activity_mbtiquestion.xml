@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MBTIQuestionActivity"
-    android:background="#EEEEEE"
+    android:background="#FCF7F6"
     >
 
 
@@ -27,23 +27,25 @@
                 <TextView
                     android:id="@+id/textView1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
 
                     android:layout_weight="3"
-                    android:background="@drawable/button"
+
+                    android:background="@drawable/back_quest6"
                     android:gravity="start"
+                    android:paddingStart="20dp"
+                    android:paddingTop="25dp"
                     android:text=" Q : 데이트가 없는 주말에 나는..
                     \n Y : 침대랑 하루 종일 물아일체가 된다
                     \n N : 단톡에 연락해서 친구들과 약속을 잡는다"
-                    android:textAlignment="gravity"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <RadioGroup
                     android:id="@+id/group1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
+
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -64,7 +66,7 @@
                 android:id="@+id/layout2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -72,21 +74,22 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="3"
-                    android:background="@drawable/button"
+                    android:background="@drawable/back_quest6"
                     android:gravity="start"
+                    android:paddingStart="20dp"
+                    android:paddingTop="25dp"
                     android:text=" Q : 친구의 소개로 소개팅에 나온 나는..
                     \n Y : 먼저 말 걸면서 분위기를 띄운다
                     \n N : 말을 걸어올 때까지 기다리고 본다"
                     android:textAlignment="gravity"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <RadioGroup
                     android:id="@+id/group2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y2"
@@ -106,7 +109,7 @@
                 android:id="@+id/layout3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView3"
@@ -114,21 +117,22 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="3"
-                    android:background="@drawable/button"
+                    android:background="@drawable/back_quest6"
                     android:gravity="start"
+                    android:paddingStart="20dp"
+                    android:paddingTop="25dp"
                     android:text=" Q : 데이트 중 길에서 연인의 친구를 만난다면 나는..
                     \n Y : 자연스럽게 웃으며 대한다
                     \n N : 무생물이 되어 조용히 있는다"
                     android:textAlignment="gravity"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <RadioGroup
                     android:id="@+id/group3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y3"
@@ -148,7 +152,7 @@
                 android:id="@+id/layout4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView4"
@@ -156,21 +160,22 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="3"
-                    android:background="@drawable/button"
+                    android:background="@drawable/back_quest6"
                     android:gravity="start"
+                    android:paddingStart="20dp"
+                    android:paddingTop="25dp"
                     android:text=" Q : 데이트 중 맛있어 보이는 밥집을 발견한 나는..
                     \n Y : 간판에서 맛집의 기운이 느껴진다. 맛집 각이야!
                     \n N : 유명하고 리뷰도 많으니까 맛은 보장되어 있겠군"
                     android:textAlignment="gravity"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <RadioGroup
                     android:id="@+id/group4"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y4"
@@ -190,7 +195,7 @@
                 android:id="@+id/layout5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView5"
@@ -198,13 +203,15 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="3"
-                    android:background="@drawable/button"
+                    android:background="@drawable/back_quest6"
                     android:gravity="start"
+                    android:paddingStart="18dp"
+                    android:paddingTop="22dp"
                     android:text=" Q : 오늘 본 영화를 궁금해하는 연인에게 나는..
                     \n Y : 주인공이 좀비 바이러스가 퍼져서 치료하기 위한 영화야
-                    \n N : 좀비랑 싸우는데 주인공이 완전 멋져 보는 내내 소름 돋았어"
+                    \n N : 좀비랑 싸우는데 주인공이 너무 멋져서 보는 내내\n  소름 돋았어"
                     android:textAlignment="gravity"
-                    android:textSize="16sp" />
+                    android:textSize="12sp" />
 
                 <RadioGroup
                     android:id="@+id/group5"
@@ -212,7 +219,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    >
 
                     <RadioButton
                         android:id="@+id/Y5"
@@ -232,7 +239,7 @@
                 android:id="@+id/layout6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView6"
@@ -240,21 +247,22 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="3"
-                    android:background="@drawable/button"
+                    android:background="@drawable/back_quest6"
                     android:gravity="start"
+                    android:paddingStart="20dp"
+                    android:paddingTop="25dp"
                     android:text=" Q : 연인에게 줄 선물을 고르게 된 나는..
                     \n Y : 실용성은 없어도 예쁘고 기억에 남을 선물
                     \n N : 연인에게 요즘 가장 필요할 것 같은 선물"
                     android:textAlignment="gravity"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <RadioGroup
                     android:id="@+id/group6"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y6"
@@ -274,7 +282,7 @@
                 android:id="@+id/layout7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView7"
@@ -282,21 +290,22 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="3"
-                    android:background="@drawable/button"
+                    android:background="@drawable/back_quest6"
                     android:gravity="start"
+                    android:paddingStart="20dp"
+                    android:paddingTop="25dp"
                     android:text=" Q : 연인과 사소한 일로 다퉜을 때 나는..
                     \n Y : 나 진짜 너무 화나!
                     \n N : 이런점은 꼭 고쳐줬으면 좋겠어. 이렇게 하면 되잖아"
                     android:textAlignment="gravity"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <RadioGroup
                     android:id="@+id/group7"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y7"
@@ -316,7 +325,7 @@
                 android:id="@+id/layout8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView8"
@@ -324,21 +333,22 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="3"
-                    android:background="@drawable/button"
+                    android:background="@drawable/back_quest6"
                     android:gravity="start"
+                    android:paddingStart="20dp"
+                    android:paddingTop="25dp"
                     android:text=" Q : 축 처진 연인이 우울하다고 말했을 때 나는..
                     \n Y : 왜 우울해? 뭐 때문에 우울한 거야?
                     \n N : 5초 만에 감정이입 완료. 같이 글썽거린다"
                     android:textAlignment="gravity"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <RadioGroup
                     android:id="@+id/group8"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y8"
@@ -358,7 +368,7 @@
                 android:id="@+id/layout9"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView9"
@@ -366,21 +376,22 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="3"
-                    android:background="@drawable/button"
+                    android:background="@drawable/back_quest6"
                     android:gravity="start"
+                    android:paddingStart="20dp"
+                    android:paddingTop="25dp"
                     android:text=" Q : 힘들게 이벤트를 준비한 나를 신나게 할 연인의 칭찬은?
                     \n Y : 최고야. 나 완전 감동했어
                     \n N : 고마워. 요즘 바쁠 텐데 언제 이런 걸 생각했어?"
                     android:textAlignment="gravity"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <RadioGroup
                     android:id="@+id/group9"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y9"
@@ -400,7 +411,7 @@
                 android:id="@+id/layout10"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView10"
@@ -408,21 +419,22 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="3"
-                    android:background="@drawable/button"
+                    android:background="@drawable/back_quest6"
                     android:gravity="start"
+                    android:paddingStart="20dp"
+                    android:paddingTop="25dp"
                     android:text=" Q : 데이트 룩을 고를 때 나는
                     \n Y : 전날부터 머리부터 발끝까지 세팅해 준다
                     \n N : 나가기 직전 마음에 드는 옷을 입는다"
                     android:textAlignment="gravity"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <RadioGroup
                     android:id="@+id/group10"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y10"
@@ -442,7 +454,7 @@
                 android:id="@+id/layout11"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView11"
@@ -450,21 +462,22 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="3"
-                    android:background="@drawable/button"
+                    android:background="@drawable/back_quest6"
                     android:gravity="start"
+                    android:paddingStart="20dp"
+                    android:paddingTop="25dp"
                     android:text=" Q : 썸 중에 연인이 집에 놀러 온다고 했을 때 나는..
                     \n Y : 보이는 곳만 일단 급하게 치워둔다
                     \n N : 쓰레기 버리기부터 화장실 청소까지 한다"
                     android:textAlignment="gravity"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <RadioGroup
                     android:id="@+id/group11"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y11"
@@ -484,7 +497,7 @@
                 android:id="@+id/layout12"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textView12"
@@ -492,21 +505,22 @@
                     android:layout_height="wrap_content"
 
                     android:layout_weight="3"
-                    android:background="@drawable/button"
+                    android:background="@drawable/back_quest6"
                     android:gravity="start"
+                    android:paddingStart="20dp"
+                    android:paddingTop="25dp"
                     android:text=" Q : 커플 해외여행 계획을 짜게 된 나는..
                     \n Y : 할 거면 제대로! 일별로 세부 일정을 정리한다
                     \n N : 비행기 표만 끊어두고 계획의 80% 끝난다고 생각한다"
                     android:textAlignment="gravity"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <RadioGroup
                     android:id="@+id/group12"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:background="@drawable/button">
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/Y12"

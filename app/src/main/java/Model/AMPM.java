@@ -5,6 +5,7 @@ public enum AMPM {
     NINE,
     TEN,
     ELEVEN,
+    TWELVE,
     ONE,
     TWO,
     THREE,

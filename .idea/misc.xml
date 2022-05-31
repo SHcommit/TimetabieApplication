@@ -15,18 +15,29 @@
         <entry key="..\:/Users/ruddh/Desktop/Android/app/src/main/res/layout/fragment_student_info.xml" value="0.175" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.151" />
         <entry key="app/src/main/res/drawable/button.xml" value="0.1375" />
+        <entry key="app/src/main/res/drawable/dlg_background.xml" value="0.1975" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.151" />
         <entry key="app/src/main/res/drawable/layout_background.xml" value="0.151" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3484375" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.35125732421875" />
         <entry key="app/src/main/res/layout/activity_mbtiactivity.xml" value="0.30625" />
-        <entry key="app/src/main/res/layout/activity_mbtiquestion.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/activity_mbtidetail.xml" value="0.31333333333333335" />
+        <entry key="app/src/main/res/layout/activity_mbtiquestion.xml" value="0.26269698066343455" />
+        <entry key="app/src/main/res/layout/activity_previous.xml" value="0.3182291666666667" />
+        <entry key="app/src/main/res/layout/activity_previous_layout1.xml" value="0.3182291666666667" />
+        <entry key="app/src/main/res/layout/activity_previous_layout2.xml" value="0.3182291666666667" />
+        <entry key="app/src/main/res/layout/activity_previous_layout3.xml" value="0.3182291666666667" />
+        <entry key="app/src/main/res/layout/activity_previous_layout4.xml" value="0.3182291666666667" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.3398148148148148" />
+        <entry key="app/src/main/res/layout/dialog_mbti_input.xml" value="0.25229644775390625" />
+        <entry key="app/src/main/res/layout/dialog_mbti_show.xml" value="0.46883544921875003" />
+        <entry key="app/src/main/res/layout/dialog_mbti_show_background.xml" value="0.1609375" />
         <entry key="app/src/main/res/layout/fragment_information.xml" value="0.3487179487179487" />
         <entry key="app/src/main/res/layout/fragment_input_mbti.xml" value="0.2765625" />
         <entry key="app/src/main/res/layout/fragment_recommend_subject.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/fragment_student_info.xml" value="0.34974358974358977" />
         <entry key="app/src/main/res/layout/layout_background.xml" value="0.334375" />
-        <entry key="app/src/main/res/layout/mbti_item.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/layout/mbti_item.xml" value="0.3567179361979167" />
+        <entry key="app/src/main/res/layout/previous_item.xml" value="0.3182291666666667" />
         <entry key="app/src/main/res/layout/table_cell.xml" value="0.5" />
       </map>
     </option>

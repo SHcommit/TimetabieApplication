@@ -74,6 +74,7 @@ public class MBTIActivity extends AppCompatActivity implements MBTIAdapter.OnIte
          */
         //add recycler view animation
         AlphaInAnimationAdapter alphaInAnimationAdapter = new AlphaInAnimationAdapter(adapter);
+        alphaInAnimationAdapter.setDuration(1700);
         alphaInAnimationAdapter.setInterpolator(new OvershootInterpolator());
         alphaInAnimationAdapter.setFirstOnly(true);
         recyclerView.setAdapter(new ScaleInAnimationAdapter(alphaInAnimationAdapter));
