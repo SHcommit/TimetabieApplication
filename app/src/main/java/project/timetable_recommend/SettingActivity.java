@@ -20,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import Controller.bottomNavigationListenerInFirstActivity;
 import Model.GsonThread;
 import Model.TableCell;
+import Model.dialog_mbti;
 
 
 public class SettingActivity extends AppCompatActivity {
@@ -136,6 +137,11 @@ public class SettingActivity extends AppCompatActivity {
     public void onFragmentChanged(int index, Bundle bundle) {
 
         if (index == 0) { //12개 질문지 선택하고 MBTI값 정확하게 받은 경우, studentInfoFragment로 이동
+
+
+            //다이얼로그를 통해서 보여줌
+            dialog_mbti dlg = new dialog_mbti(SettingActivity.this,MBTI.toString());
+            dlg.show();
 
             //MBTI 값을 받고, 그 값을 StudentInfoFragment로 전환하면서 넘기기
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

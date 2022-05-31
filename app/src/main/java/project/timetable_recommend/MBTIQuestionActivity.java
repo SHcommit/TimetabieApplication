@@ -12,6 +12,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import Model.dialog_mbti;
+
 public class MBTIQuestionActivity extends AppCompatActivity {
 
 

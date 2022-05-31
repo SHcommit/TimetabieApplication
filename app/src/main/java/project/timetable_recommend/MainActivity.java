@@ -55,31 +55,6 @@ public class MainActivity extends AppCompatActivity {
          * 이 객체에 이벤트 헨들러를 통해 어떤 네비게이션 바의 아이콘이 클릭 됬는지 찾는 메서드 입니다.
          */
         bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
-        //test
-        c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setText("c++");
-        c.cell[ampm.NINE.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
-        c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
-        c.cell[ampm.ELEVEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
-
-        c.cell[ampm.ELEVEN.ordinal()][day.WEDNESDAY.ordinal()].setText("java");
-        c.cell[ampm.TEN.ordinal()][day.WEDNESDAY.ordinal()].setBackgroundColor(Color.GREEN);
-        c.cell[ampm.ELEVEN.ordinal()][day.WEDNESDAY.ordinal()].setBackgroundColor(Color.GREEN);
-        c.cell[ampm.TWELVE.ordinal()][day.WEDNESDAY.ordinal()].setBackgroundColor(Color.GREEN);
-
-        c.cell[ampm.ONE.ordinal()][day.FRIDYA.ordinal()].setText("인터넷응용");
-        c.cell[ampm.TWO.ordinal()][day.FRIDYA.ordinal()].setBackgroundColor(Color.BLUE);
-        c.cell[ampm.ONE.ordinal()][day.FRIDYA.ordinal()].setBackgroundColor(Color.BLUE);
-        c.cell[ampm.THREE.ordinal()][day.FRIDYA.ordinal()].setBackgroundColor(Color.BLUE);
-
-        c.cell[ampm.TWELVE.ordinal()][day.MONDAY.ordinal()].setText("메롱");
-        c.cell[ampm.ELEVEN.ordinal()][day.MONDAY.ordinal()].setBackgroundColor(Color.CYAN);
-        c.cell[ampm.TWELVE.ordinal()][day.MONDAY.ordinal()].setBackgroundColor(Color.CYAN);
-        c.cell[ampm.ONE.ordinal()][day.MONDAY.ordinal()].setBackgroundColor(Color.CYAN);
-
-        c.cell[ampm.THREE.ordinal()][day.TUESDAY.ordinal()].setText("하와이");
-        c.cell[ampm.TWO.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.GREEN);
-        c.cell[ampm.THREE.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.GREEN);
-        c.cell[ampm.FOUR.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.GREEN);
     }
 
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.
