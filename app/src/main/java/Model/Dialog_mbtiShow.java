@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.Objects;
 import project.timetable_recommend.R;
 
-public class dialog_mbti extends Dialog {
+public class Dialog_mbtiShow extends Dialog {
 
     private Button   dlg_ok_button;
     private TextView dlg_mbti_text;
@@ -39,7 +39,7 @@ public class dialog_mbti extends Dialog {
             }
         });
     }
-    public dialog_mbti(Context mContext, String mbti) {
+    public Dialog_mbtiShow(Context mContext, String mbti) {
         super(mContext);
         this.context   = mContext;
         this.user_mbti = mbti;

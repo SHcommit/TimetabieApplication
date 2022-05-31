@@ -6,29 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".SettingActivity">
 
-    <TextView
-        android:id="@+id/textViewFIM_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
-        android:text="MBTI를 입력해주세요."
+    <LinearLayout
+        android:id="@+id/mbti_input_window"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextFIM_input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="340dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:visibility="invisible"
+        android:layout_width="322dp"
+        android:layout_height="205dp"
+        android:layout_gravity="center"
+        android:background="@drawable/dlg_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+                android:layout_weight="0.6"
+                android:text="당신의 MBTI를 입력해주세요"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/mbti_put_text"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1.7" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="12dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/mbti_buttonSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:scaleType="center"
+                    android:text="save"
+                    android:textSize="10dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonFIM_OK"
         android:layout_width="wrap_content"
