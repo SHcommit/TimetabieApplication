@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
         //변수 초기화
         context_main = this;
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        //GsonThread gsonThread = new GsonThread(getApplicationContext());
+        GsonThread gsonThread = new GsonThread(getApplicationContext());
         c = new TableCell();
         findTextViewById(c);
-        //gsonThread.start();
+        gsonThread.start();
 
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.

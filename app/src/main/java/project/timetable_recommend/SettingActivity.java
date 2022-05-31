@@ -22,6 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import Controller.bottomNavigationListenerInFirstActivity;
 import Model.Dialog_mbtiPut;
 import Model.Dialog_mbtiShow;
+import Model.GsonThread;
 
 
 public class SettingActivity extends AppCompatActivity {
@@ -68,8 +69,8 @@ public class SettingActivity extends AppCompatActivity {
         recommendSubjectFragment = new RecommendSubjectFragment();
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
-        //GsonThread gsonThread = new GsonThread(getApplicationContext());
-        //gsonThread.start();
+        GsonThread gsonThread = new GsonThread(getApplicationContext());
+        gsonThread.start();
         //시작화면 다이얼로그
         /*
         * 어플 시작 시 MBTI 검사 여부 체크하기 위해 다이얼로그 띄움
@@ -95,9 +96,6 @@ public class SettingActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int id) {
                 //숨겼던 위젯 보이게 하기
                 input_Layout_instacnce.setVisibility(View.VISIBLE);
-                //textView.setVisibility(View.VISIBLE);
-                //editText.setVisibility(View.VISIBLE);
-                //button.setVisibility(View.VISIBLE);
             }
         });
         dialogBuilder.show();
