@@ -23,7 +23,7 @@ public class MBTISubject {
             10045, 10048, 10052, 10053, 10057,//INTJ
             10030, 10033, 10034, 11828, 11826,//ENTJ
             10027, 10039, 11402, 11404, 11832,//ENTP
-            10024, 10576, 11103, 11123, 11401,//ENFP
+            10024, 10036, 11103, 11123, 11401,//ENFP
             10060, 10574, 11089, 10036, 11101,//ENFJ
             10022, 10028, 11092, 10573, 11074,//INFJ
             10016, 10612, 11075, 11076, 11095//INFP
@@ -39,8 +39,8 @@ public class MBTISubject {
             }
         }
     }
-    public SubjectItemDTO[] getMBTI80subjects(){
-        return MBTI80subjects;
+    public SubjectItemDTO getMBTI80subjects(int m_count){
+        return MBTI80subjects[m_count];
     }
 }
 
