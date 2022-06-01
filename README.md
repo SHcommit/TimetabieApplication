@@ -6,7 +6,6 @@
 
 * **Team Leader**   = <a href="https://github.com/sam0774">김석현</a>
 
-
 * member =   <a href="https://github.com/MoonDooo">임경완</a>
 
 * member = <a href="https://github.com/SHcommit">양승현</a>

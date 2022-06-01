@@ -1,24 +1,17 @@
 package project.timetable_recommend;
-
-import static Model.GsonThread.subjectList;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
-
 import android.graphics.Color;
-
 import android.os.Bundle;
-import android.widget.Toast;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import Model.AMPM;
 import Model.DAY;
 import Model.GsonThread;
-import Model.SubjectListDTO;
 import Model.TableCell;
 import Controller.bottomNavigationListenerInFirstActivity;
+
+
+
 
 public class MainActivity extends AppCompatActivity {
     /**

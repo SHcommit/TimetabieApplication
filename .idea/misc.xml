@@ -20,13 +20,27 @@
         <entry key="app/src/main/res/drawable/layout_background.xml" value="0.151" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35125732421875" />
         <entry key="app/src/main/res/layout/activity_mbtiactivity.xml" value="0.30625" />
+<<<<<<< HEAD
         <entry key="app/src/main/res/layout/activity_mbtidetail.xml" value="0.2735368855794272" />
+=======
+<<<<<<< HEAD
+        <entry key="app/src/main/res/layout/activity_mbtidetail.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/activity_mbtiquestion.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/activity_previous.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/activity_previous_layout1.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/activity_previous_layout2.xml" value="0.2390625" />
+        <entry key="app/src/main/res/layout/activity_previous_layout3.xml" value="0.2390625" />
+        <entry key="app/src/main/res/layout/activity_previous_layout4.xml" value="0.2390625" />
+=======
+        <entry key="app/src/main/res/layout/activity_mbtidetail.xml" value="0.31333333333333335" />
+>>>>>>> 3d7c89471976a62a7c019af9aa7d7310aa6528b9
         <entry key="app/src/main/res/layout/activity_mbtiquestion.xml" value="0.26269698066343455" />
         <entry key="app/src/main/res/layout/activity_previous.xml" value="0.3182291666666667" />
         <entry key="app/src/main/res/layout/activity_previous_layout1.xml" value="0.40963846842447915" />
         <entry key="app/src/main/res/layout/activity_previous_layout2.xml" value="0.4644571940104167" />
         <entry key="app/src/main/res/layout/activity_previous_layout3.xml" value="0.3182291666666667" />
         <entry key="app/src/main/res/layout/activity_previous_layout4.xml" value="0.3182291666666667" />
+>>>>>>> f2991c6ec1cce9bc25ba4d7b6e93fc367fdd2757
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.3398148148148148" />
         <entry key="app/src/main/res/layout/dialog_mbti_input.xml" value="0.451849365234375" />
         <entry key="app/src/main/res/layout/dialog_mbti_show.xml" value="0.46883544921875003" />
@@ -36,8 +50,13 @@
         <entry key="app/src/main/res/layout/fragment_recommend_subject.xml" value="0.23324381510416667" />
         <entry key="app/src/main/res/layout/fragment_student_info.xml" value="0.34974358974358977" />
         <entry key="app/src/main/res/layout/layout_background.xml" value="0.334375" />
+<<<<<<< HEAD
+        <entry key="app/src/main/res/layout/mbti_item.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/layout/previous_item.xml" value="0.35520833333333335" />
+=======
         <entry key="app/src/main/res/layout/mbti_item.xml" value="0.3567179361979167" />
         <entry key="app/src/main/res/layout/previous_item.xml" value="0.3182291666666667" />
+>>>>>>> f2991c6ec1cce9bc25ba4d7b6e93fc367fdd2757
         <entry key="app/src/main/res/layout/table_cell.xml" value="0.5" />
       </map>
     </option>
