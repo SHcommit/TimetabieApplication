@@ -18,6 +18,7 @@
         <activity android:name=".PreviousLayout2"/>
         <activity android:name=".PreviousLayout3"/>
         <activity android:name=".PreviousLayout4"/>
+        <activity android:name=".MBTIActivity"/>
         <activity
             android:name=".PreviousActivity"
             android:exported="false" /> <!-- networkSecurityConfig는 res/xml 폴더 안에 있는 네트워크 허용 파일 적용시킨 겁니다. -->

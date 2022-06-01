@@ -9,10 +9,10 @@ public class StudentInfoDTO implements Serializable {
     int subjectId; //학수번호, 절대 0으로 시작하지 않기때문에 int형으로 구현해도 됨
 
     StudentInfoDTO() {
-        grade = 1;
-        majorScore = 1;
-        cultureScore = 1;
-        subjectId = 1;
+        grade = 0;
+        majorScore = 0;
+        cultureScore = 0;
+        subjectId = 0;
     }
     public int getGrade() {
         return grade;

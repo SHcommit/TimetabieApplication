@@ -7,6 +7,12 @@
     tools:context=".SettingActivity"
     android:id="@+id/container">
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
     <fragment
         android:name="project.timetable_recommend.InputMBTIFragment"
         android:id="@+id/settingFragment"

@@ -9,9 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.io.Serializable;
 
 public class RecommendSubjectFragment extends Fragment {
     Button button1, button2, button3, button4, button5, buttonFinish;
@@ -38,6 +35,10 @@ public class RecommendSubjectFragment extends Fragment {
         //bundle에 담아놓은 studentInfoDTO(객체)를 꺼냄
         StudentInfoDTO studentInfoDTO = (StudentInfoDTO) bundle.getSerializable("studentInfoDTO");
 
+        /*
+        * Button에
+        * */
+        //버튼 클릭시 과목 객체를 시간표액티비티로 넘기면서 시간표액티비티로 화면전환
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
