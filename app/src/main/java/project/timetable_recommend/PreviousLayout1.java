@@ -98,22 +98,18 @@ public class PreviousLayout1 extends AppCompatActivity{
                         for (int i = 0; i < subjectList.getSubjects().get(pos).getSubject_day().size(); i++) {
                             checked_day = subjectList.getSubjects().get(pos).getSubject_day().get(i).getDay();
                             checked_time = subjectList.getSubjects().get(pos).getSubject_day().get(i).getTime();
-                            if (checkSubject[checked_time][checked_day]) checked_subjectTime = true;
+                            if (checkSubject[checked_time][checked_day]) {
+                                Toast.makeText(getApplicationContext(), "중첩된 시간표가 있습니다.", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
                         }
                         for (int i = 0; i < subjectList.getSubjects().get(pos).getSubject_day().size(); i++) {
                             tmp_day = subjectList.getSubjects().get(pos).getSubject_day().get(i).getDay();
                             tmp_time = subjectList.getSubjects().get(pos).getSubject_day().get(i).getTime();
-                            if (i == 0 && tmp_day != 0 && tmp_time != 0) {
-                                if (!checked_subjectTime) {
-                                    c.cell[tmp_time][tmp_day].setText(subjectList.getSubjects().get(pos).getSubjectName()); // 시간표에 추가되는 부분
-                                } else
-                                    Toast.makeText(getApplicationContext(), "중첩된 시간표가 있습니다.", Toast.LENGTH_SHORT).show();
-                            }
-                            if (!checked_subjectTime) {
-                                checkSubject[tmp_time][tmp_day] = true;
-                                c.cell[tmp_time][tmp_day].setBackgroundColor(Color.parseColor(color));
-                                checkColor[tmp_time][tmp_day] = color;
-                            }
+                            if (i == 0 && tmp_day != 0 && tmp_time != 0) c.cell[tmp_time][tmp_day].setText(subjectList.getSubjects().get(pos).getSubjectName()); // 시간표에 추가되는 부분
+                            checkSubject[tmp_time][tmp_day] = true;
+                            c.cell[tmp_time][tmp_day].setBackgroundColor(Color.parseColor(color));
+                            checkColor[tmp_time][tmp_day] = color;
                         }
                     }
                 }

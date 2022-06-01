@@ -48,16 +48,26 @@ public class SettingActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     LinearLayout input_Layout_instacnce;
     TableLayout tableLayout;
+    boolean[][] checkSubject;
+    String[][] checkColor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-        GsonThread gsonThread = new GsonThread(getApplicationContext());
         c = new TableCell();
         findTextViewById(c);
+        checkSubject = new boolean[c.getHeight()][c.getWidth()];
+        checkColor = new String[c.getHeight()][c.getWidth()];
         tableLayout = findViewById(R.id.table);
         tableLayout.setVisibility(View.INVISIBLE);
+        for (int i = 1; i < (c.getHeight() - 1); i++) {
+            for (int j = 1; j < (c.getWidth() - 1); j++) {
+                checkSubject[i][j] = false;
+            }
+        }
+        GsonThread gsonThread = new GsonThread(getApplicationContext());
         gsonThread.start();
         /**
          * @param context_settingActivity : settingActivity 화면 객체 얻어오는 변수
@@ -147,19 +157,9 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
     }
+
     ////////접근 금지///////
-    public void setTimeTable(SubjectItemDTO subjectItemDTO){
-        /*/////////////////////공사중
-        boolean[][] checkSubject;
-        String[][] checkColor;
-        checkSubject = new boolean[c.getHeight()][c.getWidth()];
-        checkColor = new String[c.getHeight()][c.getWidth()];
-        for (int i = 1; i < (c.getHeight() - 1); i++) {
-            for (int j = 1; j < (c.getWidth() - 1); j++) {
-                checkSubject[i][j] = false;
-            }
-        }
-        ///////////////////////공사중
+    public void setTimeTable(SubjectItemDTO subjectItemDTO) {
         PreviousSelectedColor temp = new PreviousSelectedColor();
         String color = temp.getColor();
         int tmp_day = 0;
@@ -170,26 +170,23 @@ public class SettingActivity extends AppCompatActivity {
         for (int i = 0; i < subjectItemDTO.getSubject_day().size(); i++) {
             checked_day = subjectItemDTO.getSubject_day().get(i).getDay();
             checked_time = subjectItemDTO.getSubject_day().get(i).getTime();
-            if (checkSubject[checked_time][checked_day]) checked_subjectTime = true;
+            if (checkSubject[checked_time][checked_day]) {
+                Toast.makeText(getApplicationContext(), "중첩된 시간표가 있습니다.", Toast.LENGTH_SHORT).show();
+                return;
+            }
         }
         for (int i = 0; i < subjectItemDTO.getSubject_day().size(); i++) {
             tmp_day = subjectItemDTO.getSubject_day().get(i).getDay();
             tmp_time = subjectItemDTO.getSubject_day().get(i).getTime();
             if (i == 0 && tmp_day != 0 && tmp_time != 0) {
-                if (!checked_subjectTime) {
-                    c.cell[tmp_time][tmp_day].setText(subjectItemDTO.getSubjectName()); // 시간표에 추가되는 부분
-                } else
-                    Toast.makeText(getApplicationContext(), "중첩된 시간표가 있습니다.", Toast.LENGTH_SHORT).show();
+                c.cell[tmp_time][tmp_day].setText(subjectItemDTO.getSubjectName()); // 시간표에 추가되는 부분
             }
-            if (!checked_subjectTime) {
                 checkSubject[tmp_time][tmp_day] = true;
                 c.cell[tmp_time][tmp_day].setBackgroundColor(Color.parseColor(color));
                 checkColor[tmp_time][tmp_day] = color;
-            }
         }
-        ///////////////////////*/
-        System.out.println(c.getWidth());
     }
+
 
     public void onFragmentChanged(int index, Bundle bundle) {
 
