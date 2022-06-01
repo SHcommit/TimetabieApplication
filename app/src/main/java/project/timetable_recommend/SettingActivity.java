@@ -1,5 +1,7 @@
 package project.timetable_recommend;
 
+import static Model.GsonThread.subjectList;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,12 +10,14 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +27,9 @@ import Controller.bottomNavigationListenerInFirstActivity;
 import Model.Dialog_mbtiPut;
 import Model.Dialog_mbtiShow;
 import Model.GsonThread;
+import Model.PreviousSelectedColor;
+import Model.SubjectItemDTO;
+import Model.TableCell;
 
 
 public class SettingActivity extends AppCompatActivity {
@@ -30,7 +37,7 @@ public class SettingActivity extends AppCompatActivity {
     StudentInfoFragment studentInfoFragment;
     InputMBTIFragment inputMBTIFragment;
     RecommendSubjectFragment recommendSubjectFragment;
-    TextView textView;
+    TableCell c;
     EditText editText;
     Button button;
     static final int REQUEST_SETTING_TO_QUESTION = 1; //requestCode of SettnigActivity -> MBTIQuestionActivity
@@ -40,11 +47,17 @@ public class SettingActivity extends AppCompatActivity {
     public static Context context_settingActivity;
     BottomNavigationView bottomNavigationView;
     LinearLayout input_Layout_instacnce;
+    TableLayout tableLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         GsonThread gsonThread = new GsonThread(getApplicationContext());
+        c = new TableCell();
+        findTextViewById(c);
+        tableLayout = findViewById(R.id.table);
+        tableLayout.setVisibility(View.INVISIBLE);
         gsonThread.start();
         /**
          * @param context_settingActivity : settingActivity 화면 객체 얻어오는 변수
@@ -65,23 +78,21 @@ public class SettingActivity extends AppCompatActivity {
         });
 
         editText = findViewById(R.id.mbti_put_text);
-        button   = findViewById(R.id.mbti_buttonSave);
+        button = findViewById(R.id.mbti_buttonSave);
 
         //액티비티 위에 돌아갈 프래그먼트 객체 생성
-        studentInfoFragment      = new StudentInfoFragment();
-        inputMBTIFragment        = new InputMBTIFragment();
+        studentInfoFragment = new StudentInfoFragment();
+        inputMBTIFragment = new InputMBTIFragment();
         recommendSubjectFragment = new RecommendSubjectFragment();
-        bottomNavigationView     = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
 
         //시작화면 다이얼로그
         /*
-        * 어플 시작 시 MBTI 검사 여부 체크하기 위해 다이얼로그 띄움
-        * OK: MBTI 검사 시작 (MBTIQuestionActivity로 화면 전환)
-        * Cancel: 사용자의 MBTI 요구 (INVISIBLE 되어있던 위젯들을 VISIBLE로 전환)
-        *
-        *
-        * */
+         * 어플 시작 시 MBTI 검사 여부 체크하기 위해 다이얼로그 띄움
+         * OK: MBTI 검사 시작 (MBTIQuestionActivity로 화면 전환)
+         * Cancel: 사용자의 MBTI 요구 (INVISIBLE 되어있던 위젯들을 VISIBLE로 전환)
+         *
+         *
+         * */
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("MBTI 검사 하시겠습니까?").setMessage("");
         //OK 클릭 시 MBTIQuestionActivity로 화면 전환
@@ -119,7 +130,6 @@ public class SettingActivity extends AppCompatActivity {
                         MBTI.equals("INFJ") ||
                         MBTI.equals("INTP") ||
                         MBTI.equals("INTJ") ||
-
                         MBTI.equals("ESFP") ||
                         MBTI.equals("ESFJ") ||
                         MBTI.equals("ESTP") ||
@@ -127,20 +137,59 @@ public class SettingActivity extends AppCompatActivity {
                         MBTI.equals("ENFP") ||
                         MBTI.equals("ENFJ") ||
                         MBTI.equals("ENTP") ||
-                        MBTI.equals("ENTJ"))
-                {
+                        MBTI.equals("ENTJ")) {
                     // 프래그먼트 화면 전환(0),
                     onFragmentChanged(0, bundle); // index 0 호출(flag의 개념)
-                }
-                else
-                { //MBTI 정확하게 기입하지 않은 경우
+                } else { //MBTI 정확하게 기입하지 않은 경우
                     Toast.makeText(getApplicationContext(),
                             "MBTI를 정확히 입력해주세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
-
+    ////////접근 금지///////
+    public void setTimeTable(SubjectItemDTO subjectItemDTO){
+        /*/////////////////////공사중
+        boolean[][] checkSubject;
+        String[][] checkColor;
+        checkSubject = new boolean[c.getHeight()][c.getWidth()];
+        checkColor = new String[c.getHeight()][c.getWidth()];
+        for (int i = 1; i < (c.getHeight() - 1); i++) {
+            for (int j = 1; j < (c.getWidth() - 1); j++) {
+                checkSubject[i][j] = false;
+            }
+        }
+        ///////////////////////공사중
+        PreviousSelectedColor temp = new PreviousSelectedColor();
+        String color = temp.getColor();
+        int tmp_day = 0;
+        int tmp_time = 0;
+        int checked_day = 0;
+        int checked_time = 0;
+        boolean checked_subjectTime = false;
+        for (int i = 0; i < subjectItemDTO.getSubject_day().size(); i++) {
+            checked_day = subjectItemDTO.getSubject_day().get(i).getDay();
+            checked_time = subjectItemDTO.getSubject_day().get(i).getTime();
+            if (checkSubject[checked_time][checked_day]) checked_subjectTime = true;
+        }
+        for (int i = 0; i < subjectItemDTO.getSubject_day().size(); i++) {
+            tmp_day = subjectItemDTO.getSubject_day().get(i).getDay();
+            tmp_time = subjectItemDTO.getSubject_day().get(i).getTime();
+            if (i == 0 && tmp_day != 0 && tmp_time != 0) {
+                if (!checked_subjectTime) {
+                    c.cell[tmp_time][tmp_day].setText(subjectItemDTO.getSubjectName()); // 시간표에 추가되는 부분
+                } else
+                    Toast.makeText(getApplicationContext(), "중첩된 시간표가 있습니다.", Toast.LENGTH_SHORT).show();
+            }
+            if (!checked_subjectTime) {
+                checkSubject[tmp_time][tmp_day] = true;
+                c.cell[tmp_time][tmp_day].setBackgroundColor(Color.parseColor(color));
+                checkColor[tmp_time][tmp_day] = color;
+            }
+        }
+        ///////////////////////*/
+        System.out.println(c.getWidth());
+    }
 
     public void onFragmentChanged(int index, Bundle bundle) {
 
@@ -168,6 +217,8 @@ public class SettingActivity extends AppCompatActivity {
         //학생 정보(StudentInfoFragment에서 넘어옴) 기입 받은 경우, recommendSubjectFragment 이동
 
         if(index == 1) {
+            button5.setVisibility(View.INVISIBLE);
+            tableLayout.setVisibility(View.VISIBLE);
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             recommendSubjectFragment.setArguments(bundle);
             transaction.replace(R.id.container, recommendSubjectFragment);
@@ -177,7 +228,15 @@ public class SettingActivity extends AppCompatActivity {
 
 
     //넘긴 액티비티에서 다시 원래로 넘어온 경우 호출되는 메소드
-
+    public void findTextViewById(TableCell tCell) {
+        for (int y = 0; y < tCell.getHeight(); y++) {
+            final int curY = y;
+            for (int x = 0; x < tCell.getWidth(); x++) {
+                final int curX = x;
+                tCell.cell[curY][curX] = findViewById(tCell.cellID[curY][curX]);
+            }
+        }
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
