@@ -3,14 +3,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.TextUtils;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import Model.AMPM;
-import Model.DAY;
-import Model.GsonThread;
-import Model.TableCell;
-import Controller.bottomNavigationListenerInFirstActivity;
+import Model.AmpmVO;
+import Model.DayVO;
+import Model.TableCellDTO;
+import Controller.BottomNavigationListener;
 
 
 
@@ -27,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
      */
 
     BottomNavigationView bottomNavigationView;
-    AMPM ampm;
-    DAY day; ////
-    TableCell c;
+    AmpmVO ampm;
+    DayVO day; ////
+    TableCellDTO c;
     public static Context context_main;
 
     @Override
@@ -40,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
         //변수 초기화
         context_main = this;
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        c = new TableCell();
+        c = new TableCellDTO();
         findTextViewById(c);
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
          * 이 객체에 이벤트 헨들러를 통해 어떤 네비게이션 바의 아이콘이 클릭 됬는지 찾는 메서드 입니다.
          */
-        bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationListener());
 
         //test
         c.cell[ampm.NINE.ordinal()][day.FRIDYA.ordinal()].setText("c++\n융합과학관(24호관)-24405 ");
@@ -57,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.
-    public void findTextViewById(TableCell tCell) {
+    public void findTextViewById(TableCellDTO tCell) {
         for (int y = 0; y < tCell.getHeight(); y++) {
             final int curY = y;
             for (int x = 0; x < tCell.getWidth(); x++) {

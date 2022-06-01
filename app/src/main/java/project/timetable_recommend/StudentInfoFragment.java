@@ -12,7 +12,8 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import Model.StudentInfoDTO;
 
 
 public class StudentInfoFragment extends Fragment {

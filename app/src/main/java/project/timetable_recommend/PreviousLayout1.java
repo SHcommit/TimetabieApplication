@@ -1,6 +1,6 @@
 package project.timetable_recommend;
 
-import static Model.GsonThread.subjectList;
+import static Controller.GsonThread.subjectList;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,24 +11,18 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.sql.Array;
 import java.util.ArrayList;
 
 import Controller.PreviousAdapter;
-import Model.AMPM;
-import Model.DAY;
 import Model.PreviousSelectedColor;
 import Model.SubjectItemDTO;
-import Model.TableCell;
-import Model.DayTime;
+import Model.TableCellDTO;
+
 /**
  * 이곳 부터 PreviousLayout4까지 각각 이전 시간표를 보여주는 레이아웃입니다.
  * 레이아웃의 구조는 시간표와 리사이클 뷰로 나누어져있습니다.
@@ -39,7 +33,7 @@ public class PreviousLayout1 extends AppCompatActivity{
     PreviousAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView recyclerView;
-    TableCell c;
+    TableCellDTO c;
     public static Context context_main;
     private ImageView btn_back;
     boolean[][] checkSubject;
@@ -71,7 +65,7 @@ public class PreviousLayout1 extends AppCompatActivity{
         });
         context_main = this;
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
-        c = new TableCell();
+        c = new TableCellDTO();
         findTextViewById(c);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         adapter = new PreviousAdapter();
@@ -165,7 +159,7 @@ public class PreviousLayout1 extends AppCompatActivity{
         }
     }
 
-    public void findTextViewById(TableCell tCell) {
+    public void findTextViewById(TableCellDTO tCell) {
         for (int y = 0; y < tCell.getHeight(); y++) {
             final int curY = y;
             for (int x = 0; x < tCell.getWidth(); x++) {
