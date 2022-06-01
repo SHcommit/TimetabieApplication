@@ -99,7 +99,7 @@
             <TextView
                 android:id="@+id/time1"
                 android:layout_width="20dp"
-                android:layout_height="38dp"
+                android:layout_height="60dp"
                 android:gravity="center"
 
                 android:text="9"
@@ -108,7 +108,7 @@
             <TextView
                 android:id="@+id/mon1"
                 android:layout_width="42dp"
-                android:layout_height="38dp"
+                android:layout_height="60dp"
                 android:gravity="center"
 
                 android:text=""
@@ -117,7 +117,7 @@
             <TextView
                 android:id="@+id/tue1"
                 android:layout_width="42dp"
-                android:layout_height="38dp"
+                android:layout_height="60dp"
                 android:gravity="center"
 
                 android:text=""
@@ -126,7 +126,7 @@
             <TextView
                 android:id="@+id/wed1"
                 android:layout_width="42dp"
-                android:layout_height="38dp"
+                android:layout_height="60dp"
                 android:gravity="center"
 
                 android:text=""
