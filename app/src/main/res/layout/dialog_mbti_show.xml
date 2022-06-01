@@ -41,8 +41,9 @@
             android:layout_weight="1"
             android:layout_gravity="right">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/dialog_button_ok"
+                android:background="@drawable/button"
                 android:text="ok"
                 android:textSize="10dp"
                 android:layout_marginLeft="4dp"

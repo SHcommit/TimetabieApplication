@@ -24,9 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="bottom"
-        android:background="@color/white"
+        android:background="#FCF7F6"
         android:elevation="10dp"
-        app:itemBackground="@color/white"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

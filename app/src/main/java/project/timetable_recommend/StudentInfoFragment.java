@@ -101,8 +101,14 @@ public class StudentInfoFragment extends Fragment {
 
                 studentInfoDTO = new StudentInfoDTO();
 
-
+                if (grade.getText().toString().equals("")){
+                    grade.setText("0");
+                }
+                if (subjectId.getText().toString().equals("")){
+                    subjectId.setText("0");
+                }
                 studentInfoDTO.setGrade(Integer.parseInt(grade.getText().toString()));
+
                 studentInfoDTO.setMajorScore(Integer.parseInt(majorNum.getText().toString()));
                 studentInfoDTO.setCultureScore(Integer.parseInt(cultureNum.getText().toString()));
                 studentInfoDTO.setSubjectId(Integer.parseInt(subjectId.getText().toString())); //학수번호는 문자열! (시작 번호가 0으로 시작할 수도 있기 때문

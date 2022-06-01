@@ -6,7 +6,7 @@
     android:layout_marginLeft="40dp"
     android:layout_marginTop="40dp"
     android:layout_marginRight="40dp"
-    android:background="@drawable/button"
+    android:background="#FCF7F6"
     android:orientation="vertical"
     android:visibility="visible"
     tools:context=".StudentInfoFragment">
@@ -27,7 +27,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="#FCF7F6">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonFRS_1"
