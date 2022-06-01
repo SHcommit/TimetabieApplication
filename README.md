@@ -6,6 +6,7 @@
 
 * **Team Leader**   = <a href="https://github.com/sam0774">김석현</a>
 
+
 * member =   <a href="https://github.com/MoonDooo">임경완</a>
 
 * member = <a href="https://github.com/SHcommit">양승현</a>
@@ -51,4 +52,122 @@
 <img width="275" alt="1" align="left" src="https://user-images.githubusercontent.com/96910404/170806755-51d47969-c604-474e-8143-42998737521d.jpeg">
 <img width="275" alt="1" align="left" src="https://user-images.githubusercontent.com/96910404/170806757-97537aa3-d589-482f-bf9b-329aa974c111.jpeg">
 
-<img width="275" alt="1" align="left" src="https://user-images.githubusercontent.com/96910404/170806756-982cf955-a02a-458c-9c90-6c2bd90e873c.jpeg">
+<img width="275" alt="1" align="center" src="https://user-images.githubusercontent.com/96910404/170806756-982cf955-a02a-458c-9c90-6c2bd90e873c.jpeg">
+
+
+<div align=center><h1>구현된 기능_ </div>
+
+<div align=center><h3>백엔드_ </div>
+
+<div>
+dataBase : Oracle Database
+</div>
+
+> make 700+ students major, general_elective subjects in db. ( type : JSON)
+
+<div>
+use jsp
+</div>
+
+<div align=center><h3>안드로이드_ </div>
+
+
+<div>
+use jsp to JSON Serialization(SubjectListDTO)
+</div>
+
+> JSON 형식으로 만들어진 700개 이상의 전공/교양 학생 과목을 직렬화 작업수행
+
+<div>
+ripple animation을 구현 ( adapt button)
+</div>
+<div>
+ AlphaInAnimationAdapterAnimation 사용 (MbtiAcitivty)
+</div>
+
+> Mbti 타입별 설명 목록 recyclerView 를 사용하여 목록을 호출할 때
+
+<div>
+shared element transition 구현 (MbtiActivity to MbtiDetailActivity)
+</div>
+
+> https://developer.android.com/training/transitions/start-activity?hl=ko#java
+>
+>Mbti 타입별 설명 목록에서 recyclerView cell을 클릭했을 때 transition animate 발생
+>
+> > Activity-> Activity 간 이동시 shared element transition은 오류가 없지만 그 외의 경우 버그가 발생할 수 있습니다.
+
+
+BottomNavigationView를 통한 화면 전환 & FLAG_ACTIVITY_CLEAR_TOP|FLAG_ACTIVITY_CLEAR_TOP 부여
+<div>
+TextView에 스크롤 (activity_mbtidetail.xml)
+</div>
+<br/>
+
+<div>
+TableLayout을 통한 시간표 구현 (Model.TableCell)
+</div>
+<div>
+시간표 추가, 초기화 기능 (PreviousLayout1~4)
+</div>
+<div>
+이전 시간표 선택과 동시에 추가 기능(PreviousLayout1~4)
+</div>
+<div>
+이전 시간표 저장
+</div>
+<div>
+커스텀 다이얼로그 (Dialog_mbti Put&Show)
+</div>
+<div>
+시간표에 TextUtils.TruncateAt 기능 적용
+</div>
+<br/>
+
+<div>
+MBTI algorithm 적용
+</div>
+<div>
+사용자의 mbti 입력에 대한 예외 처리 구현
+</div>
+<div>
+사용자의 인적사항 입력시 예외처리 구현
+</div>
+<div>
+부분 프래그먼트와 bundle, intent 등 사용한 객체 전달.
+</div>
+
+<br/>
+<div>
+MVC 아키텍쳐 적용
+</div>
+<div>
+협업 과정에서 코드 컨벤션(Code Convention) 스타일을 준수하기 위해 노력함.
+</div>
+<div>
+Github을 통한 프로젝트 버전 관리
+</div>
+
+![2](https://user-images.githubusercontent.com/96910404/171493337-339d82dd-f91c-4e2b-b2b3-0601364b1f2f.gif)
+
+<div>
+협업 과정에서 Data Transfer Object(DTO), Value Object(VO) 개념을 도입해 클래스 간 역할 구분
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+</div>
