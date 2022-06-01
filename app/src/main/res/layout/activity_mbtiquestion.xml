@@ -89,6 +89,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/button"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -132,6 +133,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/button"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -175,6 +177,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/button"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -218,6 +221,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/button"
+                    android:orientation="horizontal">
                     android:orientation="horizontal"
                     >
 
@@ -262,6 +267,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/button"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -305,6 +311,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/button"
+
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -348,6 +356,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+
+                    android:background="@drawable/button"
+
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -391,6 +402,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/button"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -434,6 +446,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/button"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -477,6 +490,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/button"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -520,6 +534,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/button"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -536,13 +551,14 @@
                 </RadioGroup>
 
             </LinearLayout>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/button"
                 android:text="완료"
-                android:visibility="invisible"
-                android:background="@drawable/button"/>
+                android:visibility="gone" />
 
         </LinearLayout>
     </ScrollView>

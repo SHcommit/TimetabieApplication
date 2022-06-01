@@ -9,9 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.io.Serializable;
 
 public class RecommendSubjectFragment extends Fragment {
     Button button1, button2, button3, button4, button5, buttonFinish;
@@ -33,9 +30,57 @@ public class RecommendSubjectFragment extends Fragment {
         //settingActivity에 담겨있는 bundle객체 반환받음
         Bundle bundle = getArguments();
         String MBTI = bundle.getString("MBTI"); //번들에서 MBTI값 가져옴
+        textView.setText(MBTI);
 
         //bundle에 담아놓은 studentInfoDTO(객체)를 꺼냄
         StudentInfoDTO studentInfoDTO = (StudentInfoDTO) bundle.getSerializable("studentInfoDTO");
+
+        /*
+        * Button에
+        * */
+        //버튼 클릭시 과목 객체를 시간표액티비티로 넘기면서 시간표액티비티로 화면전환
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        buttonFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
         return recommendSubjectView;
     }

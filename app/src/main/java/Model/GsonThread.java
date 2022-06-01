@@ -12,7 +12,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
-import Model.MBTISubject;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +33,9 @@ public class GsonThread extends Thread{
         makeRequest();
     }
     public void makeRequest() {
-        String url = "http://192.168.0.17:80/test/Android/android.jsp";
+
+
+        String url = "http://192.168.150.102:80/test/Android/android.jsp";
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
