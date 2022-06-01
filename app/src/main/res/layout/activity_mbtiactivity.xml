@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="bottom"
-        android:background="#FFFDFC"
+        android:background="#FCF7F6"
         android:elevation="10dp"
 
         app:layout_constraintBottom_toBottomOf="parent"

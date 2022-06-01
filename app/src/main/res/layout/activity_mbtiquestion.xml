@@ -525,7 +525,7 @@
                     android:paddingTop="25dp"
                     android:text=" Q : 커플 해외여행 계획을 짜게 된 나는..
                     \n Y : 할 거면 제대로! 일별로 세부 일정을 정리한다
-                    \n N : 비행기 표만 끊어두고 계획의 80% 끝난다고 생각한다"
+                    \n N : 비행기 표만 끊어두고 계획의 80% 끝난다고\n         생각한다"
                     android:textAlignment="gravity"
                     android:textSize="13sp" />
 

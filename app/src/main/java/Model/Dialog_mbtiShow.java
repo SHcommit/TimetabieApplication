@@ -22,7 +22,6 @@ public class Dialog_mbtiShow extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_mbti_show);
-
         //다이얼로그 뒷 배경 투명하게 만듬
         Objects.requireNonNull(getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 

@@ -4,7 +4,8 @@
     android:layout_gravity="center"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="322dp"
-    android:layout_height="155dp">
+    android:layout_height="155dp"
+    android:elevation="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,8 +41,9 @@
             android:layout_weight="1"
             android:layout_gravity="right">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/dialog_button_ok"
+                android:background="@drawable/button"
                 android:text="ok"
                 android:textSize="10dp"
                 android:layout_marginLeft="4dp"

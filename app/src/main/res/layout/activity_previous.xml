@@ -63,7 +63,7 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        android:background="#ECF0F3"
+        android:background="#FCF7F6"
 
         android:elevation="10dp"
         app:labelVisibilityMode="labeled"

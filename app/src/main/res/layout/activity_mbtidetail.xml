@@ -17,13 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <ImageView
                 android:id="@+id/btn_back"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="54dp"
+                android:layout_height="55dp"
                 android:layout_gravity="left"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/back_img" />
+                android:src="@drawable/back_btn555" />
 
             <ImageView
                 android:id="@+id/mbti_image"
@@ -45,14 +46,24 @@
             android:textColor="#8e8e8e"
             android:textSize="22dp"
             android:textStyle="bold" />
-        <TextView
-            android:id="@+id/text_mbti_introduce"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="20dp"
-            android:textColor="#8e8e8e"
-            android:textSize="13dp" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/text_mbti_introduce"
+                android:scrollbars="vertical"
+                android:scrollbarFadeDuration = "0"
+                android:scrollbarThumbVertical="@color/teal_200"
+                android:scrollbarTrackVertical="@color/teal_200"
+                android:scrollbarSize="2dp"
+                android:scrollbarAlwaysDrawVerticalTrack = "true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="20dp"
+                android:textColor="#8e8e8e"
+                android:textSize="17dp" />
+        </ScrollView>
 
     </LinearLayout>
 
