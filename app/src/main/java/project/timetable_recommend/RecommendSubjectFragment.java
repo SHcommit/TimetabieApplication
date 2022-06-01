@@ -11,12 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.Serializable;
 
 import Model.MBTISubject;
 
 public class RecommendSubjectFragment extends Fragment {
-    Button button1, button2, button3, button4, button5, buttonFinish;
-    TextView textView;
+    Button button1, button2, button3, buttonFinish;
+    TextView textView, textView2;
     public int searchMBTI(String MBTI){
         switch(MBTI){
             case "ISFJ" :
@@ -58,40 +61,43 @@ public class RecommendSubjectFragment extends Fragment {
     int first;
     int second;
     int third;
-    int fourth;
-    int fifth;
+    StudentInfoDTO studentInfoDTO;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         ViewGroup recommendSubjectView = (ViewGroup) inflater.inflate(R.layout.fragment_recommend_subject, container, false);
         SettingActivity settingActivity = (SettingActivity)getActivity();
+        studentInfoDTO = (StudentInfoDTO)getArguments().getSerializable("studentInfoDTO");
         button1 = recommendSubjectView.findViewById(R.id.buttonFRS_1);
         button2 = recommendSubjectView.findViewById(R.id.buttonFRS_2);
         button3 = recommendSubjectView.findViewById(R.id.buttonFRS_3);
-        button4 = recommendSubjectView.findViewById(R.id.buttonFRS_4);
-        button5 = recommendSubjectView.findViewById(R.id.buttonFRS_5);
         buttonFinish = recommendSubjectView.findViewById(R.id.buttonFRS_Finish);
         textView = recommendSubjectView.findViewById(R.id.textViewFRS_MBTI);
+        textView2 = recommendSubjectView.findViewById(R.id.textView);
+        int subject_max = studentInfoDTO.getCultureScore();
+        textView2.setText("남은 교양 학점 : " + subject_max);
+
         MBTISubject subject = new MBTISubject();
         //settingActivity에 담겨있는 bundle객체 반환받음
         Bundle bundle = getArguments();
         String MBTI = bundle.getString("MBTI"); //번들에서 MBTI값 가져옴
         count  = searchMBTI(MBTI);
-        button1.setText(""+subject.getMBTI80subjects(count).getSubjectName());
+        button1.setText(""+subject.getMBTI80subjects(++count).getSubjectName()
+                + "\n" + subject.getMBTI80subjects(count).getSubjectTimetable()
+                + "\n" + subject.getMBTI80subjects(count).getCredit());
         first = count;
-        button2.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
+        button2.setText(""+subject.getMBTI80subjects(++count).getSubjectName()
+                + "\n" + subject.getMBTI80subjects(count).getSubjectTimetable()
+                + "\n" + subject.getMBTI80subjects(count).getCredit());
         second = count;
-        button3.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
+        button3.setText(""+subject.getMBTI80subjects(++count).getSubjectName()
+                + "\n" + subject.getMBTI80subjects(count).getSubjectTimetable()
+                + "\n" + subject.getMBTI80subjects(count).getCredit());
         third = count;
-        button4.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
-        fourth = count;
-        button5.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
-        fifth = count;
         textView.setText(MBTI);
 
         //bundle에 담아놓은 studentInfoDTO(객체)를 꺼냄
-        StudentInfoDTO studentInfoDTO = (StudentInfoDTO) bundle.getSerializable("studentInfoDTO");
         /*
         * Button에
         * */
@@ -100,7 +106,9 @@ public class RecommendSubjectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 settingActivity.setTimeTable(subject.getMBTI80subjects(first));
-                button1.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
+                button1.setText(""+subject.getMBTI80subjects(++count).getSubjectName()
+                        + "\n" + subject.getMBTI80subjects(count).getSubjectTimetable()
+                        + "\n" + subject.getMBTI80subjects(count).getCredit());
                 first = count;
             }
         });
@@ -109,7 +117,9 @@ public class RecommendSubjectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 settingActivity.setTimeTable(subject.getMBTI80subjects(second));
-                button2.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
+                button2.setText(""+subject.getMBTI80subjects(++count).getSubjectName()
+                        + "\n" + subject.getMBTI80subjects(count).getSubjectTimetable()
+                        + "\n" + subject.getMBTI80subjects(count).getCredit());
                 second = count;
             }
         });
@@ -118,26 +128,10 @@ public class RecommendSubjectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 settingActivity.setTimeTable(subject.getMBTI80subjects(third));
-                button3.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
+                button3.setText(""+subject.getMBTI80subjects(count).getSubjectName()
+                + "\n" + subject.getMBTI80subjects(count).getSubjectTimetable()
+                + "\n" + subject.getMBTI80subjects(++count).getCredit());
                 third = count;
-            }
-        });
-
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                settingActivity.setTimeTable(subject.getMBTI80subjects(fourth));
-                button4.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
-                fourth = count;
-            }
-        });
-
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                settingActivity.setTimeTable(subject.getMBTI80subjects(fifth));
-                button5.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
-                fifth = count;
             }
         });
 
