@@ -67,8 +67,8 @@ public class SettingActivity extends AppCompatActivity {
                 checkSubject[i][j] = false;
             }
         }
-        GsonThread gsonThread = new GsonThread(getApplicationContext());
-        gsonThread.start();
+        //GsonThread gsonThread = new GsonThread(getApplicationContext());
+        //gsonThread.start();
         /**
          * @param context_settingActivity : settingActivity 화면 객체 얻어오는 변수
          * @param input_Layout_instacnce  : mbti 값 읽어 들일 때 사용하는 변수

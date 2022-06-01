@@ -43,7 +43,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/dialog_button_ok"
-                android:background="@drawable/button"
+                android:background="@drawable/user_show_button_anim_ripple_color12"
                 android:text="ok"
                 android:textSize="10dp"
                 android:layout_marginLeft="4dp"

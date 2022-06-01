@@ -50,8 +50,9 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:text="Button"
-            android:background="@drawable/button"
-            android:elevation="10dp"/>
+            android:background="@drawable/user_show_button_anim_ripple_color5"
+            android:elevation="10dp"
+            />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonFRS_2"
@@ -59,22 +60,37 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:background="@drawable/button"
-            android:text="Button" />
-
+            android:text="Button"
+            android:background="@drawable/user_show_button_anim_ripple_color4"
+            android:elevation="10dp"/>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonFRS_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:background="@drawable/button"
-            android:text="Button" /><![CDATA[
+            android:text="Button"
+            android:background="@drawable/user_show_button_anim_ripple_color3"
+            android:elevation="10dp"/>
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonFRS_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="Button"
+            android:background="@drawable/user_show_button_anim_ripple_color2"
+            android:elevation="10dp"/>
 
-        >>>>>>> 987a17bcc41a1388ad5be4a9d4b0db242ed10a9e
-
-    ]]>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonFRS_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Button"
+            android:background="@drawable/user_show_button_anim_ripple_color1"
+            android:elevation="10dp"/>
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -85,7 +101,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/button"
+        android:background="@drawable/user_show_button_anim_ripple"
         android:elevation="10dp"
         android:text="Finish" />
 

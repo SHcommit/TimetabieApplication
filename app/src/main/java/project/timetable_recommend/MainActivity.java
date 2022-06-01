@@ -3,6 +3,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import Model.AMPM;
 import Model.DAY;
@@ -47,10 +49,11 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
 
         //test
-        c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setText("c++");
-        c.cell[ampm.NINE.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
-        c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
-        c.cell[ampm.ELEVEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
+        c.cell[ampm.NINE.ordinal()][day.FRIDYA.ordinal()].setText("c++\n융합과학관(24호관)-24405 ");
+        c.cell[ampm.NINE.ordinal()][day.FRIDYA.ordinal()].setBackgroundColor(Color.parseColor("#da4453"));
+        c.cell[ampm.TEN.ordinal()][day.FRIDYA.ordinal()].setBackgroundColor(Color.parseColor("#da4453"));
+        c.cell[ampm.ELEVEN.ordinal()][day.FRIDYA.ordinal()].setBackgroundColor(Color.parseColor("#da4453"));
+        c.addNeonMovingEffectInTextView(c.cell[ampm.NINE.ordinal()][day.FRIDYA.ordinal()]);
     }
 
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.

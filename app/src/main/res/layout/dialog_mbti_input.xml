@@ -37,7 +37,7 @@
             android:layout_gravity="right">
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/dialog_buttonSave"
-                android:background="@drawable/button"
+                android:background="@drawable/user_show_button_anim_ripple_color8"
                 android:text="save"
                 android:elevation="10dp"
                 android:textSize="10dp"
