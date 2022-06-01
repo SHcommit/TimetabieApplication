@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MBTIQuestionActivity extends AppCompatActivity {
 

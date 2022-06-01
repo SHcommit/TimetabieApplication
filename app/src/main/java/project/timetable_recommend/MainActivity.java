@@ -38,22 +38,19 @@ public class MainActivity extends AppCompatActivity {
         //변수 초기화
         context_main = this;
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        GsonThread gsonThread = new GsonThread(getApplicationContext());
         c = new TableCell();
         findTextViewById(c);
-        gsonThread.start();
-
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
          * 이 객체에 이벤트 헨들러를 통해 어떤 네비게이션 바의 아이콘이 클릭 됬는지 찾는 메서드 입니다.
          */
         bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
+
         //test
         c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setText("c++");
         c.cell[ampm.NINE.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
         c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
         c.cell[ampm.ELEVEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
-
     }
 
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.

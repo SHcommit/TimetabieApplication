@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,14 +13,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import Controller.bottomNavigationListenerInFirstActivity;
+import Model.Dialog_mbtiPut;
+import Model.Dialog_mbtiShow;
 import Model.GsonThread;
-import Model.TableCell;
 
 
 public class SettingActivity extends AppCompatActivity {
@@ -33,12 +36,25 @@ public class SettingActivity extends AppCompatActivity {
     static final int REQUEST_SETTING_TO_QUESTION = 1; //requestCode of SettnigActivity -> MBTIQuestionActivity
     Bundle bundle;
     Button button5;
+    boolean isDialogCancel;
+    public static Context context_settingActivity;
     BottomNavigationView bottomNavigationView;
+    LinearLayout input_Layout_instacnce;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        GsonThread gsonThread = new GsonThread(getApplicationContext());
+        gsonThread.start();
+        /**
+         * @param context_settingActivity : settingActivity 화면 객체 얻어오는 변수
+         * @param input_Layout_instacnce  : mbti 값 읽어 들일 때 사용하는 변수
+         */
+        context_settingActivity = this;
+        isDialogCancel = false;
+        input_Layout_instacnce = findViewById(R.id.mbti_input_window);
         bundle = new Bundle();
+        //이 버튼 임시적으로 만든거
         button5 = findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,17 +64,16 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
-        textView = findViewById(R.id.textViewFIM_text);
-        editText = findViewById(R.id.editTextFIM_input);
-        button = findViewById(R.id.buttonFIM_OK);
+        editText = findViewById(R.id.mbti_put_text);
+        button   = findViewById(R.id.mbti_buttonSave);
 
         //액티비티 위에 돌아갈 프래그먼트 객체 생성
-        studentInfoFragment = new StudentInfoFragment();
-        inputMBTIFragment = new InputMBTIFragment();
+        studentInfoFragment      = new StudentInfoFragment();
+        inputMBTIFragment        = new InputMBTIFragment();
         recommendSubjectFragment = new RecommendSubjectFragment();
+        bottomNavigationView     = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
 
-        GsonThread gsonThread = new GsonThread(getApplicationContext());
-        gsonThread.start();
         //시작화면 다이얼로그
         /*
         * 어플 시작 시 MBTI 검사 여부 체크하기 위해 다이얼로그 띄움
@@ -82,11 +97,8 @@ public class SettingActivity extends AppCompatActivity {
         dialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-
                 //숨겼던 위젯 보이게 하기
-                textView.setVisibility(View.VISIBLE);
-                editText.setVisibility(View.VISIBLE);
-                button.setVisibility(View.VISIBLE);
+                input_Layout_instacnce.setVisibility(View.VISIBLE);
             }
         });
         dialogBuilder.show();
@@ -97,7 +109,7 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MBTI = editText.getText().toString();
-                    MBTI = MBTI.toUpperCase(); //예외(소문자로 MBTI 기입한 경우)처리를 위해 사용자가 입력한 문자열을 대문자로 처리
+                MBTI = MBTI.toUpperCase(); //예외(소문자로 MBTI 기입한 경우)처리를 위해 사용자가 입력한 문자열을 대문자로 처리
                 //정상적으로 MBTI 기입한 경우
                 if (MBTI.equals("ISFP") ||
                         MBTI.equals("ISFJ") ||
@@ -115,15 +127,13 @@ public class SettingActivity extends AppCompatActivity {
                         MBTI.equals("ENFP") ||
                         MBTI.equals("ENFJ") ||
                         MBTI.equals("ENTP") ||
-                        MBTI.equals("ENTJ")) {
-
-
-
-                     // 프래그먼트 화면 전환(0),
-
+                        MBTI.equals("ENTJ"))
+                {
+                    // 프래그먼트 화면 전환(0),
                     onFragmentChanged(0, bundle); // index 0 호출(flag의 개념)
                 }
-                else { //MBTI 정확하게 기입하지 않은 경우
+                else
+                { //MBTI 정확하게 기입하지 않은 경우
                     Toast.makeText(getApplicationContext(),
                             "MBTI를 정확히 입력해주세요.", Toast.LENGTH_SHORT).show();
                 }
@@ -135,6 +145,11 @@ public class SettingActivity extends AppCompatActivity {
     public void onFragmentChanged(int index, Bundle bundle) {
 
         if (index == 0) { //12개 질문지 선택하고 MBTI값 정확하게 받은 경우, studentInfoFragment로 이동
+
+
+            //다이얼로그를 통해서 보여줌
+            Dialog_mbtiShow dlg = new Dialog_mbtiShow(SettingActivity.this,MBTI.toString());
+            dlg.show();
 
             //MBTI 값을 받고, 그 값을 StudentInfoFragment로 전환하면서 넘기기
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

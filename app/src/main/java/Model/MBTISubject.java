@@ -30,7 +30,7 @@ public class MBTISubject {
     };
     //80개를 초기화 시켜주는 함수입니다.
     public void MBTI80subject(){
-        int tmp = subjectList.getSubjects().size();
+        int tmp = subjectList.getSubjects().size(); //리스트에 들어있는 객체 개수
         for(int i = 0; i<tmp; i++){
             for(int j = 0; j < 80; j++){
                 if(subjectList.getSubjects().get(i).getSubjectId() == MBTIsubjects[j]){
