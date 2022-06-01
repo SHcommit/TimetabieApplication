@@ -30,7 +30,6 @@
                 android:id="@+id/emptyCell"
                 android:layout_width="20dp"
                 android:layout_height="30dp"
-
                 android:gravity="center"
                 android:text=""
                 android:textAlignment="center" />
