@@ -661,8 +661,10 @@
                 android:gravity="center"
                 android:text=""
                 android:textAlignment="center" />
+
         </TableRow>
     </TableLayout>
+
     <fragment
         android:name="project.timetable_recommend.InputMBTIFragment"
         android:id="@+id/settingFragment"
