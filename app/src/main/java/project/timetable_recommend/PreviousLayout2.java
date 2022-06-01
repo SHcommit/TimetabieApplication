@@ -1,6 +1,6 @@
 package project.timetable_recommend;
 
-import static Model.GsonThread.subjectList;
+import static Controller.GsonThread.subjectList;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,13 +21,13 @@ import java.util.ArrayList;
 import Controller.PreviousAdapter;
 import Model.PreviousSelectedColor;
 import Model.SubjectItemDTO;
-import Model.TableCell;
+import Model.TableCellDTO;
 
 public class PreviousLayout2 extends AppCompatActivity {
     PreviousAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView recyclerView;
-    TableCell c;
+    TableCellDTO c;
     public static Context context_main;
     private ImageView btn_back;
     boolean[][] checkSubject;
@@ -59,7 +59,7 @@ public class PreviousLayout2 extends AppCompatActivity {
         });
         context_main = this;
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
-        c = new TableCell();
+        c = new TableCellDTO();
         findTextViewById(c);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         adapter = new PreviousAdapter();
@@ -154,7 +154,7 @@ public class PreviousLayout2 extends AppCompatActivity {
         }
     }
 
-    public void findTextViewById(TableCell tCell) {
+    public void findTextViewById(TableCellDTO tCell) {
         for (int y = 0; y < tCell.getHeight(); y++) {
             final int curY = y;
             for (int x = 0; x < tCell.getWidth(); x++) {

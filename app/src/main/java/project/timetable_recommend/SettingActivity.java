@@ -1,7 +1,5 @@
 package project.timetable_recommend;
 
-import static Model.GsonThread.subjectList;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,18 +16,14 @@ import android.widget.EditText;
 
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import Controller.bottomNavigationListenerInFirstActivity;
-import Model.Dialog_mbtiPut;
 import Model.Dialog_mbtiShow;
-import Model.GsonThread;
 import Model.PreviousSelectedColor;
 import Model.SubjectItemDTO;
-import Model.TableCell;
+import Model.TableCellDTO;
 
 
 public class SettingActivity extends AppCompatActivity {
@@ -37,7 +31,7 @@ public class SettingActivity extends AppCompatActivity {
     StudentInfoFragment studentInfoFragment;
     InputMBTIFragment inputMBTIFragment;
     RecommendSubjectFragment recommendSubjectFragment;
-    TableCell c;
+    TableCellDTO c;
     EditText editText;
     Button button;
     static final int REQUEST_SETTING_TO_QUESTION = 1; //requestCode of SettnigActivity -> MBTIQuestionActivity
@@ -56,7 +50,7 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-        c = new TableCell();
+        c = new TableCellDTO();
         findTextViewById(c);
         checkSubject = new boolean[c.getHeight()][c.getWidth()];
         checkColor = new String[c.getHeight()][c.getWidth()];
@@ -109,7 +103,7 @@ public class SettingActivity extends AppCompatActivity {
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                Intent intent = new Intent(getApplicationContext(), MBTIQuestionActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MbtiQuestionActivity.class);
                 startActivityForResult(intent, REQUEST_SETTING_TO_QUESTION);
             }
         });
@@ -225,7 +219,7 @@ public class SettingActivity extends AppCompatActivity {
 
 
     //넘긴 액티비티에서 다시 원래로 넘어온 경우 호출되는 메소드
-    public void findTextViewById(TableCell tCell) {
+    public void findTextViewById(TableCellDTO tCell) {
         for (int y = 0; y < tCell.getHeight(); y++) {
             final int curY = y;
             for (int x = 0; x < tCell.getWidth(); x++) {

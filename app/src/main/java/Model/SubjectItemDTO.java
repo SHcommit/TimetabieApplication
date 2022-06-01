@@ -1,12 +1,5 @@
 package Model;
 
-import static Model.GsonThread.subjectList;
-
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import java.lang.reflect.Array;
-import java.sql.Time;
 import java.util.ArrayList;
 
 public class SubjectItemDTO {

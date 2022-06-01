@@ -1,15 +1,15 @@
 package Controller;
 
-import static Model.GsonThread.subjectList;
+import static Controller.GsonThread.subjectList;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import Model.SubjectListDTO;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import Model.GsonThread;
+
 import Model.SubjectItemDTO;
 import project.timetable_recommend.R;
 

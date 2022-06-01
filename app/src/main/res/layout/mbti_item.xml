@@ -26,9 +26,9 @@
                 android:layout_marginLeft="23dp"
                 android:layout_marginTop="60dp"
                 android:padding="5dp"
-                android:scaleType="centerCrop"
+
                 android:transitionName="mbti_image_detail"
-                app:srcCompat="@mipmap/ic_launcher"
+                app:srcCompat="@drawable/entp"
 
                 />
 

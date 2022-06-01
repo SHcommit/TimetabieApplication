@@ -1,10 +1,8 @@
 package project.timetable_recommend;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import Model.MBTISubject;
+import Model.StudentInfoDTO;
 
 public class RecommendSubjectFragment extends Fragment {
     Button button1, button2, button3, button4, button5, buttonFinish;
