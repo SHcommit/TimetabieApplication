@@ -18,7 +18,7 @@ import java.io.Serializable;
 import Model.MBTISubject;
 
 public class RecommendSubjectFragment extends Fragment {
-    Button button1, button2, button3, button4, button5, buttonFinish;
+    Button button1, button2, button3, buttonFinish;
     TextView textView, textView2;
     public int searchMBTI(String MBTI){
         switch(MBTI){
@@ -61,8 +61,6 @@ public class RecommendSubjectFragment extends Fragment {
     int first;
     int second;
     int third;
-    int fourth;
-    int fifth;
     StudentInfoDTO studentInfoDTO;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,8 +72,6 @@ public class RecommendSubjectFragment extends Fragment {
         button1 = recommendSubjectView.findViewById(R.id.buttonFRS_1);
         button2 = recommendSubjectView.findViewById(R.id.buttonFRS_2);
         button3 = recommendSubjectView.findViewById(R.id.buttonFRS_3);
-        button4 = recommendSubjectView.findViewById(R.id.buttonFRS_4);
-        button5 = recommendSubjectView.findViewById(R.id.buttonFRS_5);
         buttonFinish = recommendSubjectView.findViewById(R.id.buttonFRS_Finish);
         textView = recommendSubjectView.findViewById(R.id.textViewFRS_MBTI);
         textView2 = recommendSubjectView.findViewById(R.id.textView);
@@ -87,16 +83,18 @@ public class RecommendSubjectFragment extends Fragment {
         Bundle bundle = getArguments();
         String MBTI = bundle.getString("MBTI"); //번들에서 MBTI값 가져옴
         count  = searchMBTI(MBTI);
-        button1.setText(""+subject.getMBTI80subjects(count).getSubjectName());
+        button1.setText(""+subject.getMBTI80subjects(++count).getSubjectName()
+                + "\n" + subject.getMBTI80subjects(count).getSubjectTimetable()
+                + "\n" + subject.getMBTI80subjects(count).getCredit());
         first = count;
-        button2.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
+        button2.setText(""+subject.getMBTI80subjects(++count).getSubjectName()
+                + "\n" + subject.getMBTI80subjects(count).getSubjectTimetable()
+                + "\n" + subject.getMBTI80subjects(count).getCredit());
         second = count;
-        button3.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
+        button3.setText(""+subject.getMBTI80subjects(++count).getSubjectName()
+                + "\n" + subject.getMBTI80subjects(count).getSubjectTimetable()
+                + "\n" + subject.getMBTI80subjects(count).getCredit());
         third = count;
-        button4.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
-        fourth = count;
-        button5.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
-        fifth = count;
         textView.setText(MBTI);
 
         //bundle에 담아놓은 studentInfoDTO(객체)를 꺼냄
@@ -108,7 +106,9 @@ public class RecommendSubjectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 settingActivity.setTimeTable(subject.getMBTI80subjects(first));
-                button1.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
+                button1.setText(""+subject.getMBTI80subjects(++count).getSubjectName()
+                        + "\n" + subject.getMBTI80subjects(count).getSubjectTimetable()
+                        + "\n" + subject.getMBTI80subjects(count).getCredit());
                 first = count;
             }
         });
@@ -117,7 +117,9 @@ public class RecommendSubjectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 settingActivity.setTimeTable(subject.getMBTI80subjects(second));
-                button2.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
+                button2.setText(""+subject.getMBTI80subjects(++count).getSubjectName()
+                        + "\n" + subject.getMBTI80subjects(count).getSubjectTimetable()
+                        + "\n" + subject.getMBTI80subjects(count).getCredit());
                 second = count;
             }
         });
@@ -126,26 +128,10 @@ public class RecommendSubjectFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 settingActivity.setTimeTable(subject.getMBTI80subjects(third));
-                button3.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
+                button3.setText(""+subject.getMBTI80subjects(count).getSubjectName()
+                + "\n" + subject.getMBTI80subjects(count).getSubjectTimetable()
+                + "\n" + subject.getMBTI80subjects(++count).getCredit());
                 third = count;
-            }
-        });
-
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                settingActivity.setTimeTable(subject.getMBTI80subjects(fourth));
-                button4.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
-                fourth = count;
-            }
-        });
-
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                settingActivity.setTimeTable(subject.getMBTI80subjects(fifth));
-                button5.setText(""+subject.getMBTI80subjects(++count).getSubjectName());
-                fifth = count;
             }
         });
 
