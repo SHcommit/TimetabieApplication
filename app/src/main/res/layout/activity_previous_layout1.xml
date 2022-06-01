@@ -30,7 +30,7 @@
             android:layout_height="48dp"
             android:layout_gravity="left"
             android:layout_marginLeft="30dp"
-            android:src="@drawable/back_img" />
+            android:src="@drawable/back_btn555" />
 
         <TextView
             android:id="@+id/first"

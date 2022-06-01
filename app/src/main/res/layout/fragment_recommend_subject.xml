@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="330dp"
+    android:layout_width="360dp"
     android:layout_height="300dp"
-    android:layout_marginLeft="40dp"
-    android:layout_marginTop="40dp"
-    android:layout_marginRight="40dp"
+    android:layout_marginTop="400dp"
+    android:layout_marginLeft="26dp"
     android:background="#FCF7F6"
     android:orientation="vertical"
     android:visibility="visible"
-    tools:context=".StudentInfoFragment">
+    tools:context=".StudentInfoFragment"
+    android:elevation="10dp">
 
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="1dp"
         android:text="MBTI"
         android:textSize="30sp" />
 
@@ -37,7 +37,8 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:text="Button"
-            android:background="@drawable/button"/>
+            android:background="@drawable/button"
+            android:elevation="10dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonFRS_2"
@@ -46,7 +47,8 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:text="Button"
-            android:background="@drawable/button"/>
+            android:background="@drawable/button"
+            android:elevation="10dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonFRS_3"
@@ -55,7 +57,8 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:text="Button"
-            android:background="@drawable/button"/>
+            android:background="@drawable/button"
+            android:elevation="10dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonFRS_4"
@@ -64,7 +67,8 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:text="Button"
-            android:background="@drawable/button"/>
+            android:background="@drawable/button"
+            android:elevation="10dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonFRS_5"
@@ -72,7 +76,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Button"
-            android:background="@drawable/button"/>
+            android:background="@drawable/button"
+            android:elevation="10dp"/>
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -84,6 +89,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/button"
+        android:elevation="10dp"
         android:text="Finish" />
 
 </LinearLayout>
