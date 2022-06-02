@@ -42,7 +42,6 @@ public class MbtiActivity extends AppCompatActivity implements MbtiAdapter.OnIte
     RecyclerView               recyclerView;
     MBTIDataVO                 mbtiData;
     public static Context      context_mbtiActivity;
-    AlphaInAnimationAdapter    alphaInAnimationAdapter;
 
 
     @Override
@@ -53,7 +52,8 @@ public class MbtiActivity extends AppCompatActivity implements MbtiAdapter.OnIte
         /**
          * 변수들 초기화
          */
-        alphaInAnimationAdapter = new AlphaInAnimationAdapter(adapter);
+
+
         context_mbtiActivity    = this;
         bottomNavigationView    = findViewById(R.id.bottom_navigation);
         recyclerView            = (RecyclerView)findViewById(R.id.mbti_recyclerView);
@@ -72,6 +72,7 @@ public class MbtiActivity extends AppCompatActivity implements MbtiAdapter.OnIte
         recyclerView.setAdapter(new AlphaInAnimationAdapter(adapter));
 
         //add recycler view animation
+        AlphaInAnimationAdapter    alphaInAnimationAdapter = new AlphaInAnimationAdapter(adapter);
         alphaInAnimationAdapter.setDuration(1700);
         alphaInAnimationAdapter.setInterpolator(new OvershootInterpolator());
         alphaInAnimationAdapter.setFirstOnly(true);
