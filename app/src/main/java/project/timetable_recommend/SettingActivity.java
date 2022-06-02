@@ -23,6 +23,8 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+
 import Controller.bottomNavigationListenerInFirstActivity;
 import Model.Dialog_mbtiPut;
 import Model.Dialog_mbtiShow;
@@ -48,6 +50,7 @@ public class SettingActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     LinearLayout input_Layout_instacnce;
     TableLayout tableLayout;
+    ArrayList<String> subjectNameTest;
     boolean[][] checkSubject;
     String[][] checkColor;
 
@@ -58,6 +61,7 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
         c = new TableCell();
         findTextViewById(c);
+        subjectNameTest = new ArrayList<String>();
         checkSubject = new boolean[c.getHeight()][c.getWidth()];
         checkColor = new String[c.getHeight()][c.getWidth()];
         tableLayout = findViewById(R.id.table);
@@ -159,32 +163,47 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     ////////접근 금지///////
-    public void setTimeTable(SubjectItemDTO subjectItemDTO) {
+    public int setTimeTable(SubjectItemDTO subjectItemDTO) {
         PreviousSelectedColor temp = new PreviousSelectedColor();
         String color = temp.getColor();
         int tmp_day = 0;
         int tmp_time = 0;
         int checked_day = 0;
         int checked_time = 0;
+        int compare_day = 0;
+        boolean compare = false;
         boolean checked_subjectTime = false;
         for (int i = 0; i < subjectItemDTO.getSubject_day().size(); i++) {
             checked_day = subjectItemDTO.getSubject_day().get(i).getDay();
             checked_time = subjectItemDTO.getSubject_day().get(i).getTime();
             if (checkSubject[checked_time][checked_day]) {
                 Toast.makeText(getApplicationContext(), "중첩된 시간표가 있습니다.", Toast.LENGTH_SHORT).show();
-                return;
+                return -1;
+            }
+        }//시간표 중첩 확인 반복문입니다. 최대 3번정도 실행
+        for(int i = 0; i< subjectNameTest.size(); i++){
+            if(subjectNameTest.get(i).equals(subjectItemDTO.getSubjectName())) {
+                System.out.println("중첩있음");
+                return -1;
             }
         }
+        subjectNameTest.add(subjectItemDTO.getSubjectName());
         for (int i = 0; i < subjectItemDTO.getSubject_day().size(); i++) {
             tmp_day = subjectItemDTO.getSubject_day().get(i).getDay();
             tmp_time = subjectItemDTO.getSubject_day().get(i).getTime();
-            if (i == 0 && tmp_day != 0 && tmp_time != 0) {
+            if(compare_day!=tmp_day){
+                compare = true;
+            }
+            else compare = false;
+            if ((i == 0||compare) && tmp_day != 0 && tmp_time != 0) {
                 c.cell[tmp_time][tmp_day].setText(subjectItemDTO.getSubjectName()); // 시간표에 추가되는 부분
             }
-                checkSubject[tmp_time][tmp_day] = true;
-                c.cell[tmp_time][tmp_day].setBackgroundColor(Color.parseColor(color));
-                checkColor[tmp_time][tmp_day] = color;
+            checkSubject[tmp_time][tmp_day] = true;
+            c.cell[tmp_time][tmp_day].setBackgroundColor(Color.parseColor(color));
+            checkColor[tmp_time][tmp_day] = color;
+            compare_day = tmp_day;
         }
+        return 1;
     }
 
 

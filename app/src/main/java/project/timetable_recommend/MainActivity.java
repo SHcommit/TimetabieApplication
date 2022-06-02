@@ -1,12 +1,23 @@
 package project.timetable_recommend;
+import static Model.GsonThread.subjectList;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
+
 import Model.AMPM;
 import Model.DAY;
 import Model.GsonThread;
+import Model.MainActivitySubjectInfo;
+import Model.PreviousSelectedColor;
+import Model.SubjectItemDTO;
 import Model.TableCell;
 import Controller.bottomNavigationListenerInFirstActivity;
 
@@ -28,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
     AMPM ampm;
     DAY day; ////
     TableCell c;
+    int compare_day;
     public static Context context_main;
-
+    MainActivitySubjectInfo subjectItemDTOS;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,13 +58,38 @@ public class MainActivity extends AppCompatActivity {
          */
         bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
 
-        //test
-        c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setText("c++");
-        c.cell[ampm.NINE.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
-        c.cell[ampm.TEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
-        c.cell[ampm.ELEVEN.ordinal()][day.TUESDAY.ordinal()].setBackgroundColor(Color.YELLOW);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        restoreState();
+    }
+
+    //불러옵니다.
+    protected void restoreState() {
+        Bundle tmp = getIntent().getExtras();
+        subjectItemDTOS = tmp.getParcelable("MainActivitySubject");
+        for(int i = 0; i<subjectItemDTOS.getSubjectItemDTOS().size(); i++){
+            PreviousSelectedColor temp = new PreviousSelectedColor();
+            String color = temp.getColor();
+            boolean compare = false;
+            compare_day  = -1;
+            for(int j = 0; j<subjectItemDTOS.getSubjectItemDTOS().get(i).getSubject_day().size(); j++){
+                int temp_time = subjectItemDTOS.getSubjectItemDTOS().get(i).getSubject_day().get(j).getTime();
+                int temp_day = subjectItemDTOS.getSubjectItemDTOS().get(i).getSubject_day().get(j).getDay();
+                if(compare_day!=temp_day){
+                    compare = true;
+                }
+                else compare = false;
+                compare_day = temp_day;
+                if ((j == 0||compare) && temp_day != 0 && temp_time != 0) {
+                    c.cell[temp_time][temp_day].setText(subjectItemDTOS.getSubjectItemDTOS().get(i).getSubjectName()); // 시간표에 추가되는 부분
+                }
+                c.cell[temp_time][temp_day].setBackgroundColor(Color.parseColor(color));
+            }
+        }
+    }
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.
     public void findTextViewById(TableCell tCell) {
         for (int y = 0; y < tCell.getHeight(); y++) {

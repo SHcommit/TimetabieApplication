@@ -69,12 +69,7 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:background="@drawable/button"
-            android:text="Button" /><![CDATA[
-
-
-        >>>>>>> 987a17bcc41a1388ad5be4a9d4b0db242ed10a9e
-
-    ]]>
+            android:text="Button" />
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
