@@ -1,6 +1,8 @@
-package project.timetable_recommend.Model;
+package project.timetable_recommend.model.dataTransferObject;
 
-import static project.timetable_recommend.activity.Controller.GsonThread.subjectList;
+import static project.timetable_recommend.activity.controller.GsonThread.subjectList;
+
+import project.timetable_recommend.model.valueObejct.SubjectItemVO;
 
 public class MBTISubjectDTO {
     //mbti별로 추천하는 80개의 subject를 담고있습니다.

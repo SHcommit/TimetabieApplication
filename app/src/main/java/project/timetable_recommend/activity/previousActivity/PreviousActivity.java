@@ -1,4 +1,4 @@
-package project.timetable_recommend.activity;
+package project.timetable_recommend.activity.previousActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,27 +9,38 @@ import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import Controller.BottomNavigationListener;
-import project.timetable_recommend.PreviousLayout1;
-import project.timetable_recommend.PreviousLayout2;
-import project.timetable_recommend.PreviousLayout3;
-import project.timetable_recommend.PreviousLayout4;
+import project.timetable_recommend.activity.controller.BottomNavigationListener;
 import project.timetable_recommend.R;
 
 public class PreviousActivity extends AppCompatActivity {
-    Button button1, button2, button3, button4;
+    /**
+     * @param buttonTransJunior           : 1학년 1학기 시간표로 이동하는 버튼
+     * @param buttonTransSenior           : 2학년 1학기 시간표로 이동하는 버튼
+     * @param buttonTransJunoir_Sophister : 3학년 1학기 시간표로 이동하는 버튼
+     * @param buttonTransSenior_Shphister : 4학년 1학기 시간표로 이동하는 버튼
+     * @param bottomNavigationView        : 바텀 네비게이션 뷰 인스턴스
+     */
+    Button  buttonTransJunior,
+            buttonTransSenior,
+            buttonTransJunoir_Sophister,
+            buttonTransSenior_Shphister;
     BottomNavigationView  bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_previous);
-        bottomNavigationView  = findViewById(R.id.bottom_navigation);
+
+        //인스턴스 ID 값 부여
+        bottomNavigationView        = findViewById(R.id.bottom_navigation);
+        buttonTransJunior           = findViewById(R.id.button);
+        buttonTransSenior           = findViewById(R.id.button2);
+        buttonTransJunoir_Sophister = findViewById(R.id.button3);
+        buttonTransSenior_Shphister = findViewById(R.id.button4);
+
+        //바텀 네비게이션 바
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationListener());
-        button1 = findViewById(R.id.button);
-        button2 = findViewById(R.id.button2);
-        button3 = findViewById(R.id.button3);
-        button4 = findViewById(R.id.button4);
+
         Button.OnClickListener onClickListener = new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,10 +65,10 @@ public class PreviousActivity extends AppCompatActivity {
             }
         } ;
         
-        button1.setOnClickListener(onClickListener);
-        button2.setOnClickListener(onClickListener);
-        button3.setOnClickListener(onClickListener);
-        button4.setOnClickListener(onClickListener);
+        buttonTransJunior.setOnClickListener(onClickListener);
+        buttonTransSenior.setOnClickListener(onClickListener);
+        buttonTransJunoir_Sophister.setOnClickListener(onClickListener);
+        buttonTransSenior_Shphister.setOnClickListener(onClickListener);
 
     }
 

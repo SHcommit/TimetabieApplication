@@ -1,4 +1,4 @@
-package project.timetable_recommend;
+package project.timetable_recommend.fragment;
 
 import android.os.Bundle;
 
@@ -13,8 +13,9 @@ import android.widget.FrameLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import project.timetable_recommend.Model.StudentInfoDTO;
-import project.timetable_recommend.activity.SettingActivity;
+import project.timetable_recommend.model.dataTransferObject.StudentInfoDTO;
+import project.timetable_recommend.R;
+import project.timetable_recommend.activity.settingActivity.SettingActivity;
 
 
 public class StudentInfoFragment extends Fragment {

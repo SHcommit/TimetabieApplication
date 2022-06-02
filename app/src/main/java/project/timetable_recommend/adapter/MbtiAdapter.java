@@ -1,4 +1,4 @@
-package Controller;
+package project.timetable_recommend.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import Model.MbtiRecyclerViewCellDTO;
-import Model.MbtiTypeDTO;
+import project.timetable_recommend.model.dataTransferObject.MbtiRecyclerViewCellDTO;
+import project.timetable_recommend.model.dataTransferObject.MbtiTypeDTO;
 import project.timetable_recommend.R;
 
 public class MbtiAdapter extends RecyclerView.Adapter<MbtiAdapter.ViewHolder> {

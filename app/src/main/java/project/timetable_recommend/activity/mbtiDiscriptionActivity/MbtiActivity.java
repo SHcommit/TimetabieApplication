@@ -1,4 +1,4 @@
-package project.timetable_recommend.activity;
+package project.timetable_recommend.activity.mbtiDiscriptionActivity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,9 +17,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import project.timetable_recommend.R;
 import project.timetable_recommend.adapter.MbtiAdapter;
-import project.timetable_recommend.activity.Controller.BottomNavigationListener;
-import project.timetable_recommend.Model.MBTIData;
-import project.timetable_recommend.Model.MbtiTypeDTO;
+import project.timetable_recommend.activity.controller.BottomNavigationListener;
+import project.timetable_recommend.model.valueObejct.MBTIDataVO;
+import project.timetable_recommend.model.dataTransferObject.MbtiTypeDTO;
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 
@@ -38,11 +38,11 @@ public class MbtiActivity extends AppCompatActivity implements MbtiAdapter.OnIte
      */
     BottomNavigationView       bottomNavigationView;
     RecyclerView.LayoutManager layoutManager;
-    MbtiAdapter adapter;
+    MbtiAdapter                adapter;
     RecyclerView               recyclerView;
-    MBTIData                   mbtiData;
+    MBTIDataVO                 mbtiData;
     public static Context      context_mbtiActivity;
-
+    AlphaInAnimationAdapter    alphaInAnimationAdapter;
 
 
     @Override
@@ -53,12 +53,13 @@ public class MbtiActivity extends AppCompatActivity implements MbtiAdapter.OnIte
         /**
          * 변수들 초기화
          */
-        context_mbtiActivity = this;
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
-        recyclerView         = (RecyclerView)findViewById(R.id.mbti_recyclerView);
-        layoutManager        = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-        adapter              = new MbtiAdapter();
-        mbtiData             = new MBTIData();
+        alphaInAnimationAdapter = new AlphaInAnimationAdapter(adapter);
+        context_mbtiActivity    = this;
+        bottomNavigationView    = findViewById(R.id.bottom_navigation);
+        recyclerView            = (RecyclerView)findViewById(R.id.mbti_recyclerView);
+        layoutManager           = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        adapter                 = new MbtiAdapter();
+        mbtiData                = new MBTIDataVO();
 
         //adapter에 데이터 넣기.
         inputDataToAdapter();
@@ -66,15 +67,11 @@ public class MbtiActivity extends AppCompatActivity implements MbtiAdapter.OnIte
 
         /**
          * adapter에 에니메이션 adapter 설정.
+         * add recycler view animation
          */
         recyclerView.setAdapter(new AlphaInAnimationAdapter(adapter));
 
-        /**
-         * Used recyclerview shared element transition
-         *
-         */
         //add recycler view animation
-        AlphaInAnimationAdapter alphaInAnimationAdapter = new AlphaInAnimationAdapter(adapter);
         alphaInAnimationAdapter.setDuration(1700);
         alphaInAnimationAdapter.setInterpolator(new OvershootInterpolator());
         alphaInAnimationAdapter.setFirstOnly(true);
@@ -116,6 +113,7 @@ public class MbtiActivity extends AppCompatActivity implements MbtiAdapter.OnIte
     }
 
     /**
+     *              Used recyclerview shared element transition                *
      *
      * @param v        : view를 통해 현재 출력된 특정 position의 이미지thumbnail을 얻어낸다.
      * @param position : recyclerView 의 특정 Cell에서 몇번째 값이 선택 됬는지 알 수 있다.
@@ -126,7 +124,7 @@ public class MbtiActivity extends AppCompatActivity implements MbtiAdapter.OnIte
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onItemClick(View v, int position)  {
-        Intent intent = new Intent(MbtiActivity.this, MbtiDetailActivity.class);
+        Intent intent    = new Intent(MbtiActivity.this, MbtiDetailActivity.class);
         MbtiTypeDTO mbti = adapter.getItem(position);
 
         intent.putExtra("mbtiType", mbti.getType());

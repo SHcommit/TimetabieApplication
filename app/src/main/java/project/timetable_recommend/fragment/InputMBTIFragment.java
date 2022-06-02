@@ -1,4 +1,4 @@
-package project.timetable_recommend;
+package project.timetable_recommend.fragment;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import project.timetable_recommend.R;
 
 
 public class InputMBTIFragment extends Fragment {

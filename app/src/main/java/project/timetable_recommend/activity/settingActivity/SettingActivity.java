@@ -1,4 +1,4 @@
-package project.timetable_recommend.settingActivity;
+package project.timetable_recommend.activity.settingActivity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -20,10 +20,10 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import project.timetable_recommend.Model.Dialog_mbtiShow;
-import project.timetable_recommend.Model.valueObejct.PreviousSelectedColorVO;
-import project.timetable_recommend.Model.valueObejct.SubjectItemVO;
-import project.timetable_recommend.Model.valueObejct.TableCellVO;
+import project.timetable_recommend.model.Dialog_mbtiShow;
+import project.timetable_recommend.model.valueObejct.PreviousSelectedColorVO;
+import project.timetable_recommend.model.valueObejct.SubjectItemVO;
+import project.timetable_recommend.model.valueObejct.TableCellVO;
 import project.timetable_recommend.activity.MainActivity;
 import project.timetable_recommend.fragment.InputMBTIFragment;
 import project.timetable_recommend.R;

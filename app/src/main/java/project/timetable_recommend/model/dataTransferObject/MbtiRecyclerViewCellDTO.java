@@ -1,4 +1,4 @@
-package project.timetable_recommend.Model;
+package project.timetable_recommend.model.dataTransferObject;
 
 import android.widget.ImageView;
 import android.widget.TextView;

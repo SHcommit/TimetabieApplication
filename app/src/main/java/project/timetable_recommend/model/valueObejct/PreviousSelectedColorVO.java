@@ -1,4 +1,4 @@
-package project.timetable_recommend.Model;
+package project.timetable_recommend.model.valueObejct;
 
 public class PreviousSelectedColorVO {
     String[] color = {

@@ -1,4 +1,4 @@
-package project.timetable_recommend.activity;
+package project.timetable_recommend.activity.mbtiDiscriptionActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -67,6 +67,7 @@ public class MbtiDetailActivity extends AppCompatActivity {
     /**
      * 에니메이션 작동에 의해 이 화면이 로딩 됬을 때
      * 이 클래스의 위젯멤버변수 객체 인스턴스 얻어옴
+     * Glide를 통해 이미지를 불러왔습니다.
      */
     public void setInit() {
         btn_back            = (ImageView) findViewById(R.id.btn_back);
@@ -96,7 +97,7 @@ public class MbtiDetailActivity extends AppCompatActivity {
     /**
      *
      * @param mbti_type
-     * @return
+     * @return mbti type 에 따라 상세 설명 string을 반환합니다.
      */
     public String setDetailMbtiText(String mbti_type){
         String contents;

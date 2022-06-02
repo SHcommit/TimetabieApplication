@@ -1,4 +1,4 @@
-package project.timetable_recommend.settingActivity;
+package project.timetable_recommend.activity.settingActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

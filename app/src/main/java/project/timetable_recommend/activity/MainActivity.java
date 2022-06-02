@@ -1,16 +1,15 @@
-package project.timetable_recommend;
+package project.timetable_recommend.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import Model.AmpmVO;
-import Model.DayVO;
-import Model.TableCellDTO;
-import Controller.BottomNavigationListener;
-
-
+import project.timetable_recommend.model.dataTransferObject.AmpmDTO;
+import project.timetable_recommend.model.dataTransferObject.DayDTO;
+import project.timetable_recommend.model.valueObejct.TableCellVO;
+import project.timetable_recommend.activity.controller.BottomNavigationListener;
+import project.timetable_recommend.R;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
      */
 
     BottomNavigationView bottomNavigationView;
-    AmpmVO ampm;
-    DayVO day; ////
-    TableCellDTO c;
+    AmpmDTO ampm;
+    DayDTO day; ////
+    TableCellVO c;
     public static Context context_main;
 
     @Override
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         //변수 초기화
         context_main = this;
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        c = new TableCellDTO();
+        c = new TableCellVO();
         findTextViewById(c);
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.
-    public void findTextViewById(TableCellDTO tCell) {
+    public void findTextViewById(TableCellVO tCell) {
         for (int y = 0; y < tCell.getHeight(); y++) {
             final int curY = y;
             for (int x = 0; x < tCell.getWidth(); x++) {

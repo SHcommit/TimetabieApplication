@@ -1,5 +1,5 @@
 
-package project.timetable_recommend.Model;
+package project.timetable_recommend.model.valueObejct;
 
 import project.timetable_recommend.*;
 

@@ -1,6 +1,6 @@
-package Controller;
+package project.timetable_recommend.adapter;
 
-import static Controller.GsonThread.subjectList;
+import static project.timetable_recommend.activity.controller.GsonThread.subjectList;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import Model.SubjectItemDTO;
+import project.timetable_recommend.model.valueObejct.SubjectItemVO;
 import project.timetable_recommend.R;
 
 public class PreviousAdapter extends RecyclerView.Adapter<PreviousAdapter.ViewHolder>{
@@ -42,7 +42,7 @@ public class PreviousAdapter extends RecyclerView.Adapter<PreviousAdapter.ViewHo
                 }
             });
         }
-        public void setItem(SubjectItemDTO m_subject){
+        public void setItem(SubjectItemVO m_subject){
             textView.setTextSize(15);
             textView.setText( "  " + m_subject.getSubjectName());
             textView2.setTextSize(10);
@@ -62,7 +62,7 @@ public class PreviousAdapter extends RecyclerView.Adapter<PreviousAdapter.ViewHo
     //여기서 subjectItemDTO에서 가져와 리사이클 뷰에 set시킵니다.
     @Override
     public void onBindViewHolder(@NonNull PreviousAdapter.ViewHolder holder, int position) {
-        SubjectItemDTO subject = subjectList.getSubjects().get(position);
+        SubjectItemVO subject = subjectList.getSubjects().get(position);
         holder.setItem(subject);
     }
     //리사이클 사이즈는 데이터베이스에서 가져온 SUBJECT 배열의 크기입니다.

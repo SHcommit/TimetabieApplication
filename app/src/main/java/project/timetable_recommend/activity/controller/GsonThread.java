@@ -1,4 +1,4 @@
-package Controller;
+package project.timetable_recommend.activity.controller;
 
 
 import android.content.Context;
@@ -15,15 +15,14 @@ import com.google.gson.Gson;
 import java.util.HashMap;
 import java.util.Map;
 
-import Model.SubjectListDTO;
+import project.timetable_recommend.model.dataTransferObject.SubjectListDTO;
 
 /**
  * RequestQueue : Volley에서 사용하는 변수입니다.
  */
 public class GsonThread extends Thread{
     static public SubjectListDTO subjectList;
-
-    static RequestQueue requestQueue;
+    static RequestQueue          requestQueue;
     public GsonThread(Context context){
         if(requestQueue == null){
             requestQueue = Volley.newRequestQueue(context);
@@ -35,7 +34,7 @@ public class GsonThread extends Thread{
         makeRequest();
     }
     public void makeRequest() {
-        String url = "http://192.168.150.102:80/test/Android/android.jsp";
+        String url            = "http://192.168.150.102:80/test/Android/android.jsp";
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -59,7 +58,7 @@ public class GsonThread extends Thread{
     }
     //이 함수는 gson을 이용해서 json객체를 파싱합니다.
     public void processResponse(String response){
-        Gson gson = new Gson();
+        Gson gson   = new Gson();
         subjectList = gson.fromJson(response, SubjectListDTO.class);
         for(int i = 0 ; i<subjectList.getSubjects().size(); i++){
             subjectList.getSubjects().get(i).DivideTimetable();

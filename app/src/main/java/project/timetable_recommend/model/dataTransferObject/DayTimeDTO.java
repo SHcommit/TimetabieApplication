@@ -1,4 +1,4 @@
-package project.timetable_recommend.Model;
+package project.timetable_recommend.model.dataTransferObject;
 
 public class DayTimeDTO {
         public DayTimeDTO(int m_day, int m_time){

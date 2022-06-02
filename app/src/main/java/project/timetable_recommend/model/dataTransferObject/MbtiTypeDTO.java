@@ -1,6 +1,4 @@
-package project.timetable_recommend.Model;
-
-import android.widget.TextView;
+package project.timetable_recommend.model.dataTransferObject;
 
 /**
  * type로 mbti 알아내고

@@ -1,6 +1,8 @@
-package project.timetable_recommend.Model;
+package project.timetable_recommend.model.valueObejct;
 
 import java.util.ArrayList;
+
+import project.timetable_recommend.model.dataTransferObject.DayTimeDTO;
 
 public class SubjectItemVO {
     int subjectId; //학번

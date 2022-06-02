@@ -1,6 +1,6 @@
-package project.timetable_recommend;
+package project.timetable_recommend.activity.previousActivity;
 
-import static Controller.GsonThread.subjectList;
+import static project.timetable_recommend.activity.controller.GsonThread.subjectList;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,10 +18,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import project.timetable_recommend.R;
 import project.timetable_recommend.adapter.PreviousAdapter;
-import Model.PreviousSelectedColor;
-import Model.SubjectItemDTO;
-import Model.TableCellDTO;
+import project.timetable_recommend.model.valueObejct.PreviousSelectedColorVO;
+import project.timetable_recommend.model.valueObejct.SubjectItemVO;
+import project.timetable_recommend.model.valueObejct.TableCellVO;
 
 /**
  * 이곳 부터 PreviousLayout4까지 각각 이전 시간표를 보여주는 레이아웃입니다.
@@ -30,48 +31,37 @@ import Model.TableCellDTO;
  */
 
 public class PreviousLayout1 extends AppCompatActivity{
-    PreviousAdapter adapter;
+    public static Context      context_main;
+
+    private ImageView          btn_back;
+    PreviousAdapter            adapter;
     RecyclerView.LayoutManager layoutManager;
-    RecyclerView recyclerView;
-    TableCellDTO c;
-    public static Context context_main;
-    private ImageView btn_back;
-    boolean[][] checkSubject;
-    String[][] checkColor;
-    Button button5;
-    ArrayList<SubjectItemDTO> select_item = new ArrayList<SubjectItemDTO>();
+    RecyclerView               recyclerView;
+    TableCellVO                c;
+    String[][]                 checkColor;
+    Button                     button5;
+    ArrayList<SubjectItemVO>   select_item = new ArrayList<SubjectItemVO>();
+
+    boolean[][]                checkSubject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_previous_layout1);
-        button5 = findViewById(R.id.button6);
-        //초기화 시키는 임시 버튼, 나중에 삭제 기능 추가하면 삭제 예정
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences pref = getSharedPreferences("pref1", Activity.MODE_PRIVATE);
-                SharedPreferences.Editor editor = pref.edit();
-                editor.clear();
-                editor.commit();
-                for (int i = 1; i < c.getHeight(); i++) {
-                    for (int j = 1; j < c.getWidth(); j++) {
-                        c.cell[i][j].setText(null);
-                        c.cell[i][j].setBackgroundColor(Color.WHITE);
-                        checkSubject[i][j] = false;
-                    }
-                }
-            }
-        });
-        context_main = this;
-        recyclerView = (RecyclerView) findViewById(R.id.recycler);
-        c = new TableCellDTO();
+
+        c             = new TableCellVO();
         findTextViewById(c);
+
+        button5       = findViewById(R.id.button6);
+        context_main  = this;
+        recyclerView  = (RecyclerView) findViewById(R.id.recycler);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        adapter = new PreviousAdapter();
+        adapter       = new PreviousAdapter();
+
+        checkSubject  = new boolean[c.getHeight()][c.getWidth()];
+        checkColor    = new String[c.getHeight()][c.getWidth()];
         ////////////////////
-        checkSubject = new boolean[c.getHeight()][c.getWidth()];
-        checkColor = new String[c.getHeight()][c.getWidth()];
+
         for (int i = 1; i < (c.getHeight() - 1); i++) {
             for (int j = 1; j < (c.getWidth() - 1); j++) {
                 checkSubject[i][j] = false;
@@ -82,11 +72,11 @@ public class PreviousLayout1 extends AppCompatActivity{
                     @Override
                     public void onItemClick(View v, int pos) {
                         select_item.add(subjectList.getSubjects().get(pos));
-                        PreviousSelectedColor temp = new PreviousSelectedColor();
-                        String color = temp.getColor();
-                        int tmp_day = 0;
-                        int tmp_time = 0;
-                        int checked_day = 0;
+                        PreviousSelectedColorVO temp = new PreviousSelectedColorVO();
+                        String color     = temp.getColor();
+                        int tmp_day      = 0;
+                        int tmp_time     = 0;
+                        int checked_day  = 0;
                         int checked_time = 0;
                         boolean checked_subjectTime = false;
                         for (int i = 0; i < subjectList.getSubjects().get(pos).getSubject_day().size(); i++) {
@@ -108,10 +98,31 @@ public class PreviousLayout1 extends AppCompatActivity{
                     }
                 }
         );
+
         ////////////////////
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
         setInit();
+
+
+        //초기화 시키는 임시 버튼, 나중에 삭제 기능 추가하면 삭제 예정
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences pref = getSharedPreferences("pref1", Activity.MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.clear();
+                editor.commit();
+                for (int i = 1; i < c.getHeight(); i++) {
+                    for (int j = 1; j < c.getWidth(); j++) {
+                        c.cell[i][j].setText(null);
+                        c.cell[i][j].setBackgroundColor(Color.WHITE);
+                        checkSubject[i][j] = false;
+                    }
+                }
+            }
+        });
+
     }
 
     @Override
@@ -159,7 +170,7 @@ public class PreviousLayout1 extends AppCompatActivity{
         }
     }
 
-    public void findTextViewById(TableCellDTO tCell) {
+    public void findTextViewById(TableCellVO tCell) {
         for (int y = 0; y < tCell.getHeight(); y++) {
             final int curY = y;
             for (int x = 0; x < tCell.getWidth(); x++) {

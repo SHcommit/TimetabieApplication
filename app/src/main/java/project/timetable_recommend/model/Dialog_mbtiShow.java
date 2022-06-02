@@ -1,4 +1,4 @@
-package Model;
+package project.timetable_recommend.model;
 
 import android.app.Dialog;
 import android.content.Context;

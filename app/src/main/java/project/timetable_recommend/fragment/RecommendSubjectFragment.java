@@ -1,4 +1,4 @@
-package project.timetable_recommend;
+package project.timetable_recommend.fragment;
 
 import android.os.Bundle;
 
@@ -10,9 +10,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import project.timetable_recommend.Model.MBTISubject;
-import project.timetable_recommend.Model.StudentInfoDTO;
-import project.timetable_recommend.activity.SettingActivity;
+import project.timetable_recommend.model.dataTransferObject.MBTISubjectDTO;
+import project.timetable_recommend.model.dataTransferObject.StudentInfoDTO;
+import project.timetable_recommend.R;
+import project.timetable_recommend.activity.settingActivity.SettingActivity;
 
 public class RecommendSubjectFragment extends Fragment {
     Button button1, button2, button3, buttonFinish;
@@ -75,7 +76,7 @@ public class RecommendSubjectFragment extends Fragment {
         int subject_max = studentInfoDTO.getCultureScore();
         textView2.setText("남은 교양 학점 : " + subject_max);
 
-        MBTISubject subject = new MBTISubject();
+        MBTISubjectDTO subject = new MBTISubjectDTO();
         //settingActivity에 담겨있는 bundle객체 반환받음
         Bundle bundle = getArguments();
         String MBTI = bundle.getString("MBTI"); //번들에서 MBTI값 가져옴

@@ -1,6 +1,6 @@
-package project.timetable_recommend;
+package project.timetable_recommend.activity.previousActivity;
 
-import static Controller.GsonThread.subjectList;
+import static project.timetable_recommend.activity.controller.GsonThread.subjectList;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,22 +18,23 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import project.timetable_recommend.R;
 import project.timetable_recommend.adapter.PreviousAdapter;
-import Model.PreviousSelectedColor;
-import Model.SubjectItemDTO;
-import Model.TableCellDTO;
+import project.timetable_recommend.model.valueObejct.PreviousSelectedColorVO;
+import project.timetable_recommend.model.valueObejct.SubjectItemVO;
+import project.timetable_recommend.model.valueObejct.TableCellVO;
 
 public class PreviousLayout3 extends AppCompatActivity {
     PreviousAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView recyclerView;
-    TableCellDTO c;
+    TableCellVO c;
     public static Context context_main;
     private ImageView btn_back;
     boolean[][] checkSubject;
     String[][] checkColor;
     Button button5;
-    ArrayList<SubjectItemDTO> select_item = new ArrayList<SubjectItemDTO>();
+    ArrayList<SubjectItemVO> select_item = new ArrayList<SubjectItemVO>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,7 @@ public class PreviousLayout3 extends AppCompatActivity {
         });
         context_main = this;
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
-        c = new TableCellDTO();
+        c = new TableCellVO();
         findTextViewById(c);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         adapter = new PreviousAdapter();
@@ -76,7 +77,7 @@ public class PreviousLayout3 extends AppCompatActivity {
                     @Override
                     public void onItemClick(View v, int pos) {
                         select_item.add(subjectList.getSubjects().get(pos));
-                        PreviousSelectedColor temp = new PreviousSelectedColor();
+                        PreviousSelectedColorVO temp = new PreviousSelectedColorVO();
                         String color = temp.getColor();
                         int tmp_day = 0;
                         int tmp_time = 0;
@@ -153,7 +154,7 @@ public class PreviousLayout3 extends AppCompatActivity {
         }
     }
 
-    public void findTextViewById(TableCellDTO tCell) {
+    public void findTextViewById(TableCellVO tCell) {
         for (int y = 0; y < tCell.getHeight(); y++) {
             final int curY = y;
             for (int x = 0; x < tCell.getWidth(); x++) {

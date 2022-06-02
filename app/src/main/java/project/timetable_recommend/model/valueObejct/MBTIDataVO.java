@@ -1,15 +1,16 @@
-package project.timetable_recommend.Model;
+package project.timetable_recommend.model.valueObejct;
 
+import project.timetable_recommend.model.dataTransferObject.MbtiTypeDTO;
 import project.timetable_recommend.R;
 
 public class MBTIDataVO {
 
     MbtiTypeDTO mbti_type[];
 
-    public int imageID[] = {R.drawable.intj,R.drawable.intp,R.drawable.entj,R.drawable.entp,
-            R.drawable.infj,R.drawable.infp,R.drawable.enfj,R.drawable.enfp,
-            R.drawable.istj,R.drawable.isfj,R.drawable.estj,R.drawable.esfj,
-            R.drawable.istp,R.drawable.isfp,R.drawable.estp,R.drawable.esfp};
+    public int imageID[] = {R.drawable.mbti_image_intj,R.drawable.mbti_image_intp,R.drawable.mbti_image_entj,R.drawable.mbti_image_entp,
+            R.drawable.mbti_image_infj,R.drawable.mbti_image_infp,R.drawable.mbti_image_enfj,R.drawable.mbti_image_enfp,
+            R.drawable.mbti_image_istj,R.drawable.mbti_image_isfj,R.drawable.mbti_image_estj,R.drawable.mbti_image_esfj,
+            R.drawable.mbti_image_istp,R.drawable.mbti_image_isfp,R.drawable.mbti_image_estp,R.drawable.mbti_image_esfp};
 
     String mbti_type_data[][] =
             {
