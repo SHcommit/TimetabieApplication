@@ -17,9 +17,12 @@ public class MbtiQuestionActivity extends AppCompatActivity {
 
 
     //간결성을 위해 위젯의 id를 배열로 생성, id는 final int형
-    final int[] TextViewId = {R.id.textView1, R.id.textView2, R.id.textView3, R.id.textView4, R.id.textView5,
-            R.id.textView6, R.id.textView7, R.id.textView8, R.id.textView9, R.id.textView10, R.id.textView11,
-            R.id.textView12};
+    final int[] TextViewId = {
+            R.id.textView1, R.id.textView2, R.id.textView3, R.id.textView4,
+            R.id.textView5, R.id.textView6, R.id.textView7, R.id.textView8,
+            R.id.textView9, R.id.textView10, R.id.textView11, R.id.textView12
+    };
+
     final int[] yButtonId = {R.id.Y1, R.id.Y2, R.id.Y3, R.id.Y4, R.id.Y5, R.id.Y6, R.id.Y7, R.id.Y8, R.id.Y9,
             R.id.Y10, R.id.Y11, R.id.Y12};
     final int[] nButtonId = {R.id.N1, R.id.N2, R.id.N3, R.id.N4, R.id.N5, R.id.N6, R.id.N7, R.id.N8, R.id.N9,

@@ -80,12 +80,12 @@ public class PreviousLayout2 extends AppCompatActivity {
                         select_item.add(subjectList.getSubjects().get(pos));
                         PreviousSelectedColorVO temp = new PreviousSelectedColorVO();
                         String color = temp.getColor();
-                        int tmp_day = 0;
-                        int tmp_time = 0;
-                        int checked_day = 0;
+                        int tmp_day      = 0;
+                        int tmp_time     = 0;
+                        int checked_day  = 0;
                         int checked_time = 0;
                         for (int i = 0; i < subjectList.getSubjects().get(pos).getSubject_day().size(); i++) {
-                            checked_day = subjectList.getSubjects().get(pos).getSubject_day().get(i).getDay();
+                            checked_day  = subjectList.getSubjects().get(pos).getSubject_day().get(i).getDay();
                             checked_time = subjectList.getSubjects().get(pos).getSubject_day().get(i).getTime();
                             if (checkSubject[checked_time][checked_day]) {
                                 Toast.makeText(getApplicationContext(), "중첩된 시간표가 있습니다.", Toast.LENGTH_SHORT).show();
@@ -98,6 +98,7 @@ public class PreviousLayout2 extends AppCompatActivity {
                             if (i == 0 && tmp_day != 0 && tmp_time != 0) {
                                 c.cell[tmp_time][tmp_day].setTextColor(Color.WHITE);
                                 c.cell[tmp_time][tmp_day].setText(subjectList.getSubjects().get(pos).getSubjectName()); // 시간표에 추가되는 부분
+                                c.addNeonMovingEffectInTextView(c.cell[tmp_time][tmp_day]);
                             }
                             checkSubject[tmp_time][tmp_day] = true;
                             c.cell[tmp_time][tmp_day].setBackgroundColor(Color.parseColor(color));

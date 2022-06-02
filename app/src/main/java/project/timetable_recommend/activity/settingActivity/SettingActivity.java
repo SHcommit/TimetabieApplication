@@ -191,6 +191,7 @@ public class SettingActivity extends AppCompatActivity {
             if ((i == 0||compare) && tmp_day != 0 && tmp_time != 0) {
                 c.cell[tmp_time][tmp_day].setTextColor(Color.WHITE);
                 c.cell[tmp_time][tmp_day].setText(subjectItemDTO.getSubjectName()); // 시간표에 추가되는 부분
+                c.addNeonMovingEffectInTextView(c.cell[tmp_time][tmp_day]);
             }
             checkSubject[tmp_time][tmp_day] = true;
             c.cell[tmp_time][tmp_day].setBackgroundColor(Color.parseColor(color));

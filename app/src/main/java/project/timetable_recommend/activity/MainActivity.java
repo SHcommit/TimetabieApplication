@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 if ((j == 0||compare) && temp_day != 0 && temp_time != 0) {
                     c.cell[temp_time][temp_day].setTextColor(Color.WHITE);
                     c.cell[temp_time][temp_day].setText(subjectItemDTOS.getSubjectItemDTOS().get(i).getSubjectName()); // 시간표에 추가되는 부분
+                    c.addNeonMovingEffectInTextView(c.cell[temp_time][temp_day]);
                 }
                 c.cell[temp_time][temp_day].setBackgroundColor(Color.parseColor(color));
             }
