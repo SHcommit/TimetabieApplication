@@ -1,13 +1,11 @@
 package project.timetable_recommend;
 
-import static Model.GsonThread.subjectList;
-
+import static Controller.GsonThread.subjectList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +24,7 @@ import Model.MBTISubject;
 import Model.MainActivitySubjectInfo;
 import Model.SubjectItemDTO;
 import Model.majorSubject;
+import Model.StudentInfoDTO;
 
 public class RecommendSubjectFragment extends Fragment {
     Button button1, button2, button3, buttonFinish;
@@ -75,6 +74,7 @@ public class RecommendSubjectFragment extends Fragment {
     int subject_max;
     int majorScore;
     int grade;
+    int searchSubjectNum;
     ArrayList<SubjectItemDTO> subjectItemDTOS;
     StudentInfoDTO studentInfoDTO;
     @Override
@@ -109,6 +109,9 @@ public class RecommendSubjectFragment extends Fragment {
                 + "\n학점 : " + subject.getMBTI80subjects(count).getCredit());
         third = count;
         textView.setText(MBTI);
+        //선택한 과목 넣기
+        searchSubjectNum = studentInfoDTO.getSubjectId();
+        searchSubject(searchSubjectNum);
         //이 앞. 전공 집어 넣는 중
         majorScore = studentInfoDTO.getMajorScore();
         grade = studentInfoDTO.getGrade();
@@ -316,5 +319,16 @@ public class RecommendSubjectFragment extends Fragment {
                 return majorScore;
         }
         return majorScore;
+    }
+    public void searchSubject(int num){
+        for(int i = 0; i<subjectList.getSubjects().size(); i++){
+            if(num == subjectList.getSubjects().get(i).getSubjectId()) {
+                settingActivity.setTimeTable(subjectList.getSubjects().get(i));
+                subjectItemDTOS.add(subjectList.getSubjects().get(i));
+                return;
+            }
+        }
+        Toast.makeText(getContext(), "학수번호를 찾을 수 없습니다.", Toast.LENGTH_SHORT).show();
+        return;
     }
 }

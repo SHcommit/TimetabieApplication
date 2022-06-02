@@ -1,15 +1,11 @@
 package Model;
 
-import static Model.GsonThread.subjectList;
-
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.lang.reflect.Array;
-import java.sql.Time;
 import java.util.ArrayList;
 
-public class SubjectItemDTO implements Parcelable{
+public class SubjectItemDTO implements Parcelable {
     int subjectId; //학번
     int separatedClass; //분반
     String subjectName; //과목명

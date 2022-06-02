@@ -152,8 +152,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="70dp"
             android:layout_weight="1"
-
-            android:background="#00ff0000"
+            android:background="@drawable/user_show_button_anim_ripple_color10"
             android:text="확인" />
 
     </LinearLayout>

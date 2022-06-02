@@ -1,6 +1,6 @@
 package Model;
 
-import static Model.GsonThread.subjectList;
+import static Controller.GsonThread.subjectList;
 
 public class MBTISubject {
     //mbti별로 추천하는 80개의 subject를 담고있습니다.

@@ -50,7 +50,7 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:background="@drawable/button"
+                    android:background="@drawable/user_show_button_anim_ripple_color6"
 
                     android:id="@+id/mbti_buttonSave"
                     android:layout_width="wrap_content"
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="44dp"
-        android:background="@drawable/button"
+        android:background="@drawable/user_show_button_anim_ripple"
         android:text="Enter"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"

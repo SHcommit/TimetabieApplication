@@ -1,22 +1,15 @@
 package project.timetable_recommend;
 
-import static Model.GsonThread.subjectList;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import Controller.bottomNavigationListenerInFirstActivity;
+import Controller.BottomNavigationListener;
 
 public class PreviousActivity extends AppCompatActivity {
     Button button1, button2, button3, button4;
@@ -27,7 +20,7 @@ public class PreviousActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_previous);
         bottomNavigationView  = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationListener());
         button1 = findViewById(R.id.button);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);

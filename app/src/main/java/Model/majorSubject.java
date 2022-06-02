@@ -1,6 +1,6 @@
 package Model;
 
-import static Model.GsonThread.subjectList;
+import static Controller.GsonThread.subjectList;
 
 import java.util.ArrayList;
 

@@ -1,11 +1,10 @@
 package Model;
 
-import Model.MbtiType;
 import project.timetable_recommend.R;
 
 public class MBTIData {
 
-    MbtiType mbti_type[];
+    MbtiTypeDTO mbti_type[];
 
     public int imageID[] = {R.drawable.intj,R.drawable.intp,R.drawable.entj,R.drawable.entp,
             R.drawable.infj,R.drawable.infp,R.drawable.enfj,R.drawable.enfp,
@@ -37,7 +36,7 @@ public class MBTIData {
      * 여기에 inputMbtiData() func 를 통해 mbti_type에 데이터를 집어 넣는다.
      */
     public MBTIData(){
-        mbti_type = new MbtiType[mbti_type_data.length];
+        mbti_type = new MbtiTypeDTO[mbti_type_data.length];
         this.inputMbtiData();
     }
 
@@ -46,18 +45,18 @@ public class MBTIData {
      */
     public void inputMbtiData(){
         for (int i = 0; i< this.mbti_type_data.length; i ++){
-            mbti_type[i] = new MbtiType(this.mbti_type_data[i][0],this.mbti_type_data[i][1], this.imageID[i]);
+            mbti_type[i] = new MbtiTypeDTO(this.mbti_type_data[i][0],this.mbti_type_data[i][1], this.imageID[i]);
         }
     }
 
     /******************************************** 멤버변수 호출하는 함수들 ***************************************************/
 
 
-    public MbtiType[] getMbti_type() {
+    public MbtiTypeDTO[] getMbti_type() {
         return mbti_type;
     }
 
-    public void setMbti_type(MbtiType[] mbti_type) {
+    public void setMbti_type(MbtiTypeDTO[] mbti_type) {
         this.mbti_type = mbti_type;
     }
 

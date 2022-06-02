@@ -1,5 +1,5 @@
 package project.timetable_recommend;
-import static Model.GsonThread.subjectList;
+import static Controller.GsonThread.subjectList;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,18 +8,18 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-import Model.AMPM;
-import Model.DAY;
-import Model.GsonThread;
 import Model.MainActivitySubjectInfo;
 import Model.PreviousSelectedColor;
 import Model.SubjectItemDTO;
-import Model.TableCell;
-import Controller.bottomNavigationListenerInFirstActivity;
+import Model.AmpmVO;
+import Model.DayVO;
+import Model.TableCellDTO;
+import Controller.BottomNavigationListener;
 
 
 
@@ -34,11 +34,10 @@ public class MainActivity extends AppCompatActivity {
      * @param requestQueue         : Volley에서 다리역할을 하는 객체
      * @param subjectResult        : Json 파싱한 데이터가 저장되어있습니다.
      */
-
     BottomNavigationView bottomNavigationView;
-    AMPM ampm;
-    DAY day; ////
-    TableCell c;
+    AmpmVO ampm;
+    DayVO day;
+    TableCellDTO c;
     int compare_day;
     public static Context context_main;
     MainActivitySubjectInfo subjectItemDTOS;
@@ -50,14 +49,13 @@ public class MainActivity extends AppCompatActivity {
         //변수 초기화
         context_main = this;
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        c = new TableCell();
+        c = new TableCellDTO();
         findTextViewById(c);
         /**
          * bottomNavigationView함수는 bottom_navigation_menu.xml에서 정의한 메뉴 네비게이션을 통해 정의한 네비게이션 바의 객체입니다.
          * 이 객체에 이벤트 헨들러를 통해 어떤 네비게이션 바의 아이콘이 클릭 됬는지 찾는 메서드 입니다.
          */
-        bottomNavigationView.setOnNavigationItemSelectedListener(new bottomNavigationListenerInFirstActivity());
-
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationListener());
     }
 
     @Override
@@ -68,11 +66,12 @@ public class MainActivity extends AppCompatActivity {
 
     //불러옵니다.
     protected void restoreState() {
+        PreviousSelectedColor temp = new PreviousSelectedColor();
         Bundle tmp = getIntent().getExtras();
+        String color;
         subjectItemDTOS = tmp.getParcelable("MainActivitySubject");
         for(int i = 0; i<subjectItemDTOS.getSubjectItemDTOS().size(); i++){
-            PreviousSelectedColor temp = new PreviousSelectedColor();
-            String color = temp.getColor();
+            color = temp.getColor();
             boolean compare = false;
             compare_day  = -1;
             for(int j = 0; j<subjectItemDTOS.getSubjectItemDTOS().get(i).getSubject_day().size(); j++){
@@ -84,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 else compare = false;
                 compare_day = temp_day;
                 if ((j == 0||compare) && temp_day != 0 && temp_time != 0) {
+                    c.cell[temp_time][temp_day].setTextColor(Color.WHITE);
                     c.cell[temp_time][temp_day].setText(subjectItemDTOS.getSubjectItemDTOS().get(i).getSubjectName()); // 시간표에 추가되는 부분
                 }
                 c.cell[temp_time][temp_day].setBackgroundColor(Color.parseColor(color));
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.
-    public void findTextViewById(TableCell tCell) {
+    public void findTextViewById(TableCellDTO tCell) {
         for (int y = 0; y < tCell.getHeight(); y++) {
             final int curY = y;
             for (int x = 0; x < tCell.getWidth(); x++) {
