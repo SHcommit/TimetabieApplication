@@ -1,15 +1,24 @@
+
 package project.timetable_recommend.activity;
+
+import static project.timetable_recommend.activity.controller.GsonThread.*;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import project.timetable_recommend.model.dataTransferObject.AmpmDTO;
 import project.timetable_recommend.model.dataTransferObject.DayDTO;
+import project.timetable_recommend.model.dataTransferObject.MainActivitySubjectInfo;
+import project.timetable_recommend.model.valueObejct.PreviousSelectedColorVO;
 import project.timetable_recommend.model.valueObejct.TableCellVO;
 import project.timetable_recommend.activity.controller.BottomNavigationListener;
 import project.timetable_recommend.R;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -22,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
      * @param requestQueue         : Volley에서 다리역할을 하는 객체
      * @param subjectResult        : Json 파싱한 데이터가 저장되어있습니다.
      */
-
     BottomNavigationView bottomNavigationView;
     AmpmDTO ampm;
-    DayDTO day; ////
+    DayDTO day;
     TableCellVO c;
+    int compare_day;
     public static Context context_main;
-
+    MainActivitySubjectInfo subjectItemDTOS;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,15 +53,40 @@ public class MainActivity extends AppCompatActivity {
          * 이 객체에 이벤트 헨들러를 통해 어떤 네비게이션 바의 아이콘이 클릭 됬는지 찾는 메서드 입니다.
          */
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationListener());
-
-        //test
-        c.cell[ampm.NINE.ordinal()][day.FRIDYA.ordinal()].setText("c++\n융합과학관(24호관)-24405 ");
-        c.cell[ampm.NINE.ordinal()][day.FRIDYA.ordinal()].setBackgroundColor(Color.parseColor("#da4453"));
-        c.cell[ampm.TEN.ordinal()][day.FRIDYA.ordinal()].setBackgroundColor(Color.parseColor("#da4453"));
-        c.cell[ampm.ELEVEN.ordinal()][day.FRIDYA.ordinal()].setBackgroundColor(Color.parseColor("#da4453"));
-        c.addNeonMovingEffectInTextView(c.cell[ampm.NINE.ordinal()][day.FRIDYA.ordinal()]);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        restoreState();
+    }
+
+    //불러옵니다.
+    protected void restoreState() {
+        PreviousSelectedColorVO temp = new PreviousSelectedColorVO();
+        Bundle tmp = getIntent().getExtras();
+        String color;
+        subjectItemDTOS = tmp.getParcelable("MainActivitySubject");
+        for(int i = 0; i<subjectItemDTOS.getSubjectItemDTOS().size(); i++){
+            color = temp.getColor();
+            boolean compare = false;
+            compare_day  = -1;
+            for(int j = 0; j<subjectItemDTOS.getSubjectItemDTOS().get(i).getSubject_day().size(); j++){
+                int temp_time = subjectItemDTOS.getSubjectItemDTOS().get(i).getSubject_day().get(j).getTime();
+                int temp_day = subjectItemDTOS.getSubjectItemDTOS().get(i).getSubject_day().get(j).getDay();
+                if(compare_day!=temp_day){
+                    compare = true;
+                }
+                else compare = false;
+                compare_day = temp_day;
+                if ((j == 0||compare) && temp_day != 0 && temp_time != 0) {
+                    c.cell[temp_time][temp_day].setTextColor(Color.WHITE);
+                    c.cell[temp_time][temp_day].setText(subjectItemDTOS.getSubjectItemDTOS().get(i).getSubjectName()); // 시간표에 추가되는 부분
+                }
+                c.cell[temp_time][temp_day].setBackgroundColor(Color.parseColor(color));
+            }
+        }
+    }
     //이 함수는 tableCell의 textView의 아이디를 찾아 객체화 시켜주는 함수입니다.
     public void findTextViewById(TableCellVO tCell) {
         for (int y = 0; y < tCell.getHeight(); y++) {

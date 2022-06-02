@@ -72,6 +72,7 @@ public class PreviousLayout3 extends AppCompatActivity {
                 checkSubject[i][j] = false;
             }
         }
+        PreviousSelectedColorVO temp = new PreviousSelectedColorVO();
         adapter.setOnItemClickListener(
                 new PreviousAdapter.OnItemClickListener() {
                     @Override
@@ -95,7 +96,10 @@ public class PreviousLayout3 extends AppCompatActivity {
                         for (int i = 0; i < subjectList.getSubjects().get(pos).getSubject_day().size(); i++) {
                             tmp_day = subjectList.getSubjects().get(pos).getSubject_day().get(i).getDay();
                             tmp_time = subjectList.getSubjects().get(pos).getSubject_day().get(i).getTime();
-                            if (i == 0 && tmp_day != 0 && tmp_time != 0) c.cell[tmp_time][tmp_day].setText(subjectList.getSubjects().get(pos).getSubjectName()); // 시간표에 추가되는 부분
+                            if (i == 0 && tmp_day != 0 && tmp_time != 0) {
+                                c.cell[tmp_time][tmp_day].setTextColor(Color.WHITE);
+                                c.cell[tmp_time][tmp_day].setText(subjectList.getSubjects().get(pos).getSubjectName()); // 시간표에 추가되는 부분
+                            }
                             checkSubject[tmp_time][tmp_day] = true;
                             c.cell[tmp_time][tmp_day].setBackgroundColor(Color.parseColor(color));
                             checkColor[tmp_time][tmp_day] = color;
@@ -143,6 +147,7 @@ public class PreviousLayout3 extends AppCompatActivity {
             for (int i = 1; i < c.getHeight(); i++) {
                 for (int j = 1; j < c.getWidth(); j++) {
                     if (pref.contains("layout3String" + i + "," + j)) {
+                        c.cell[i][j].setTextColor(Color.WHITE);
                         c.cell[i][j].setText(pref.getString("layout3String" + i + "," + j, ""));
                         checkSubject[i][j] = pref.getBoolean("layout3boolean" + i + "," + j, false);
                         if(pref.contains("layout3StringColor"+ i+","+j)) {

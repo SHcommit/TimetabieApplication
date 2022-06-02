@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import project.timetable_recommend.activity.mbtiDiscriptionActivity.MbtiActivity;
 import project.timetable_recommend.activity.MainActivity;
+
 import project.timetable_recommend.activity.previousActivity.PreviousActivity;
 import project.timetable_recommend.R;
 import project.timetable_recommend.activity.settingActivity.SettingActivity;

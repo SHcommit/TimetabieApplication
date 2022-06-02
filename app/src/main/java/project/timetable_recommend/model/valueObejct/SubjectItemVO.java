@@ -1,10 +1,13 @@
 package project.timetable_recommend.model.valueObejct;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
 import project.timetable_recommend.model.dataTransferObject.DayTimeDTO;
 
-public class SubjectItemVO {
+public class SubjectItemVO implements Parcelable {
     int subjectId; //학번
     int separatedClass; //분반
     String subjectName; //과목명
@@ -28,7 +31,32 @@ public class SubjectItemVO {
         grade = 0;
     }
 
-        public ArrayList<DayTimeDTO> getSubject_day() {
+    protected SubjectItemVO(Parcel in) {
+        subjectId = in.readInt();
+        separatedClass = in.readInt();
+        subjectName = in.readString();
+        credit = in.readInt();
+        division = in.readString();
+        professor = in.readString();
+        subjectTimetable = in.readString();
+        grade = in.readInt();
+        subjectPlace = in.readString();
+        subject_day = in.createTypedArrayList(DayTimeDTO.CREATOR);
+    }
+
+    public static final Creator<SubjectItemVO> CREATOR = new Creator<SubjectItemVO>() {
+        @Override
+        public SubjectItemVO createFromParcel(Parcel in) {
+            return new SubjectItemVO(in);
+        }
+
+        @Override
+        public SubjectItemVO[] newArray(int size) {
+            return new SubjectItemVO[size];
+        }
+    };
+
+    public ArrayList<DayTimeDTO> getSubject_day() {
             return subject_day;
         }
 
@@ -93,15 +121,6 @@ public class SubjectItemVO {
             }
         }
 
-        public boolean isCheckSubject() {
-            return checkSubject;
-        }
-
-        public void setCheckSubject(boolean checkSubject) {
-            this.checkSubject = checkSubject;
-        }
-
-        boolean checkSubject;
 
         public int getSubjectId() {
             return subjectId;
@@ -136,4 +155,22 @@ public class SubjectItemVO {
         }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(subjectId);
+        parcel.writeInt(separatedClass);
+        parcel.writeString(subjectName);
+        parcel.writeInt(credit);
+        parcel.writeString(division);
+        parcel.writeString(professor);
+        parcel.writeString(subjectTimetable);
+        parcel.writeInt(grade);
+        parcel.writeString(subjectPlace);
+        parcel.writeTypedList(subject_day);
+    }
 }

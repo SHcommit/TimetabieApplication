@@ -1,5 +1,7 @@
 package project.timetable_recommend.activity.settingActivity;
 
+import static project.timetable_recommend.activity.controller.GsonThread.subjectList;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,12 +22,13 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+
 import project.timetable_recommend.activity.controller.GsonThread;
 import project.timetable_recommend.model.Dialog_mbtiShow;
 import project.timetable_recommend.model.valueObejct.PreviousSelectedColorVO;
 import project.timetable_recommend.model.valueObejct.SubjectItemVO;
 import project.timetable_recommend.model.valueObejct.TableCellVO;
-import project.timetable_recommend.activity.MainActivity;
 import project.timetable_recommend.fragment.InputMBTIFragment;
 import project.timetable_recommend.R;
 import project.timetable_recommend.fragment.RecommendSubjectFragment;
@@ -48,9 +51,10 @@ public class SettingActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     LinearLayout input_Layout_instacnce;
     TableLayout tableLayout;
+    ArrayList<String> subjectNameTest;
     boolean[][] checkSubject;
     String[][] checkColor;
-
+    PreviousSelectedColorVO temp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +62,12 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
         c = new TableCellVO();
         findTextViewById(c);
+        subjectNameTest = new ArrayList<String>();
         checkSubject = new boolean[c.getHeight()][c.getWidth()];
         checkColor = new String[c.getHeight()][c.getWidth()];
         tableLayout = findViewById(R.id.table);
         tableLayout.setVisibility(View.INVISIBLE);
+        temp = new PreviousSelectedColorVO();
         for (int i = 1; i < (c.getHeight() - 1); i++) {
             for (int j = 1; j < (c.getWidth() - 1); j++) {
                 checkSubject[i][j] = false;
@@ -78,15 +84,6 @@ public class SettingActivity extends AppCompatActivity {
         input_Layout_instacnce = findViewById(R.id.mbti_input_window);
         bundle = new Bundle();
         //이 버튼 임시적으로 만든거
-        button5 = findViewById(R.id.button5);
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
         editText = findViewById(R.id.mbti_put_text);
         button = findViewById(R.id.mbti_buttonSave);
 
@@ -159,32 +156,47 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     ////////접근 금지///////
-    public void setTimeTable(SubjectItemVO subjectItemDTO) {
+    public int setTimeTable(SubjectItemVO subjectItemDTO) {
         PreviousSelectedColorVO temp = new PreviousSelectedColorVO();
         String color = temp.getColor();
         int tmp_day = 0;
         int tmp_time = 0;
         int checked_day = 0;
         int checked_time = 0;
+        int compare_day = 0;
+        boolean compare = false;
         boolean checked_subjectTime = false;
         for (int i = 0; i < subjectItemDTO.getSubject_day().size(); i++) {
             checked_day = subjectItemDTO.getSubject_day().get(i).getDay();
             checked_time = subjectItemDTO.getSubject_day().get(i).getTime();
             if (checkSubject[checked_time][checked_day]) {
                 Toast.makeText(getApplicationContext(), "중첩된 시간표가 있습니다.", Toast.LENGTH_SHORT).show();
-                return;
+                return -1;
+            }
+        }//시간표 중첩 확인 반복문입니다. 최대 3번정도 실행
+        for(int i = 0; i< subjectNameTest.size(); i++){
+            if(subjectNameTest.get(i).equals(subjectItemDTO.getSubjectName())) {
+                System.out.println("중첩있음");
+                return -1;
             }
         }
+        subjectNameTest.add(subjectItemDTO.getSubjectName());
         for (int i = 0; i < subjectItemDTO.getSubject_day().size(); i++) {
             tmp_day = subjectItemDTO.getSubject_day().get(i).getDay();
             tmp_time = subjectItemDTO.getSubject_day().get(i).getTime();
-            if (i == 0 && tmp_day != 0 && tmp_time != 0) {
+            if(compare_day!=tmp_day){
+                compare = true;
+            }
+            else compare = false;
+            if ((i == 0||compare) && tmp_day != 0 && tmp_time != 0) {
+                c.cell[tmp_time][tmp_day].setTextColor(Color.WHITE);
                 c.cell[tmp_time][tmp_day].setText(subjectItemDTO.getSubjectName()); // 시간표에 추가되는 부분
             }
-                checkSubject[tmp_time][tmp_day] = true;
-                c.cell[tmp_time][tmp_day].setBackgroundColor(Color.parseColor(color));
-                checkColor[tmp_time][tmp_day] = color;
+            checkSubject[tmp_time][tmp_day] = true;
+            c.cell[tmp_time][tmp_day].setBackgroundColor(Color.parseColor(color));
+            compare_day = tmp_day;
         }
+        return 1;
     }
 
 
@@ -214,7 +226,6 @@ public class SettingActivity extends AppCompatActivity {
         //학생 정보(StudentInfoFragment에서 넘어옴) 기입 받은 경우, recommendSubjectFragment 이동
 
         if(index == 1) {
-            button5.setVisibility(View.INVISIBLE);
             tableLayout.setVisibility(View.VISIBLE);
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             recommendSubjectFragment.setArguments(bundle);
@@ -246,5 +257,4 @@ public class SettingActivity extends AppCompatActivity {
             }
         }
     }
-
 }
