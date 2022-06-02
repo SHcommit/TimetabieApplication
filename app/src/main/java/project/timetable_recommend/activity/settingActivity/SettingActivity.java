@@ -86,7 +86,6 @@ public class SettingActivity extends AppCompatActivity {
         //이 버튼 임시적으로 만든거
         editText = findViewById(R.id.mbti_put_text);
         button = findViewById(R.id.mbti_buttonSave);
-
         //액티비티 위에 돌아갈 프래그먼트 객체 생성
         studentInfoFragment = new StudentInfoFragment();
         inputMBTIFragment = new InputMBTIFragment();
@@ -157,7 +156,7 @@ public class SettingActivity extends AppCompatActivity {
 
     ////////접근 금지///////
     public int setTimeTable(SubjectItemVO subjectItemDTO) {
-        PreviousSelectedColorVO temp = new PreviousSelectedColorVO();
+
         String color = temp.getColor();
         int tmp_day = 0;
         int tmp_time = 0;
