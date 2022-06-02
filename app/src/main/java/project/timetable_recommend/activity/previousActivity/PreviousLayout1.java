@@ -41,7 +41,7 @@ public class PreviousLayout1 extends AppCompatActivity{
     String[][]                 checkColor;
     Button                     button5;
     ArrayList<SubjectItemVO>   select_item = new ArrayList<SubjectItemVO>();
-
+    PreviousSelectedColorVO    temp;
     boolean[][]                checkSubject;
 
     @Override
@@ -57,9 +57,10 @@ public class PreviousLayout1 extends AppCompatActivity{
         recyclerView  = (RecyclerView) findViewById(R.id.recycler);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         adapter       = new PreviousAdapter();
-
+        temp          = new PreviousSelectedColorVO();
         checkSubject  = new boolean[c.getHeight()][c.getWidth()];
         checkColor    = new String[c.getHeight()][c.getWidth()];
+
         ////////////////////
 
         for (int i = 1; i < (c.getHeight() - 1); i++) {
@@ -73,7 +74,6 @@ public class PreviousLayout1 extends AppCompatActivity{
                     @Override
                     public void onItemClick(View v, int pos) {
                         select_item.add(subjectList.getSubjects().get(pos));
-                        PreviousSelectedColorVO temp = new PreviousSelectedColorVO();
                         String color     = temp.getColor();
                         int tmp_day      = 0;
                         int tmp_time     = 0;
@@ -120,7 +120,7 @@ public class PreviousLayout1 extends AppCompatActivity{
                 for (int i = 1; i < c.getHeight(); i++) {
                     for (int j = 1; j < c.getWidth(); j++) {
                         c.cell[i][j].setText(null);
-                        c.cell[i][j].setBackgroundColor(Color.WHITE);
+                        c.cell[i][j].setBackgroundColor(Color.parseColor("#FCF7F6"));
                         checkSubject[i][j] = false;
                     }
                 }
