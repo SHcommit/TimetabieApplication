@@ -1,6 +1,6 @@
-package Model;
+package project.timetable_recommend.Model;
 
-public enum DayVO {
+public enum DayDTO {
     SUN,
     MONDAY,
     TUESDAY,

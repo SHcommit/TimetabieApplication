@@ -8,14 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Objects;
 
-import project.timetable_recommend.MainActivity;
 import project.timetable_recommend.R;
-import project.timetable_recommend.SettingActivity;
 
 public class Dialog_mbtiPut extends Dialog {
     private Button   dlg_save;

@@ -1,8 +1,8 @@
-package Model;
+package project.timetable_recommend.Model;
 
 import java.util.ArrayList;
 
-public class SubjectItemDTO {
+public class SubjectItemVO {
     int subjectId; //학번
     int separatedClass; //분반
     String subjectName; //과목명
@@ -13,9 +13,9 @@ public class SubjectItemDTO {
     int grade; // 학년
     String subjectPlace; //장소
 
-    ArrayList<DayTime> subject_day = new ArrayList<>(); //날짜 시간 분할된 정보 (시간표 삽입용)
+    ArrayList<DayTimeDTO> subject_day = new ArrayList<>(); //날짜 시간 분할된 정보 (시간표 삽입용)
 
-    public SubjectItemDTO() {
+    public SubjectItemVO() {
         subjectId = 0;
         separatedClass = 0;
         subjectName = "";
@@ -26,7 +26,7 @@ public class SubjectItemDTO {
         grade = 0;
     }
 
-        public ArrayList<DayTime> getSubject_day() {
+        public ArrayList<DayTimeDTO> getSubject_day() {
             return subject_day;
         }
 
@@ -85,7 +85,7 @@ public class SubjectItemDTO {
             for (int i = 0; i < tmp_time.size(); i++) {
                 int a = tmp_time.get(i);
                 if (tmp_day != 0) {
-                    DayTime day = new DayTime(tmp_day, a);
+                    DayTimeDTO day = new DayTimeDTO(tmp_day, a);
                     subject_day.add(day);
                 }
             }

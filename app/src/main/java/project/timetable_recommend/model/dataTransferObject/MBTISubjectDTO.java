@@ -1,15 +1,15 @@
-package Model;
+package project.timetable_recommend.Model;
 
-import static Controller.GsonThread.subjectList;
+import static project.timetable_recommend.activity.Controller.GsonThread.subjectList;
 
-public class MBTISubject {
+public class MBTISubjectDTO {
     //mbti별로 추천하는 80개의 subject를 담고있습니다.
-    public MBTISubject(){
+    public MBTISubjectDTO(){
         MBTI80subject();
     }
 
     //mbti별로 추천하는 80개의 subject를 지정하는 학수번호를 담고 있습니다.
-    SubjectItemDTO[] MBTI80subjects = new SubjectItemDTO[80];
+    SubjectItemVO[] MBTI80subjects = new SubjectItemVO[80];
     int MBTIsubjects[] = {
             10018, 10043, 10571, 11096, 11109,//ISFJ
             10046, 10047, 10592, 11093, 11096,//ESFJ
@@ -39,7 +39,7 @@ public class MBTISubject {
             }
         }
     }
-    public SubjectItemDTO getMBTI80subjects(int m_count){
+    public SubjectItemVO getMBTI80subjects(int m_count){
         return MBTI80subjects[m_count];
     }
 }

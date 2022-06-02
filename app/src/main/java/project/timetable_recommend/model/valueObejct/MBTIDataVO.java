@@ -1,8 +1,8 @@
-package Model;
+package project.timetable_recommend.Model;
 
 import project.timetable_recommend.R;
 
-public class MBTIData {
+public class MBTIDataVO {
 
     MbtiTypeDTO mbti_type[];
 
@@ -35,7 +35,7 @@ public class MBTIData {
      * 생성자 함수
      * 여기에 inputMbtiData() func 를 통해 mbti_type에 데이터를 집어 넣는다.
      */
-    public MBTIData(){
+    public MBTIDataVO(){
         mbti_type = new MbtiTypeDTO[mbti_type_data.length];
         this.inputMbtiData();
     }

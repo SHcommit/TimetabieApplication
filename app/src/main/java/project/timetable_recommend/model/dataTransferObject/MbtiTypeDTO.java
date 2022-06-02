@@ -1,4 +1,4 @@
-package Model;
+package project.timetable_recommend.Model;
 
 import android.widget.TextView;
 

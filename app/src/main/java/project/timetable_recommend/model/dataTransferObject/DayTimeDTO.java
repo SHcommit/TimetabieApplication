@@ -1,7 +1,7 @@
-package Model;
+package project.timetable_recommend.Model;
 
-public class DayTime {
-        public DayTime(int m_day, int m_time){
+public class DayTimeDTO {
+        public DayTimeDTO(int m_day, int m_time){
             day = m_day;
             time = m_time;
         }

@@ -1,4 +1,4 @@
-package project.timetable_recommend;
+package project.timetable_recommend.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+
+import project.timetable_recommend.R;
 
 public class MbtiDetailActivity extends AppCompatActivity {
 

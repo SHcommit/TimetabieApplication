@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import Controller.PreviousAdapter;
+import project.timetable_recommend.adapter.PreviousAdapter;
 import Model.PreviousSelectedColor;
 import Model.SubjectItemDTO;
 import Model.TableCellDTO;

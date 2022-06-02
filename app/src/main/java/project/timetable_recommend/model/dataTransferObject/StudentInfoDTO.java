@@ -1,4 +1,4 @@
-package Model;
+package project.timetable_recommend.Model;
 
 import java.io.Serializable;
 

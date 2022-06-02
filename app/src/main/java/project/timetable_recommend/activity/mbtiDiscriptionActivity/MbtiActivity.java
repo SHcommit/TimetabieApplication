@@ -1,4 +1,4 @@
-package project.timetable_recommend;
+package project.timetable_recommend.activity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,10 +15,11 @@ import android.view.animation.OvershootInterpolator;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import Controller.MbtiAdapter;
-import Controller.BottomNavigationListener;
-import Model.MBTIData;
-import Model.MbtiTypeDTO;
+import project.timetable_recommend.R;
+import project.timetable_recommend.adapter.MbtiAdapter;
+import project.timetable_recommend.activity.Controller.BottomNavigationListener;
+import project.timetable_recommend.Model.MBTIData;
+import project.timetable_recommend.Model.MbtiTypeDTO;
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 

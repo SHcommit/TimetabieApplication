@@ -18,18 +18,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import Controller.PreviousAdapter;
+import project.timetable_recommend.adapter.PreviousAdapter;
 import Model.PreviousSelectedColor;
 import Model.SubjectItemDTO;
 import Model.TableCellDTO;
 
-/**
- * 이곳 부터 PreviousLayout4까지 각각 이전 시간표를 보여주는 레이아웃입니다.
- * 레이아웃의 구조는 시간표와 리사이클 뷰로 나누어져있습니다.
- * 리사이클 뷰에 사용되는 아이템은 layout/previous_item에 있습니다.
- */
-
-public class PreviousLayout1 extends AppCompatActivity{
+public class PreviousLayout4 extends AppCompatActivity {
     PreviousAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView recyclerView;
@@ -44,13 +38,13 @@ public class PreviousLayout1 extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_previous_layout1);
+        setContentView(R.layout.activity_previous_layout4);
         button5 = findViewById(R.id.button6);
         //초기화 시키는 임시 버튼, 나중에 삭제 기능 추가하면 삭제 예정
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences pref = getSharedPreferences("pref1", Activity.MODE_PRIVATE);
+                SharedPreferences pref = getSharedPreferences("pref4", Activity.MODE_PRIVATE);
                 SharedPreferences.Editor editor = pref.edit();
                 editor.clear();
                 editor.commit();
@@ -122,13 +116,13 @@ public class PreviousLayout1 extends AppCompatActivity{
 
     //지금까지 정한 시간표가 저장됩니다.
     protected void saveState() {
-        SharedPreferences pref = getSharedPreferences("pref1", Activity.MODE_PRIVATE);
+        SharedPreferences pref = getSharedPreferences("pref4", Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
         for (int i = 1; i < (c.getHeight()); i++) {
             for (int j = 1; j < (c.getWidth()); j++) {
-                editor.putString("layout1String" + i + "," + j, c.cell[i][j].getText() + "");
-                editor.putBoolean("layout1boolean" + i + "," + j, checkSubject[i][j]);
-                if(checkColor[i][j]!=null) editor.putString("layout1StringColor"+ i+","+j, checkColor[i][j]);
+                editor.putString("layout4String" + i + "," + j, c.cell[i][j].getText() + "");
+                editor.putBoolean("layout4boolean" + i + "," + j, checkSubject[i][j]);
+                if(checkColor[i][j]!=null) editor.putString("layout4StringColor"+ i+","+j, checkColor[i][j]);
             }
         }
         editor.commit();
@@ -143,15 +137,15 @@ public class PreviousLayout1 extends AppCompatActivity{
 
     //불러옵니다.
     protected void restoreState() {
-        SharedPreferences pref = getSharedPreferences("pref1", Activity.MODE_PRIVATE);
+        SharedPreferences pref = getSharedPreferences("pref4", Activity.MODE_PRIVATE);
         if (pref != null) {
             for (int i = 1; i < c.getHeight(); i++) {
                 for (int j = 1; j < c.getWidth(); j++) {
-                    if (pref.contains("layout1String" + i + "," + j)) {
-                        c.cell[i][j].setText(pref.getString("layout1String" + i + "," + j, ""));
-                        checkSubject[i][j] = pref.getBoolean("layout1boolean" + i + "," + j, false);
-                        if(pref.contains("layout1StringColor"+ i+","+j)) {
-                            c.cell[i][j].setBackgroundColor(Color.parseColor(pref.getString("layout1StringColor" + i + "," + j, "")));
+                    if (pref.contains("layout4String" + i + "," + j)) {
+                        c.cell[i][j].setText(pref.getString("layout4String" + i + "," + j, ""));
+                        checkSubject[i][j] = pref.getBoolean("layout4boolean" + i + "," + j, false);
+                        if(pref.contains("layout4StringColor"+ i+","+j)) {
+                            c.cell[i][j].setBackgroundColor(Color.parseColor(pref.getString("layout4StringColor" + i + "," + j, "")));
                         }
                     }
                 }

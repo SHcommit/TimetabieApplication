@@ -7,11 +7,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import project.timetable_recommend.MbtiActivity;
-import project.timetable_recommend.MainActivity;
-import project.timetable_recommend.PreviousActivity;
+import project.timetable_recommend.activity.MbtiActivity;
+import project.timetable_recommend.activity.MainActivity;
+import project.timetable_recommend.activity.previousActivity.PreviousActivity;
 import project.timetable_recommend.R;
-import project.timetable_recommend.SettingActivity;
+import project.timetable_recommend.activity.SettingActivity;
 
 
 /**

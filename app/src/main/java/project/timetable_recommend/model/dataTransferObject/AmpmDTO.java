@@ -1,6 +1,6 @@
-package Model;
+package project.timetable_recommend.Model;
 
-public enum AmpmVO {
+public enum AmpmDTO {
     EIGHT,
     NINE,
     TEN,

@@ -1,12 +1,12 @@
 
-package Model;
+package project.timetable_recommend.Model;
 
 import project.timetable_recommend.*;
 
 import android.text.TextUtils;
 import android.widget.TextView;
 
-public class TableCellDTO {
+public class TableCellVO {
     /**
      * 테이블 뷰 가로 세로 크기
      */

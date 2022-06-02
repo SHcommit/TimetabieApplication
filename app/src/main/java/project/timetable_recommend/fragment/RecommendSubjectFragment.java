@@ -9,12 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.Serializable;
-
-import Model.MBTISubject;
-import Model.StudentInfoDTO;
+import project.timetable_recommend.Model.MBTISubject;
+import project.timetable_recommend.Model.StudentInfoDTO;
+import project.timetable_recommend.activity.SettingActivity;
 
 public class RecommendSubjectFragment extends Fragment {
     Button button1, button2, button3, buttonFinish;

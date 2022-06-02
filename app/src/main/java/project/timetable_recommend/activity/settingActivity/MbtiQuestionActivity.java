@@ -1,4 +1,4 @@
-package project.timetable_recommend;
+package project.timetable_recommend.settingActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import project.timetable_recommend.R;
 
 public class MbtiQuestionActivity extends AppCompatActivity {
 

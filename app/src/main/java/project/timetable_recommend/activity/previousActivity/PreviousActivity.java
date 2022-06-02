@@ -1,4 +1,4 @@
-package project.timetable_recommend;
+package project.timetable_recommend.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,11 @@ import android.widget.Button;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import Controller.BottomNavigationListener;
+import project.timetable_recommend.PreviousLayout1;
+import project.timetable_recommend.PreviousLayout2;
+import project.timetable_recommend.PreviousLayout3;
+import project.timetable_recommend.PreviousLayout4;
+import project.timetable_recommend.R;
 
 public class PreviousActivity extends AppCompatActivity {
     Button button1, button2, button3, button4;

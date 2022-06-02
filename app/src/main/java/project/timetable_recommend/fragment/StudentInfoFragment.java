@@ -13,7 +13,8 @@ import android.widget.FrameLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import Model.StudentInfoDTO;
+import project.timetable_recommend.Model.StudentInfoDTO;
+import project.timetable_recommend.activity.SettingActivity;
 
 
 public class StudentInfoFragment extends Fragment {

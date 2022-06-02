@@ -1,4 +1,4 @@
-package project.timetable_recommend;
+package project.timetable_recommend.settingActivity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -20,19 +20,23 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import Controller.GsonThread;
-import Model.Dialog_mbtiShow;
-import Model.PreviousSelectedColor;
-import Model.SubjectItemDTO;
-import Model.TableCellDTO;
+import project.timetable_recommend.Model.Dialog_mbtiShow;
+import project.timetable_recommend.Model.valueObejct.PreviousSelectedColorVO;
+import project.timetable_recommend.Model.valueObejct.SubjectItemVO;
+import project.timetable_recommend.Model.valueObejct.TableCellVO;
+import project.timetable_recommend.activity.MainActivity;
+import project.timetable_recommend.fragment.InputMBTIFragment;
+import project.timetable_recommend.R;
+import project.timetable_recommend.fragment.RecommendSubjectFragment;
+import project.timetable_recommend.fragment.StudentInfoFragment;
 
 
 public class SettingActivity extends AppCompatActivity {
     String MBTI;
     StudentInfoFragment studentInfoFragment;
     InputMBTIFragment inputMBTIFragment;
-    RecommendSubjectFragment recommendSubjectFragment;
-    TableCellDTO c;
+    public RecommendSubjectFragment recommendSubjectFragment;
+    TableCellVO c;
     EditText editText;
     Button button;
     static final int REQUEST_SETTING_TO_QUESTION = 1; //requestCode of SettnigActivity -> MBTIQuestionActivity
@@ -51,7 +55,7 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-        c = new TableCellDTO();
+        c = new TableCellVO();
         findTextViewById(c);
         checkSubject = new boolean[c.getHeight()][c.getWidth()];
         checkColor = new String[c.getHeight()][c.getWidth()];
@@ -62,8 +66,8 @@ public class SettingActivity extends AppCompatActivity {
                 checkSubject[i][j] = false;
             }
         }
-        GsonThread gsonThread = new GsonThread(getApplicationContext());
-        gsonThread.start();
+        //GsonThread gsonThread = new GsonThread(getApplicationContext());
+        //gsonThread.start();
         /**
          * @param context_settingActivity : settingActivity 화면 객체 얻어오는 변수
          * @param input_Layout_instacnce  : mbti 값 읽어 들일 때 사용하는 변수
@@ -154,8 +158,8 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     ////////접근 금지///////
-    public void setTimeTable(SubjectItemDTO subjectItemDTO) {
-        PreviousSelectedColor temp = new PreviousSelectedColor();
+    public void setTimeTable(SubjectItemVO subjectItemDTO) {
+        PreviousSelectedColorVO temp = new PreviousSelectedColorVO();
         String color = temp.getColor();
         int tmp_day = 0;
         int tmp_time = 0;
@@ -220,7 +224,7 @@ public class SettingActivity extends AppCompatActivity {
 
 
     //넘긴 액티비티에서 다시 원래로 넘어온 경우 호출되는 메소드
-    public void findTextViewById(TableCellDTO tCell) {
+    public void findTextViewById(TableCellVO tCell) {
         for (int y = 0; y < tCell.getHeight(); y++) {
             final int curY = y;
             for (int x = 0; x < tCell.getWidth(); x++) {
