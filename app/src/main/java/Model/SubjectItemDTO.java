@@ -1,8 +1,11 @@
 package Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
-public class SubjectItemDTO {
+public class SubjectItemDTO implements Parcelable {
     int subjectId; //학번
     int separatedClass; //분반
     String subjectName; //과목명
@@ -26,7 +29,33 @@ public class SubjectItemDTO {
         grade = 0;
     }
 
-        public ArrayList<DayTime> getSubject_day() {
+    protected SubjectItemDTO(Parcel in) {
+        subjectId = in.readInt();
+        separatedClass = in.readInt();
+        subjectName = in.readString();
+        credit = in.readInt();
+        division = in.readString();
+        professor = in.readString();
+        subjectTimetable = in.readString();
+        grade = in.readInt();
+        subjectPlace = in.readString();
+        subject_day = in.createTypedArrayList(DayTime.CREATOR);
+        checkSubject = in.readByte() != 0;
+    }
+
+    public static final Creator<SubjectItemDTO> CREATOR = new Creator<SubjectItemDTO>() {
+        @Override
+        public SubjectItemDTO createFromParcel(Parcel in) {
+            return new SubjectItemDTO(in);
+        }
+
+        @Override
+        public SubjectItemDTO[] newArray(int size) {
+            return new SubjectItemDTO[size];
+        }
+    };
+
+    public ArrayList<DayTime> getSubject_day() {
             return subject_day;
         }
 
@@ -134,4 +163,23 @@ public class SubjectItemDTO {
         }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(subjectId);
+        parcel.writeInt(separatedClass);
+        parcel.writeString(subjectName);
+        parcel.writeInt(credit);
+        parcel.writeString(division);
+        parcel.writeString(professor);
+        parcel.writeString(subjectTimetable);
+        parcel.writeInt(grade);
+        parcel.writeString(subjectPlace);
+        parcel.writeTypedList(subject_day);
+        parcel.writeByte((byte) (checkSubject ? 1 : 0));
+    }
 }
