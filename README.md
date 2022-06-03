@@ -157,7 +157,9 @@ Github을 통한 프로젝트 버전 관리
 <div>
 협업 과정에서 Data Transfer Object(DTO), Value Object(VO) 개념을 도입해 클래스 간 역할 구분
 </div>
+  
 <div>
+  시연 영상!! https://www.youtube.com/watch?v=LeGCNOoITgc
 </div>
 <div>
 </div>
