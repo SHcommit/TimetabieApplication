@@ -82,7 +82,8 @@ use jsp to JSON Serialization(SubjectListDTO)
 ripple animation을 구현 ( adapt button)
 </div>
 <div>
- AlphaInAnimationAdapterAnimation 사용 (MbtiAcitivty)
+ <a href="https://github.com/wasabeef/recyclerview-animators">AlphaInAnimationAdapterAnimation</a/> 사용 (MbtiAcitivty)
+ 
 </div>
 
 > Mbti 타입별 설명 목록 recyclerView 를 사용하여 목록을 호출할 때
@@ -121,6 +122,9 @@ TableLayout을 통한 시간표 구현 (Model.TableCell)
 </div>
 <div>
 시간표에 TextUtils.TruncateAt 기능 적용
+</div>
+<div>
+Glide를 통한 이미지 호출
 </div>
 <br/>
 
