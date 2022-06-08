@@ -13,6 +13,15 @@
 
 ---
 
+<div align=center><h3>About App operating_ </div>
+
+![short1](https://user-images.githubusercontent.com/96910404/172686942-54f5c5a8-5eac-4864-a018-bb4239c9c4c9.gif)
+
+![short2](https://user-images.githubusercontent.com/96910404/172686950-881e0f25-45c3-4a6c-8b36-d48eb9b8de09.gif)
+![short3](https://user-images.githubusercontent.com/96910404/172686976-55d2f67d-c1cd-4afa-9990-666fa85de27c.gif)
+
+![short4](https://user-images.githubusercontent.com/96910404/172686982-61b5b63e-84b3-47e4-896e-a16f35461fbd.gif)
+---
 <div align=center><h3>Target_</div>
 
 * 컴퓨터공학과 학생 누구나
@@ -177,3 +186,4 @@ Github을 통한 프로젝트 버전 관리
 </div>
 <div>
 </div>
+
